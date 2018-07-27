@@ -1,0 +1,81 @@
+#header {
+  background-color: #add8e6;
+  font-size: 20px;
+  height: 150px;
+  margin: 0px;
+  padding-top: 3%;
+  text-align: center;
+  width: 100%;
+}
+
+body {
+  background-color: #ffffff;
+}
+
+.current {
+    background-color: #eedd82;
+    color: white;
+}
+
+h1 {
+  font-family: 'Raleway', sans-serif;
+	font-size: 48px;
+	font-style: bold;
+	font-variant: normal;
+	font-weight: 400;
+	line-height: 20px;
+  color: #2f4f4f;
+}
+
+h2 {
+  font-family: 'Poiret One', cursive;
+  font-size: 20px;
+  line-height: 28px;
+  font-style: italic;
+  color: grey;
+}
+
+h3 {
+  /* font-family: 'Nanum Gothic', sans-serif; */
+  font-family: 'Raleway', sans-serif;
+  color: grey;
+  font-size: 64px;
+  line-height: 0px;
+}
+
+p {
+  font-family: 'Lato', sans-serif;
+}
+
+#nav {
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  width: 100%;
+}
+
+#nav > ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  background-color: #f1f1f1;
+  width: 100%;
+  overflow: hidden;
+  display: inline-block;
+}
+
+#nav li a {
+    float: left;
+    display: block;
+    color: #000;
+    text-align: center;
+    padding: 14px 0px;
+    text-decoration: none;
+    width: 20%;
+}
+
+/* Change the link color on hover */
+#nav li a:hover {
+    background-color: #555;
+    color: white;
+}
