@@ -19,7 +19,7 @@ body {
 
 h1 {
   font-family: 'Raleway', sans-serif;
-	font-size: 48px;
+	font-size: 56px;
 	font-style: bold;
 	font-variant: normal;
 	font-weight: 400;
@@ -66,17 +66,98 @@ p {
 }
 
 #nav li a {
-    float: left;
-    display: block;
-    color: #000;
-    text-align: center;
-    padding: 14px 0px;
-    text-decoration: none;
-    width: 20%;
+  float: right;
+  display: block;
+  color: #000;
+  text-align: center;
+  padding: 14px 0px;
+  text-decoration: none;
+  width: 20%;
 }
+
 
 /* Change the link color on hover */
 #nav li a:hover {
-    background-color: #555;
-    color: white;
+  background-color: #555;
+  color: white;
+}
+
+
+/********BREAK*****/
+
+#nav {
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  width: 100%;
+}
+
+#nav > ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  background-color: #f1f1f1;
+  width: 100%;
+  overflow: hidden;
+  display: inline-block;
+}
+
+#nav li a {
+  float: right;
+  display: block;
+  color: #000;
+  text-align: center;
+  padding: 14px 0px;
+  text-decoration: none;
+  width: 20%;
+}
+
+
+/* Change the link color on hover */
+#nav li a:hover {
+  background-color: #555;
+  color: white;
+}
+
+#dash {
+  /* text-align: center; */
+  font-family: 'Lato', sans-serif;
+  font-size: 24px;
+  width: 100%;
+}
+
+#dash > ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  background-color: #f1f1f1;
+  width: 100%;
+  overflow: hidden;
+  display: inline-block;
+}
+
+#dash li a {
+  float: left;
+  display: block;
+  color: #000;
+  /* text-align: center; */
+  padding: 8px 0px;
+  text-decoration: none;
+}
+
+
+/* Change the link color on hover */
+#dash li a:hover {
+  background-color: #555;
+  color: white;
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+  padding: 0px 12px;
+}
+
+#uni {
+  width: 90%;
 }
