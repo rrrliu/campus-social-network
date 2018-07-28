@@ -1,0 +1,52 @@
+#header {
+  background-color: #0fdb27;
+  font-size: 20px;
+  height: 150px;
+  margin: 0px;
+  padding-top: 3%;
+  text-align: center;
+  width: 100%;
+}
+
+body {
+  /*background-color: #ffffff;*/
+  background-image: url('https://cdlnws.a.ssl.fastly.net/image/upload/f_auto,q_auto/v1494865224/Blog/college_students.jpg');
+  background-position: center;
+  margin-top: 0px;
+  margin: 0px;
+}
+
+h1 {
+  font-family: 'Raleway', sans-serif;
+	font-size: 48px;
+	font-style: bold;
+	font-variant: normal;
+	font-weight: 400;
+	line-height: inherit;
+  color: #ffffff;
+}
+
+h2 {
+  font-family: 'Poiret One', cursive;
+  font-size: 20px;
+  line-height: 28px;
+  font-style: italic;
+  color: grey;
+}
+
+h3 {
+  /* font-family: 'Nanum Gothic', sans-serif; */
+  font-family: 'Raleway', sans-serif;
+  color: grey;
+  font-size: 64px;
+}
+
+p {
+  font-family: 'Lato', sans-serif;
+}
+#intro {
+  text-align: center;
+  padding-top: 5%;
+  margin: 0;
+  width: 100%;
+}
