@@ -40,7 +40,15 @@ h3 {
   color: grey;
   font-size: 64px;
 }
+form {
 
+}
+fieldset {
+  background-color: white;
+  border-radius: 8px;
+  diplay: block;
+  text-align: center;
+}
 p {
   font-family: 'Lato', sans-serif;
 }
