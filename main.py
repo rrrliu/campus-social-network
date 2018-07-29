@@ -38,7 +38,6 @@ class WelcomePage(webapp2.RequestHandler):
 
 
 app = webapp2.WSGIApplication([
-    ('/', MainPage),
+    ('/', WelcomePage),
     ('/index', MainPage),
-    ('/welcome', WelcomePage)
 ], debug=True)
