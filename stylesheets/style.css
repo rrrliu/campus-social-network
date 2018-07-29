@@ -1,15 +1,7 @@
-#header {
-  background-color: #add8e6;
-  font-size: 20px;
-  height: 150px;
-  margin: 0px;
-  padding-top: 3%;
-  text-align: center;
-  width: 100%;
-}
-
 body {
   background-color: #ffffff;
+  margin: 0px;
+  padding: 0px;
 }
 
 .current {
@@ -18,13 +10,16 @@ body {
 }
 
 h1 {
+  float: left;
   font-family: 'Raleway', sans-serif;
 	font-size: 56px;
 	font-style: bold;
 	font-variant: normal;
 	font-weight: 400;
 	line-height: 20px;
-  color: #2f4f4f;
+  color: #ffffff;
+  padding-left: 10px;
+
 }
 
 h2 {
@@ -32,7 +27,7 @@ h2 {
   font-size: 20px;
   line-height: 28px;
   font-style: italic;
-  color: grey;
+  color: #f2ffff;
 }
 
 h3 {
@@ -44,21 +39,45 @@ h3 {
   text-align: center
 }
 
-.nav {
+form {
+  text-align: center;
+}
+
+img {
+  border-radius: 50%;
+  float: right;
+  height: 40px;
+  padding: 5px;
+  width:40px;
+
+}
+
+#navbar {
+  background-color: #e2e2e2;
+  float: center;
+  line-height: 50px;
+}
+
+#nav {
   font-family: 'Lato', sans-serif;
   float: left;
+  height: 100%;
+  position: fixed;
+  text-align: center;
+  width: 200px;
 }
 
 
-.nav ul {
+#nav ul {
+    background-color: #f1f1f1;
+    height: 100%;
     list-style-type: none;
     margin: 0;
     padding: 0;
     width: 200px;
-    background-color: #f1f1f1;
-}
+  }
 
-.nav li a {
+#nav li a {
     display: block;
     color: #000;
     padding: 8px 16px;
@@ -66,7 +85,21 @@ h3 {
 }
 
 /* Change the link color on hover */
-.nav li a:hover {
+#nav li a:hover {
     background-color: #555;
     color: white;
+}
+
+#header {
+  background-color: #229118;
+  font-size: 20px;
+  height: 110px;
+  margin: 0px;
+  padding-top: 3%;
+  text-align: center;
+  width: 100%;
+}
+
+#wrapper {
+  min-height: 100%
 }

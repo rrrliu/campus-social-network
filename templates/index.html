@@ -10,10 +10,19 @@
   </head>
   <body>
     <a name="top"></a>
-    <div id="header">
-      <h1>ClassConnect</h1>
-      <h2>The social network for your school</h2>
+    <div id='wrapper'>
+      <div id="header">
+        <h1>Class Connect</h1>
+      <!--<h2>The social network for your school</h2>-->
+        <h2 style='float: right; padding: 10px;'>Sign out</h2>
+      </div>
+      <div id='navbar'>
+        <form action="/action_page.php">
+          <input type="text" placeholder="Search.." name="search">
+        <button type="submit"><i class="fa fa-search" value="Search"></i></button>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/7/7c/User_font_awesome.svg" alt="Profile Picture">
     </div>
+  </div>
     <!-- <div id="dash">
       <ul>
         <li><a id="uni" href="#top"><a/></li>
@@ -21,17 +30,13 @@
         <li><a href="profile.html"><img class="icon" src="https://static.thenounproject.com/png/630729-200.png"></a></li>
       </ul>
     </div> -->
-    <div class="nav">
+    <div id="nav">
       <ul>
         <li><a href="index.html">General</a></li>
-        <li><a href="teachers.html">Reviews</a></li>
+        <li><a href="homework.html">Homework Help</a></li>
         <li><a href="announcements.html">Announcements</a></li>
         <li><a href="confessions.html">Confessions</a></li>
       </ul>
-    </div>
-    <div id="intro">
-      <h3>Welcome.</h3>
-      <br>
     </div>
   </body>
 </html>
