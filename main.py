@@ -32,6 +32,8 @@ class WelcomePage(webapp2.RequestHandler):
     def get(self):
         results_template = JINJA_ENVIRONMENT.get_template('templates/welcome.html')
         self.response.write(results_template.render())
+    # def login(self):
+    #
 
 
 

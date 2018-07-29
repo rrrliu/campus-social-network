@@ -44,9 +44,21 @@ h3 {
 p {
   font-family: 'Lato', sans-serif;
 }
-#intro {
+
+.introtext {
+  top: 400px;
+  left: 200px;
   text-align: center;
   padding-top: 5%;
   margin: 0;
   width: 100%;
+}
+
+.g-signin2 {
+  margin: 0 auto;
+  width: 100px;
+}
+
+.confirm {
+  display: none;
 }
