@@ -51,7 +51,17 @@
           $(".confirm").css("display", "block");
           $("#pic").attr('src', profile.getImageUrl());
           $("#email").text(profile.getEmail());
-              }
+        }
+
+        function signOut() {
+        let auth2 = gapi.auth2.getAuthInstance();
+        auth2.signOut().then(function() {
+          $(".introtext").css("display", "block");
+          $(".g-signin2").css("display", "block");
+          $(".confirm").css("display", "none");
+          })
+        }
+
         </script>
   </body>
 </html>
