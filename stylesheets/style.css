@@ -54,7 +54,7 @@ img {
 #container{
   background-color: #e2e2e2;
   display: flex;
-  line-height: 50px;
+  line-height: 10px;
   list-style-type: none;
   margin: 0px;
   padding: 0px;
@@ -68,12 +68,13 @@ img {
 #dash li {
   color: black;
   display: inline-block;
+  padding: 5px;
   text-align: center;
 }
 
 #header {
   background-color: #229118;
-  font-size: 20px;
+  font-size: 30px;
   height: 110px;
   margin: 0px;
   padding-top: 3%;
