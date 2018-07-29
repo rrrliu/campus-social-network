@@ -45,17 +45,26 @@ form {
 
 img {
   border-radius: 50%;
-  float: right;
   height: 40px;
-  padding: 5px;
+  margin: 0px;
+  padding-bottom: 0px;
   width:40px;
-
 }
 
-#navbar {
+#dash ul{
   background-color: #e2e2e2;
-  float: center;
   line-height: 50px;
+  list-style-type: none;
+  margin: 0px;
+  padding: 0px;
+  width: 100%;
+}
+
+#dash li {
+  color: black;
+  display: inline-block;
+  padding: 0px 15px;
+  text-align: center;
 }
 
 #nav {
