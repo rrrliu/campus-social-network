@@ -103,3 +103,7 @@ img {
 #wrapper {
   min-height: 100%
 }
+
+.mainbody {
+  margin-left: 240px;
+}

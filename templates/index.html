@@ -4,11 +4,14 @@
     <meta charset="utf-8">
     <title>Campus Connect</title>
     <link rel="stylesheet" href="stylesheets/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <meta name="google-signin-client_id" content="928270275694-v9phsaerghg67cinbriumsbt05nij68k.apps.googleusercontent.com">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
     <style>
       @import url('https://fonts.googleapis.com/css?family=Hind+Siliguri|Lato|Merriweather|Muli|Nanum+Gothic|Open+Sans|Playfair+Display|Poiret+One|Raleway|Roboto');
     </style>
   </head>
-  <body>
+  <body onload="foo();">
     <a name="top"></a>
     <div id='wrapper'>
       <div id="header">
@@ -38,5 +41,14 @@
         <li><a href="confessions.html">Confessions</a></li>
       </ul>
     </div>
+    <div class="mainbody">
+      <p>Example text/p>
+    </div>
+    <script type="text/javascript">
+      function foo() {
+        let profile = googleUser.getBasicProfile();
+        document.querySelector('td1').innerHTML = profile.getEmail();
+      }
+    </script>
   </body>
 </html>
