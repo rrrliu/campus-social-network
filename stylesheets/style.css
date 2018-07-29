@@ -51,8 +51,9 @@ img {
   width:40px;
 }
 
-#dash ul{
+#container{
   background-color: #e2e2e2;
+  display: flex;
   line-height: 50px;
   list-style-type: none;
   margin: 0px;
@@ -60,11 +61,24 @@ img {
   width: 100%;
 }
 
+#dash {
+  text-align: center;
+}
+
 #dash li {
   color: black;
   display: inline-block;
-  padding: 0px 15px;
   text-align: center;
+}
+
+#header {
+  background-color: #229118;
+  font-size: 20px;
+  height: 110px;
+  margin: 0px;
+  padding-top: 3%;
+  text-align: center;
+  width: 100%;
 }
 
 #nav {
@@ -99,14 +113,8 @@ img {
     color: white;
 }
 
-#header {
-  background-color: #229118;
-  font-size: 20px;
-  height: 110px;
-  margin: 0px;
-  padding-top: 3%;
-  text-align: center;
-  width: 100%;
+#search {
+  flex: 1;
 }
 
 #wrapper {
