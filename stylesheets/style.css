@@ -43,8 +43,7 @@ form {
 }
 
 #container{
-  background-color: #00004f
-;
+  background-color: #e2e2e2;
   display: flex;
   line-height: 10px;
   list-style-type: none;
@@ -65,13 +64,18 @@ form {
 }
 
 #header {
-  background-color: #5ddef4;
+  background-color: #071011;
   font-size: 30px;
-  height: 110px;
+  height: 90px;
   margin: 0px;
   padding-top: 3%;
   text-align: center;
   width: 100%;
+}
+
+#header h1 {
+  position: relative;
+  line-height: 10px;
 }
 
 #nav {

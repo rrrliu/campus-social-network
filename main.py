@@ -16,7 +16,6 @@ import webapp2
 import jinja2
 import urllib
 import urllib2
-import httplib
 import os
 from model import User
 
@@ -72,17 +71,14 @@ class WelcomePage(webapp2.RequestHandler):
     def get(self):
         results_template = JINJA_ENVIRONMENT.get_template('templates/welcome.html')
         self.response.write(results_template.render())
-    def post(self):
-        results_template = JINJA_ENVIRONMENT.get_template('templates/welcome.html')
-        self.response.write(results_template.render())
-
 
 
 class ProfilePage(webapp2.RequestHandler):
     def get(self):
         results_template = JINJA_ENVIRONMENT.get_template('templates/profile.html')
         self.response.write(results_template.render())
-
+    # def login(self):
+    #
 
 
 app = webapp2.WSGIApplication([
