@@ -1,5 +1,5 @@
 body {
-  background-color: #ffffff;
+  background-color: white;
   margin: 0px;
   padding: 0px;
 }
@@ -16,6 +16,8 @@ h1 {
 	line-height: 20px;
   color: #ffffff;
   padding-left: 10px;
+  position: relative;
+  bottom: 30px;
 
 }
 
@@ -62,6 +64,8 @@ fieldset {
 
 #dash {
   margin: 0;
+  position: relative;
+  bottom: 80px;
 }
 
 #dash li {
@@ -71,7 +75,7 @@ fieldset {
 }
 
 #header {
-  background-color: #229118;
+  background-color: #071011;
   font-size: 30px;
   height: 90px;
   margin: 0px;
@@ -80,8 +84,8 @@ fieldset {
   width: 100%;
 }
 
-#header a {
-  padding-bottom: 25px;
+#header {
+  position: relative;
 }
 
 #mainpic {
