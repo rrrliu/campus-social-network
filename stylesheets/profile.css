@@ -40,6 +40,13 @@ fieldset {
   text-align: center;
   width: 60%;
 }
+
+#hello {
+  vertical-align: middle;
+  position: relative;
+  top: 15px;
+}
+
 #container{
   background-color: #e2e2e2;
   display: flex;
@@ -62,6 +69,14 @@ fieldset {
   text-align: center;
 }
 
+#profilepic {
+  border-radius: 50%;
+  height: 40px;
+  margin: 0px;
+  padding-bottom: 0px;
+  width:40px;
+}
+
 #dash {
   margin: 0;
   position: relative;
@@ -70,8 +85,17 @@ fieldset {
 
 #dash li {
   color: black;
-  display: inline-flex;
+  display: inline-block;
   padding: 5px;
+  text-align: center;
+}
+
+
+#dashpic {
+  height: 40px;
+  margin: 0px;
+  padding-bottom: 0px;
+  width:40px;
 }
 
 #header {
@@ -94,11 +118,37 @@ fieldset {
   width: 80px;
 }
 
-#dashpic {
-  height: 40px;
-  margin: 0px;
-  padding-bottom: 0px;
-  width:40px;
+#search {
+  flex: 1;
+  position: relative;
+  top: 8px;
+}
+
+#search button {
+  background: transparent;
+  border: 0;
+  position: absolute;
+  height: 18px;
+}
+
+#search input {
+  background: transparent;
+  border: 0;
+  width: 100%;
+  text-height: 14px;
+}
+
+#search [type=text] {
+    width: 180px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.2s ease-in-out;
+    border: 1px solid #444444;
+    border-radius: 10px;
+    font-size: 18px;
+}
+
+#search [type=text]:focus {
+    width: 50%;
 }
 
 #signout {

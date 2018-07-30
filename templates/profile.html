@@ -15,12 +15,19 @@
     <a name="top"></a>
     <div id='wrapper'>
       <div id="header">
-        <h1> <a href='index?'> <h1 style="display: inline;">camp·</h1><h1 style="display: inline; color:#5ddef4">us</h1> </a></h1>
+        <h1> <a href='index?'> <h1 style="display: inline;">camp·</h1><h1 style="display: inline; color:#5ddef4">us </h1> </a></h1>
       <!--<h2>The social network for your school</h2>-->
       </div>
       <div id='dash'>
         <ul id='container'>
-          <li> <a href='index?'> <img src="https://upload.wikimedia.org/wikipedia/commons/4/40/Home_Icon_by_Lakas.svg" alt="" id='dashpic'> </a> </li>
+          <li> <a href='index?'> <img src="https://upload.wikimedia.org/wikipedia/commons/4/40/Home_Icon_by_Lakas.svg" alt="" id='dashpic'> </a> </li><br>
+          <li id='hello'>Hello, {{ first_name }}!</li>
+          <li id='search'>
+            <form action="/action_page.php">
+              <input type="text" placeholder="Search.." name="search">
+              <button type="submit"><img src='https://svgsilh.com/svg/1976105.svg' height='18px'; width='18px'></button>
+            </form> </li>
+          <li> <a href='profile'><img src="{{ dp_url }}" alt="Profile Picture" id='profilepic'></a></li>
           <!-- <li> <a href='profile'> <img src="https://upload.wikimedia.org/wikipedia/commons/7/7c/User_font_awesome.svg" alt="Profile Picture" id='dashpic'> </a> </li> -->
         </ul>
     </div>
@@ -28,7 +35,7 @@
   <div id='info'>
     <form class="" action="index.html" method="post" id='profile'>
       <fieldset id='profile'>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/7/7c/User_font_awesome.svg" alt="Profile Picture" id='mainpic'>
+        <img src="{{ dp_url }}" alt="Profile Picture" id='mainpic'>
         <h4>Username</h4>
         <ul>
           <br> <li> First Name &ensp; <input type="text" name="" value=""> </li><br>
