@@ -1,25 +1,33 @@
-# Copyright 2016 Google Inc.
-#
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
-#
-#     http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
 
 import webapp2
 import jinja2
 import urllib
 import urllib2
 import os
-from model import User
+from model import User, Post
+import datetime
 
 
+import webapp2
+
+from webapp2_extras import sessions
+
+class BaseHandler(webapp2.RequestHandler):
+    def dispatch(self):
+        # Get a session store for this request.
+        self.session_store = sessions.get_store(request=self.request)
+
+        try:
+            # Dispatch the request.
+            webapp2.RequestHandler.dispatch(self)
+        finally:
+            # Save all sessions.
+            self.session_store.save_sessions(self.response)
+
+    @webapp2.cached_property
+    def session(self):
+        # Returns a session using the default cookie key.
+        return self.session_store.get_session()
 
 JINJA_ENVIRONMENT = jinja2.Environment(
     loader=jinja2.FileSystemLoader(os.path.dirname(__file__)),
@@ -27,7 +35,7 @@ JINJA_ENVIRONMENT = jinja2.Environment(
     autoescape=True)
 
 
-class MainPage(webapp2.RequestHandler):
+class MainHandler(BaseHandler):
     def get(self):
         results_template = JINJA_ENVIRONMENT.get_template('templates/index.html')
 
@@ -41,53 +49,89 @@ class MainPage(webapp2.RequestHandler):
                     dp_url = dp_url,
                     email = email)
         user.put()
+        ### TO DO: CHECK TO MAKE SURE IF USER HAS ALREADY BEEN CREATED
+        # User.query().filter()
 
-        profile_info = {
-            'first_name' : user.first_name,
-            'last_name' : user.last_name,
-            'dp_url' : user.dp_url,
-            'email' : user.email
+        current_user = User.query().fetch()[0]
+
+        all_posts = Post.query().fetch()
+
+        info = {
+            'first_name' : self.session.get('f_name'),
+            'last_name' : self.session.get('l_name'),
+            'dp_url' : self.session.get('dp_url'),
+            'email' : self.session.get('email'),
+            'all_posts' : all_posts
         }
 
-        self.response.write(results_template.render(profile_info))
-    # def post(self):
-    #     results_template = JINJA_ENVIRONMENT.get_template('templates/index.html')
-    #
-    #     text = self.request.get('text')
-    #     img_url = self.request.get('img_url')
-    #     type = self.request.get('type')
-    #
-    #     post = Post(text = text,
-    #                 img_url = img_url,
-    #                 type = type)
-    #
-    #     post.put()
-        # img_url = meme.get_meme_url()
-        # all_memes = Meme.query().fetch()
-        #
-        # the_variable_dict = { 'line1' : meme_first_line,
-        #                       'line2' : meme_second_line,
-        #                       'img_url' : img_url,
-        #                       'all_memes' : all_memes }
-        #
-        # self.response.write(results_template.render())
+        self.response.write(results_template.render(info))
 
-class WelcomePage(webapp2.RequestHandler):
+    def post(self):
+        results_template = JINJA_ENVIRONMENT.get_template('templates/index.html')
+
+        text = self.request.get('text')
+        img_url = self.request.get('img_url')
+        type = self.request.get('type')
+
+        author_name = self.session.get('f_name') + ' ' + self.session.get('l_name')
+        author_pic = self.session.get('dp_url')
+
+        if len(text) == 0 and len(img_url) == 0:
+            self.redirect('/')
+
+        post = Post(text = text,
+                    img_url = img_url,
+                    type = type,
+                    timestamp = datetime.datetime.now(),
+                    author_name = author_name,
+                    author_pic = author_pic)
+        post.put()
+
+        # all_posts = Post.query().fetch()
+        #
+        # info = {
+        #     'first_name' : self.session.get('f_name'),
+        #     'last_name' : self.session.get('l_name'),
+        #     'dp_url' : self.session.get('dp_url'),
+        #     'email' : self.session.get('email'),
+        #     'all_posts' : all_posts
+        # }
+
+        # self.response.write(results_template.render(info))
+        self.redirect('/index')
+
+class WelcomeHandler(BaseHandler):
     def get(self):
         results_template = JINJA_ENVIRONMENT.get_template('templates/welcome.html')
         self.response.write(results_template.render())
 
 
-class ProfilePage(webapp2.RequestHandler):
+class ProfileHandler(BaseHandler):
     def get(self):
         results_template = JINJA_ENVIRONMENT.get_template('templates/profile.html')
         self.response.write(results_template.render())
     # def login(self):
     #
 
+class LoginHandler(BaseHandler):
+    def post(self):
+        self.session['dp_url'] = self.request.get('dp_url')
+        self.session['email'] = self.request.get('email')
+        self.session['f_name'] = self.request.get('first_name')
+        self.session['l_name'] = self.request.get('last_name')
+
+        self.redirect('/index')
+
+config = {}
+config['webapp2_extras.sessions'] = {
+    'secret_key': 'my-super-secret-key',
+}
+
 
 app = webapp2.WSGIApplication([
-    ('/', WelcomePage),
-    ('/index', MainPage),
-    ('/profile', ProfilePage)
-], debug=True)
+    ('/', WelcomeHandler),
+    ('/index', MainHandler),
+    ('/profile', ProfileHandler),
+    ('/login', LoginHandler),
+], config=config,
+   debug=True)
