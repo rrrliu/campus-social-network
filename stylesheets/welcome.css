@@ -81,14 +81,15 @@ p {
 
 .circle {
 
-  width: 400px;
-  height: 400px;
+  width: 425px;
+  height: 425px;
   border-radius: 50%;
   font-size: 20px;
   color: #000;
-  line-height: 300px;
+  line-height: 350px;
   text-align: center;
   /*background: #b6ffff;*/
   border: 3px solid white;
+
 
 }
