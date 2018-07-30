@@ -43,7 +43,8 @@ form {
 }
 
 #container{
-  background-color: #e2e2e2;
+  background-color: #00004f
+;
   display: flex;
   line-height: 10px;
   list-style-type: none;
@@ -64,7 +65,7 @@ form {
 }
 
 #header {
-  background-color: #229118;
+  background-color: #5ddef4;
   font-size: 30px;
   height: 110px;
   margin: 0px;
