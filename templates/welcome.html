@@ -66,6 +66,7 @@
           $("#pic").attr('src', profile.getImageUrl());
           $("#email").text(profile.getEmail());
           $("#name").text(profile.getName());
+          let id_token = googleUser.getAuthResponse().id_token;
 
         }
 
@@ -76,6 +77,7 @@
           $(".g-signin2").css("display", "block");
           $(".confirm").css("display", "none");
           })
+
         }
 
         </script>
