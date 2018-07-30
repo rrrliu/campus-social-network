@@ -74,54 +74,14 @@ form {
   width: 100%;
 }
 
-#nav {
-  font-family: 'Lato', sans-serif;
-  float: left;
-  height: 100%;
-  position: fixed;
-  text-align: center;
-  width: 200px;
-}
-
-
-#nav ul {
-    background-color: #f1f1f1;
-    height: 100%;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    width: 200px;
-  }
-
-#nav li a {
-    display: block;
-    color: #000;
-    padding: 8px 16px;
-    text-decoration: none;
-}
-
-/* Change the link color on hover */
-#nav li a:hover {
-    background-color: #555;
-    color: white;
-}
-
 #profilepic {
   border-radius: 50%;
-  height: 40px;
+  height: 100px;
   margin: 0px;
   padding-bottom: 0px;
-  width:40px;
-}
-
-#search {
-  flex: 1;
+  width:100px;
 }
 
 #wrapper {
   min-height: 100%
-}
-
-.mainbody {
-  margin-left: 240px;
 }

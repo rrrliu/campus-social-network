@@ -4,11 +4,14 @@
     <meta charset="utf-8">
     <title>Campus Connect</title>
     <link rel="stylesheet" href="stylesheets/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <meta name="google-signin-client_id" content="928270275694-v9phsaerghg67cinbriumsbt05nij68k.apps.googleusercontent.com">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
     <style>
       @import url('https://fonts.googleapis.com/css?family=Hind+Siliguri|Lato|Merriweather|Muli|Nanum+Gothic|Open+Sans|Playfair+Display|Poiret+One|Raleway|Roboto');
     </style>
   </head>
-  <body>
+  <body onload="foo();">
     <a name="top"></a>
     <div id='wrapper'>
       <div id="header">
@@ -17,8 +20,16 @@
         <h2 style='float: right; padding: 10px;'>Sign out</h2>
       </div>
       <div id='dash'>
-      <img src="https://upload.wikimedia.org/wikipedia/commons/7/7c/User_font_awesome.svg" alt="Profile Picture">
+        <ul id='container'>
+        <li>Hello, (placeholder)!</li>
+        <li id='search'> <form action="/action_page.php" style='padding-left: 5%;padding-right: 6%;'>
+          <input type="text" placeholder="Search.." name="search">
+        <button type="submit"><i class="fa fa-search" value="Search"></i></button> </li>
+        <li> <img src="https://upload.wikimedia.org/wikipedia/commons/7/7c/User_font_awesome.svg" alt="Profile Picture" id='profilepic'> </li>
+      </ul>
     </div>
+  </div>
+  <div id='info'>
   </div>
     <!-- <div id="dash">
       <ul>
@@ -27,3 +38,12 @@
         <li><a href="profile.html"><img class="icon" src="https://static.thenounproject.com/png/630729-200.png"></a></li>
       </ul>
     </div> -->
+
+    <script type="text/javascript">
+      function foo() {
+        let profile = googleUser.getBasicProfile();
+        document.querySelector('td1').innerHTML = profile.getEmail();
+      }
+    </script>
+  </body>
+</html>
