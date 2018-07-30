@@ -6,12 +6,12 @@
   padding-top: 3%;
   text-align: center;
   width: 100%;
-  /*background-image: url('https://cdn.pixabay.com/photo/2017/08/30/01/05/milky-way-2695569_1280.jpg');*/
+
 }
 
 body {
-  /*background-color: #ffffff;*/
-  background-image: url('https://cdn.pixabay.com/photo/2017/08/30/01/05/milky-way-2695569_1280.jpg');
+  background-color: black;
+/*  background-image: url('https://cdn.pixabay.com/photo/2017/08/30/01/05/milky-way-2695569_1280.jpg');*/
   background-position: center;
   margin-top: 0px;
   margin: 0px;
@@ -90,5 +90,5 @@ p {
   text-align: center;
   /*background: #b6ffff;*/
   border: 3px solid white;
-/*background-image: url('https://cdn.pixabay.com/photo/2017/08/30/01/05/milky-way-2695569_1280.jpg');*/
+
 }
