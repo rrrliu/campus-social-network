@@ -53,9 +53,10 @@
         <button type="button" onclick="edit()">Edit</button>
 
         <input type="submit" name="" value="Finish">
-        </fieldset>
-      </form>
-    </div>
+        </div>
+      </fieldset>
+    </form>
+
       <script type="text/javascript">
         function onSignIn(googleUser) {
           let profile = googleUser.getBasicProfile();
@@ -64,6 +65,8 @@
           $(".confirm").css("display", "block");
           $("#pic").attr('src', profile.getImageUrl());
           $("#email").text(profile.getEmail());
+          $("#name").text(profile.getName());
+
         }
 
         function signOut() {

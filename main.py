@@ -16,6 +16,7 @@ import webapp2
 import jinja2
 import urllib
 import urllib2
+import httplib
 import os
 
 
@@ -34,7 +35,8 @@ class WelcomePage(webapp2.RequestHandler):
     def get(self):
         results_template = JINJA_ENVIRONMENT.get_template('templates/welcome.html')
         self.response.write(results_template.render())
-    def index(self):
+    # def index(self):
+
 
 
 class ProfilePage(webapp2.RequestHandler):
