@@ -42,9 +42,14 @@ class MainPage(webapp2.RequestHandler):
                     email = email)
         user.put()
 
-        
+        profile_info = {
+            'first_name' : user.first_name,
+            'last_name' : user.last_name,
+            'dp_url' : user.dp_url,
+            'email' : user.email
+        }
 
-        self.response.write(results_template.render())
+        self.response.write(results_template.render(profile_info))
     # def post(self):
     #     results_template = JINJA_ENVIRONMENT.get_template('templates/index.html')
     #

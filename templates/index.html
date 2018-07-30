@@ -20,13 +20,13 @@
       </div>
       <div id='dash'>
         <ul id='container'>
-          <li>Hello, (placeholder)!</li>
+          <li>Hello, {{ first_name }}!</li>
           <li id='search'>
             <form action="/action_page.php" style='padding-left: 5%;padding-right: 5%;'>
               <input type="text" placeholder="Search.." name="search">
               <button type="submit"><img src='https://svgsilh.com/svg/1976105.svg' height='18px'; width='18px'></button>
             </form> </li>
-            <li><a href='profile'><img src="https://upload.wikimedia.org/wikipedia/commons/7/7c/User_font_awesome.svg" alt="Profile Picture" id='profilepic'></a></li>
+            <li><a href='profile'><img src="{{ dp_url }}" alt="Profile Picture" id='profilepic'></a></li>
       </ul>
     </div>
   </div>
@@ -46,13 +46,10 @@
       </ul>
     </div>
     <div class="mainbody">
-      <p>Example text/p>
+      <p>Example text</p>
     </div>
     <script type="text/javascript">
-      function foo() {
-        let profile = googleUser.getBasicProfile();
-        document.querySelector('td1').innerHTML = profile.getEmail();
-      }
+
     </script>
   </body>
 </html>
