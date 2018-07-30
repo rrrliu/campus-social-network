@@ -18,7 +18,7 @@ import urllib
 import urllib2
 import httplib
 import os
-from model import Post
+from model import User
 
 
 
@@ -31,19 +31,33 @@ JINJA_ENVIRONMENT = jinja2.Environment(
 class MainPage(webapp2.RequestHandler):
     def get(self):
         results_template = JINJA_ENVIRONMENT.get_template('templates/index.html')
+
+        dp_url = self.request.get('dp_url')
+        email = self.request.get('email')
+        f_name = self.request.get('first_name')
+        l_name = self.request.get('last_name')
+
+        user = User(first_name = f_name,
+                    last_name = l_name,
+                    dp_url = dp_url,
+                    email = email)
+        user.put()
+
+        
+
         self.response.write(results_template.render())
-    def post(self):
-        results_template = JINJA_ENVIRONMENT.get_template('templates/index.html')
-
-        text = self.request.get('text')
-        img_url = self.request.get('img_url')
-        type = self.request.get('type')
-
-        post = Post(text = text,
-                    img_url = img_url,
-                    type = type)
-
-        post.put()
+    # def post(self):
+    #     results_template = JINJA_ENVIRONMENT.get_template('templates/index.html')
+    #
+    #     text = self.request.get('text')
+    #     img_url = self.request.get('img_url')
+    #     type = self.request.get('type')
+    #
+    #     post = Post(text = text,
+    #                 img_url = img_url,
+    #                 type = type)
+    #
+    #     post.put()
         # img_url = meme.get_meme_url()
         # all_memes = Meme.query().fetch()
         #
