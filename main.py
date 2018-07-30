@@ -17,6 +17,8 @@ import jinja2
 import urllib
 import urllib2
 import os
+from model import User
+
 
 
 JINJA_ENVIRONMENT = jinja2.Environment(
@@ -28,7 +30,47 @@ JINJA_ENVIRONMENT = jinja2.Environment(
 class MainPage(webapp2.RequestHandler):
     def get(self):
         results_template = JINJA_ENVIRONMENT.get_template('templates/index.html')
-        self.response.write(results_template.render())
+
+        dp_url = self.request.get('dp_url')
+        email = self.request.get('email')
+        f_name = self.request.get('first_name')
+        l_name = self.request.get('last_name')
+
+        user = User(first_name = f_name,
+                    last_name = l_name,
+                    dp_url = dp_url,
+                    email = email)
+        user.put()
+
+        profile_info = {
+            'first_name' : user.first_name,
+            'last_name' : user.last_name,
+            'dp_url' : user.dp_url,
+            'email' : user.email
+        }
+
+        self.response.write(results_template.render(profile_info))
+    # def post(self):
+    #     results_template = JINJA_ENVIRONMENT.get_template('templates/index.html')
+    #
+    #     text = self.request.get('text')
+    #     img_url = self.request.get('img_url')
+    #     type = self.request.get('type')
+    #
+    #     post = Post(text = text,
+    #                 img_url = img_url,
+    #                 type = type)
+    #
+    #     post.put()
+        # img_url = meme.get_meme_url()
+        # all_memes = Meme.query().fetch()
+        #
+        # the_variable_dict = { 'line1' : meme_first_line,
+        #                       'line2' : meme_second_line,
+        #                       'img_url' : img_url,
+        #                       'all_memes' : all_memes }
+        #
+        # self.response.write(results_template.render())
 
 class WelcomePage(webapp2.RequestHandler):
     def get(self):

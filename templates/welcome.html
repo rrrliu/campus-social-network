@@ -40,10 +40,10 @@
 
 
 
-    <form class="confirm" action="index" method="get">
+    <form class="confirm" action="/index" method="get">
       <fieldset>
         <div class="confirm">
-          <h4>Please confirm your profile details</h4>
+          <!-- <h4>Please confirm your profile details</h4>
           <img id="pic" alt="">
           <p>Email address:</p>
           <p id="email"></p>
@@ -52,10 +52,28 @@
           <button type="button" onclick="signOut()">Sign out</button>
         <button type="button" onclick="edit()">Edit</button>
 
-        <input type="submit" name="" value="Finish">
+        <input type="submit" name="" value="Finish"> -->
+        <h4 style="color: black">Please confirm your profile details:</h4>
+        <img id="pic" alt="">
+        <p>Profile picture URL</p>
+        <input id="pic_input" type="text" name="dp_url" value="">
+        <p>Email address:</p>
+        <input id="email_input" type="text" name="email" value="">
+        <p>First name</p>
+        <p>
+          <input id="firstname_input" type="text" name="first_name" value="">
+        </p>
+        <p>Last name</p>
+        <p>
+          <input id="lastname_input" type="text" name="last_name" value="">
+        </p>
+        <button type="button" onclick="signOut()">Sign out</button>
+
+      <input type="submit" name="" value="Finish">
         </div>
       </fieldset>
     </form>
+
 
       <script type="text/javascript">
         function onSignIn(googleUser) {
@@ -66,8 +84,12 @@
           $("#pic").attr('src', profile.getImageUrl());
           $("#email").text(profile.getEmail());
           $("#name").text(profile.getName());
-          let id_token = googleUser.getAuthResponse().id_token;
+          $("#pic_input").attr("value", profile.getImageUrl());
+          $("#email_input").attr("value", profile.getEmail());
+          $("#firstname_input").attr("value", profile.getGivenName());
+          $("#lastname_input").attr("value", profile.getFamilyName());
 
+          let id_token = googleUser.getAuthResponse().id_token;
         }
 
         function signOut() {
