@@ -1,29 +1,31 @@
 #header {
-  background-color: #229118;
-  font-size: 20px;
+  /*background-color: #b6ffff;*/
+  font-size: 50px;
   height: 150px;
   margin: 0px;
   padding-top: 3%;
   text-align: center;
   width: 100%;
+  /*background-image: url('https://cdn.pixabay.com/photo/2017/08/30/01/05/milky-way-2695569_1280.jpg');*/
 }
 
 body {
   /*background-color: #ffffff;*/
-  background-image: url('https://cdlnws.a.ssl.fastly.net/image/upload/f_auto,q_auto/v1494865224/Blog/college_students.jpg');
+  background-image: url('https://cdn.pixabay.com/photo/2017/08/30/01/05/milky-way-2695569_1280.jpg');
   background-position: center;
   margin-top: 0px;
   margin: 0px;
 }
 
 h1 {
-  font-family: 'Raleway', sans-serif;
+  /*font-family: 'Athiti', sans-serif;*/
+  font-family: 'Raleway';
 	font-size: 48px;
 	font-style: bold;
 	font-variant: normal;
 	font-weight: 400;
 	line-height: inherit;
-  color: #ffffff;
+  color: white;
 }
 
 h2 {
@@ -43,6 +45,12 @@ h3 {
 form {
 
 }
+
+h4 {
+  color: white;
+  font-size:20px;
+  font-family: 'Raleway';
+}
 fieldset {
   background-color: white;
   border-radius: 8px;
@@ -56,7 +64,7 @@ p {
 .introtext {
   top: 400px;
   left: 200px;
-  text-align: center;
+  text-align: top;
   padding-top: 5%;
   margin: 0;
   width: 100%;
@@ -69,4 +77,18 @@ p {
 
 .confirm {
   display: none;
+}
+
+.circle {
+
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  font-size: 20px;
+  color: #000;
+  line-height: 300px;
+  text-align: center;
+  /*background: #b6ffff;*/
+  border: 3px solid white;
+/*background-image: url('https://cdn.pixabay.com/photo/2017/08/30/01/05/milky-way-2695569_1280.jpg');*/
 }

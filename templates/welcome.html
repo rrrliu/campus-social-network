@@ -16,17 +16,29 @@
   </head>
   <body>
     <div id="header">
-      <h1>Campus Connect</h1>
+      <h1 style="display: inline;">camp·</h1><h1 style="display: inline; color:#ffeb3b">us </h1>
+
     </div>
     <div class="container">
 
-      <div class="introtext">
-        <h1>Where a campus becomes a community.</h1>
+    <!-- <div class="introtext">-->
+        <!--<h1>Where a campus becomes a community.</h1> -->
         <br>
+<center>
       </div>
-
+      <center>
+      <div class="circle"><h4>Where a campus becomes a community</h4>
+        <div class="g-signin2" data-onsuccess="onSignIn" >
+          <!-- <span class="buttonText">Google</span> -->
+        </div>
+      </div>
+      </center>
     </div>
-    <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
+  </center>
+
+
+
+
     <form class="confirm" action="index" method="get">
       <fieldset>
         <div class="confirm">
@@ -47,7 +59,7 @@
         function onSignIn(googleUser) {
           let profile = googleUser.getBasicProfile();
           $(".g-signin2").css("display", "none");
-          $(".introtext").css("display", "none");
+          $(".circle").css("display", "none");
           $(".confirm").css("display", "block");
           $("#pic").attr('src', profile.getImageUrl());
           $("#email").text(profile.getEmail());
@@ -56,7 +68,7 @@
         function signOut() {
         let auth2 = gapi.auth2.getAuthInstance();
         auth2.signOut().then(function() {
-          $(".introtext").css("display", "block");
+          $(".circle").css("display", "block");
           $(".g-signin2").css("display", "block");
           $(".confirm").css("display", "none");
           })
