@@ -15,6 +15,8 @@
 import webapp2
 import jinja2
 import os
+import datetime
+from model import Post
 
 
 JINJA_ENVIRONMENT = jinja2.Environment(
@@ -27,6 +29,23 @@ class MainPage(webapp2.RequestHandler):
     def get(self):
         results_template = JINJA_ENVIRONMENT.get_template('templates/index.html')
         self.response.write(results_template.render())
+    def post(self):
+        results_template = JINJA_ENVIRONMENT.get_template('templates/index.html')
+        input_text = self.request.get('input_text')
+        img_url = self.request.get('img_url')
+        tag = self.request.get('tag')
+
+        post = Post(text = input_text,
+                    img_url = img_url,
+                    timestamp = datetime.now(),
+                    score = 0,
+                    comments = [])
+        post.put()
+        all_posts = Post.query().fetch()
+
+        input_dict = { 'all_posts' : all_posts }
+
+        self.response.write(results_template.render(input_dict))
 
 class WelcomePage(webapp2.RequestHandler):
     def get(self):

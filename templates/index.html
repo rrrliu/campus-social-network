@@ -46,13 +46,33 @@
       </ul>
     </div>
     <div class="mainbody">
-      <p>Example text/p>
+      <form style="font-family: 'Lato', sans-serif; font-size: 20px;" method="POST" action="/index">
+        <p>Text:</p>
+        <p> <input style="font-size: 20px;" type="text" name="input_text"> </p>
+        <p>Image URL (optional):</p>
+        <p> <input style="font-size: 20px;" type="text" name="img_url"> </p>
+        <p>Meme type:</p>
+        <select style="font-size: 20px;" name="tag">
+          <option value="general">General</option>
+          <option value="homework">Homework Help</option>
+          <option value="announcements">Announcements</option>
+          <option value="confessions">Confessions</option>
+        </select>
+        <p> <input style="font-size: 20px;" type="submit" value="Go!"> </p>
+      </form>
+
+      {% for post in all_posts %}
+        <div id="container" style="position: relative; text-align: center; color: white; text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;">
+          <img src="{{ post.img_url }}" alt="">
+          <p>{{ post.text }}</p>
+        </div>
+      {% endfor %}
     </div>
     <script type="text/javascript">
-      function foo() {
-        let profile = googleUser.getBasicProfile();
-        document.querySelector('td1').innerHTML = profile.getEmail();
-      }
+      // function foo() {
+      //   let profile = googleUser.getBasicProfile();
+      //   document.querySelector('td1').innerHTML = profile.getEmail();
+      // }
     </script>
   </body>
 </html>
