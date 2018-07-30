@@ -19,6 +19,8 @@ h1 {
 	line-height: 20px;
   color: #ffffff;
   padding-left: 10px;
+  position: relative;
+  bottom: 15px;
 }
 
 /* h2 {
