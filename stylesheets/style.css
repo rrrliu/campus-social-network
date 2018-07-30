@@ -52,7 +52,8 @@ img {
 }
 
 #container{
-  background-color: #ffeb3b;
+  background-color: #00004f
+;
   display: flex;
   line-height: 10px;
   list-style-type: none;
@@ -73,7 +74,7 @@ img {
 }
 
 #header {
-  background-color: #229118;
+  background-color: #5ddef4;
   font-size: 30px;
   height: 110px;
   margin: 0px;
