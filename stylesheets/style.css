@@ -19,16 +19,15 @@ h1 {
 	line-height: 20px;
   color: #ffffff;
   padding-left: 10px;
-
 }
 
-h2 {
+/* h2 {
   font-family: 'Poiret One', cursive;
   font-size: 20px;
   line-height: 28px;
   font-style: italic;
   color: #f2ffff;
-}
+} */
 
 h3 {
   /* font-family: 'Nanum Gothic', sans-serif; */
@@ -83,7 +82,6 @@ form {
   width: 200px;
 }
 
-
 #nav ul {
     background-color: #f1f1f1;
     height: 100%;
@@ -116,6 +114,29 @@ form {
 
 #search {
   flex: 1;
+  position: relative;
+}
+
+#search button {
+  background: transparent;
+  border: 0;
+  position: absolute;
+}
+
+#search input {
+  background: transparent;
+  border: 0;
+  width: 100%;
+}
+
+#search [type=text] {
+    width: 130px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.2s ease-in-out;
+}
+
+#search [type=text]:focus {
+    width: 50%;
 }
 
 #wrapper {

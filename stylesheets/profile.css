@@ -4,11 +4,6 @@ body {
   padding: 0px;
 }
 
-.current {
-    background-color: #eedd82;
-    color: white;
-}
-
 h1 {
   float: left;
   font-family: 'Raleway', sans-serif;
@@ -27,22 +22,18 @@ h2 {
   font-size: 20px;
   line-height: 28px;
   font-style: italic;
-  color: #f2ffff;
-}
-
-h3 {
-  /* font-family: 'Nanum Gothic', sans-serif; */
-  font-family: 'Raleway', sans-serif;
-  color: grey;
-  font-size: 64px;
-  line-height: 0px;
-  text-align: center
+  color: black;
 }
 
 form {
   text-align: center;
 }
 
+fieldset {
+  border-radius: 8px;
+  margin: 20px;
+  text-align: center;
+}
 #container{
   background-color: #e2e2e2;
   display: flex;
@@ -53,15 +44,25 @@ form {
   width: 100%;
 }
 
-#dash {
+
+#profile ul {
+  height: 100%;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+#profile li {
   text-align: center;
+}
+
+#dash {
 }
 
 #dash li {
   color: black;
-  display: inline-block;
+  display: inline-flex;
   padding: 5px;
-  text-align: center;
 }
 
 #header {
@@ -74,12 +75,18 @@ form {
   width: 100%;
 }
 
-#profilepic {
+#mainpic {
+  border-radius: 15%;
+  height: 80px;
+  width: 80px;
+}
+
+#dashpic {
   border-radius: 50%;
-  height: 100px;
+  height: 40px;
   margin: 0px;
   padding-bottom: 0px;
-  width:100px;
+  width:40px;
 }
 
 #wrapper {

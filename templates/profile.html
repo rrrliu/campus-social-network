@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>Campus Connect</title>
-    <link rel="stylesheet" href="stylesheets/style.css">
+    <link rel="stylesheet" href="stylesheets/profile.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <meta name="google-signin-client_id" content="928270275694-v9phsaerghg67cinbriumsbt05nij68k.apps.googleusercontent.com">
     <script src="https://apis.google.com/js/platform.js" async defer></script>
@@ -15,21 +15,30 @@
     <a name="top"></a>
     <div id='wrapper'>
       <div id="header">
-        <h1>Class Connect</h1>
+        <h1> <a href='index?'> Class Connect</a></h1>
       <!--<h2>The social network for your school</h2>-->
-        <h2 style='float: right; padding: 10px;'>Sign out</h2>
       </div>
       <div id='dash'>
         <ul id='container'>
-        <li>Hello, (placeholder)!</li>
-        <li id='search'> <form action="/action_page.php" style='padding-left: 5%;padding-right: 6%;'>
-          <input type="text" placeholder="Search.." name="search">
-        <button type="submit"><i class="fa fa-search" value="Search"></i></button> </li>
-        <li> <img src="https://upload.wikimedia.org/wikipedia/commons/7/7c/User_font_awesome.svg" alt="Profile Picture" id='profilepic'> </li>
-      </ul>
+          <li> <a href='index?'> <img src="https://upload.wikimedia.org/wikipedia/commons/4/40/Home_Icon_by_Lakas.svg" alt="" id='dashpic'> </a> </li>
+          <!-- <li> <a href='profile'> <img src="https://upload.wikimedia.org/wikipedia/commons/7/7c/User_font_awesome.svg" alt="Profile Picture" id='dashpic'> </a> </li> -->
+        </ul>
     </div>
   </div>
   <div id='info'>
+    <form class="" action="index.html" method="post" id='profile'>
+      <fieldset id='profile'>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/7/7c/User_font_awesome.svg" alt="Profile Picture" id='mainpic'><br>
+        <ul>
+          <br> <li> First Name <input type="text" name="" value=""> </li><br>
+          <li> Last Name <input type="text" name="" value=""> </li><br>
+          <li> Email <input type='text' name='' value=''> </li>
+        </ul>
+      </fieldset>
+    </form>
+    <form class="" action="index.html" method="post">
+      <button type="button" onclick="signOut()">Sign out</button>
+    </form>
   </div>
     <!-- <div id="dash">
       <ul>
