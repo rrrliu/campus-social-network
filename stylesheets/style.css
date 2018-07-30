@@ -121,18 +121,23 @@ form {
   background: transparent;
   border: 0;
   position: absolute;
+  /* height: 18px; */
 }
 
 #search input {
   background: transparent;
   border: 0;
   width: 100%;
+  /* text-height: 14px; */
 }
 
 #search [type=text] {
-    width: 130px;
+    width: 180px;
     -webkit-transition: width 0.4s ease-in-out;
     transition: width 0.2s ease-in-out;
+    border: 1px solid #444444;
+    border-radius: 10px;
+    font-size: 18px;
 }
 
 #search [type=text]:focus {
