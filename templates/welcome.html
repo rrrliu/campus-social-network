@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <!-- <meta name="google-signin-scope" content="profile email"> -->
-    <!-- <script src="scripts/script.js"></script> -->
+    <script src="scripts/script.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <meta name="google-signin-client_id" content="928270275694-v9phsaerghg67cinbriumsbt05nij68k.apps.googleusercontent.com">
     <script src="https://apis.google.com/js/platform.js" async defer></script>
@@ -77,34 +77,7 @@
 
 
       <script type="text/javascript">
-        function onSignIn(googleUser) {
-          let profile = googleUser.getBasicProfile();
-          $("body, html").css("overflow", "visible");
-          $(".g-signin2").css("display", "none");
-          $(".circle").css("display", "none");
-          $(".confirm").css("display", "block");
-          $("#pic").attr('src', profile.getImageUrl());
-          $("#email").text(profile.getEmail());
-          $("#name").text(profile.getName());
-          $("#pic_input").attr("value", profile.getImageUrl());
-          $("#email_input").attr("value", profile.getEmail());
-          $("#firstname_input").attr("value", profile.getGivenName());
-          $("#lastname_input").attr("value", profile.getFamilyName());
-
-          let id_token = googleUser.getAuthResponse().id_token;
-        }
-
-        function signOut() {
-        let auth2 = gapi.auth2.getAuthInstance();
-        auth2.signOut().then(function() {
-          $(".circle").css("display", "block");
-          $(".g-signin2").css("display", "block");
-          $(".confirm").css("display", "none");
-          $("body, html").css("overflow", "hidden");
-          })
-
-        }
-
+        
         </script>
   </body>
 </html>
