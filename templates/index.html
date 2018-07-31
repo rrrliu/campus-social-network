@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>camp · us</title>
+    <title>home</title>
     <link rel="stylesheet" href="stylesheets/style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <meta name="google-signin-client_id" content="928270275694-v9phsaerghg67cinbriumsbt05nij68k.apps.googleusercontent.com">
@@ -13,8 +13,8 @@
   </head>
   <body onload="foo();">
      <a name="top"></a>
-    <div id='wrapper'>
-      <div id="header">
+    <div id='wrapper' class='sticky'>
+      <div class="header">
         <h1> <a href='index?' style='color: white;'>camp·<span style="color:#5ddef4">us</span></h1>
             </div>
       <div id='dash'>
@@ -96,6 +96,19 @@
     </div>
     <script type="text/javascript">
       function filter(item) {}
+
+      window.onscroll = function() {myFunction()};
+
+      var dash=document.getElementbyId('dash')
+      var sticky=dash.offsetTop;
+
+      function myFunction() {
+        if (window.pageYOffset >= sticky) {
+          dash.classList.add('sticky')
+        } else {
+          dash.classList.remove('sticky');
+        }
+      }
     </script>
   </body>
 </html>

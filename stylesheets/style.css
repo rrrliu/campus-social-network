@@ -61,9 +61,9 @@ form {
 }
 
 #dash {
-  margin: 0;
-  position: relative;
+  margin: 0px;
   top: 0px;
+  z-index: 1;
 }
 
 #dash li {
@@ -73,7 +73,6 @@ form {
   text-align: center;
 }
 
-
 #dashpic {
   border-radius: 50%;
   height: 40px;
@@ -82,7 +81,7 @@ form {
   width:40px;
 }
 
-#header {
+.header {
   background-color: #071011;
   font-size: 20px;
   height: 50px;
@@ -109,6 +108,8 @@ form {
   position: absolute;
   text-align: center;
   width: 200px;
+  margin-top: 20px;
+  padding: 10px 10px;
 }
 
 #nav ul {
@@ -173,6 +174,14 @@ form {
 }
 
 .mainbody {
+  margin-top: 110px;
   margin-left: 240px;
   width: 65%;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1
 }
