@@ -92,6 +92,7 @@ fieldset {
 
 
 #dashpic {
+  border-radius: 50%;
   height: 40px;
   margin: 0px;
   padding-bottom: 0px;

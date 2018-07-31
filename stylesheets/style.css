@@ -1,5 +1,5 @@
 body {
-  background-color: #ffffff;
+  background-color: white;
   margin: 0px;
   padding: 0px;
 }
@@ -20,16 +20,16 @@ h1 {
   color: #ffffff;
   padding-left: 10px;
   position: relative;
-  bottom: 15px;
+  bottom: 30px;
 }
 
-/* h2 {
+h2 {
   font-family: 'Poiret One', cursive;
   font-size: 20px;
   line-height: 28px;
   font-style: italic;
   color: #f2ffff;
-} */
+}
 
 h3 {
   /* font-family: 'Nanum Gothic', sans-serif; */
@@ -55,6 +55,9 @@ form {
 }
 
 #dash {
+  margin: 0;
+  position: relative;
+  bottom: 10px;
   text-align: center;
 }
 
@@ -75,10 +78,16 @@ form {
   width: 100%;
 }
 
-#header h1 {
+#hello {
+  vertical-align: middle;
+  position: relative;
+  top: 15px;
+}
+
+/* #header h1 {
   position: relative;
   line-height: 10px;
-}
+} */
 
 #nav {
   font-family: 'Lato', sans-serif;
@@ -111,7 +120,7 @@ form {
     color: white;
 }
 
-#profilepic {
+#dashpic {
   border-radius: 50%;
   height: 40px;
   margin: 0px;
@@ -122,6 +131,7 @@ form {
 #search {
   flex: 1;
   position: relative;
+  top: 8px;
 }
 
 #search button {
