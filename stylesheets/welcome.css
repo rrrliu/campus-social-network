@@ -16,8 +16,10 @@ html, body {
 body {
   background-color: #9fa8da;
   background: linear-gradient(#00004f, #9fa8da);
+  background-repeat: : no-repeat;
+  background-attachment: fixed;
  /*background-image: url('https://cdn.pixabay.com/photo/2017/08/30/01/05/milky-way-2695569_1280.jpg');*/
-  background-position: center;*/
+  /* background-position: center;*/
   margin-top: 0px;
 
 }
@@ -75,11 +77,12 @@ p {
 
 
 .confirm {
-  background-color: #757575;
-  background: linear-gradient(#cfcfcf,#757575);
+
+  /* background-color: #757575;
+  background: linear-gradient(#cfcfcf,#757575); */
   margin-top: 0px;
-  padding-top: 30px;
-  padding-bottom: 10px;
+  /* padding-top: 30px;
+  padding-bottom: 10px; */
 }
 
 
