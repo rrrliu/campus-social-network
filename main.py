@@ -109,7 +109,12 @@ class WelcomeHandler(BaseHandler):
 class ProfileHandler(BaseHandler):
     def get(self):
         results_template = JINJA_ENVIRONMENT.get_template('templates/profile.html')
-        self.response.write(results_template.render())
+        info = {
+            'first_name' : self.session.get('f_name'),
+            'last_name' : self.session.get('l_name'),
+            'dp_url' : self.session.get('dp_url'),
+        }
+        self.response.write(results_template.render(info))
     # def login(self):
     #
 
