@@ -57,14 +57,31 @@ h4 {
   font-family: 'Raleway';
 }
 fieldset {
-  background-color: white;
-  border-radius: 8px;
+  border: 0px none;
+  /* background-color: white; */
+  /* border-radius: 8px; */
   display: block;
   text-align: center;
 }
 p {
   font-family: 'Lato', sans-serif;
 }
+
+.abcRioButtonLightBlue {
+    background-color: #fff;
+    color: pink;
+}
+
+
+
+.confirm {
+  background-color: #757575;
+  background: linear-gradient(#cfcfcf,#757575);
+  margin-top: 0px;
+  padding-top: 30px;
+  padding-bottom: 10px;
+}
+
 
 .introtext {
   top: 400px;
@@ -79,8 +96,9 @@ p {
   margin: 0 auto;
   width: 100px;
   position:relative;;
-  bottom: 100px;
+  bottom: 200px;
   color: black;
+
 }
 
 .confirm {
