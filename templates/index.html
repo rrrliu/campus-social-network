@@ -38,20 +38,22 @@
       </ul>
     </div> -->
     <div id="nav">
-      <ul>
-        <!-- <li><a href="index.html">General</a></li>
-        <li><a href="homework.html">Homework Help</a></li>
-        <li><a href="announcements.html">Announcements</a></li>
-        <li><a href="confessions.html">Confessions</a></li> -->
-        <li><button class="btn" type="button" onclick="filter('all')">All</button></li>
-        <li><button class="btn" type="button" onclick="filter('s')">Schoolwork</button></li>
-        <li><button class="btn" type="button" onclick="filter('a')">Announcements</button></li>
-        <li><button class="btn" type="button" onclick="filter('q')">Questions</button></li>
-        <li><button class="btn" type="button" onclick="filter('o')">Offers</button></li>
-        <li><button class="btn" type="button" onclick="filter('s')">For sale</button></li>
-        <li><button class="btn" type="button" onclick="filter('f')">Confessions</button></li>
-
-      </ul>
+      <div id="myBtnContainer">
+        <ul>
+          <!-- <li><a href="index.html">General</a></li>
+          <li><a href="homework.html">Homework Help</a></li>
+          <li><a href="announcements.html">Announcements</a></li>
+          <li><a href="confessions.html">Confessions</a></li> -->
+          <li><button class="btn active" type="button" onclick="filterSelection('all')">All</button></li>
+          <li><button class="btn" type="button" onclick="filterSelection('sch')">Schoolwork</button></li>
+          <li><button class="btn" type="button" onclick="filterSelection('ann')">Announcements</button></li>
+          <li><button class="btn" type="button" onclick="filterSelection('que')">Questions</button></li>
+          <li><button class="btn" type="button" onclick="filterSelection('off')">Offers</button></li>
+          <li><button class="btn" type="button" onclick="filterSelection('for')">For sale</button></li>
+          <li><button class="btn" type="button" onclick="filterSelection('con')">Confessions</button></li>
+          <li><button class="btn" type="button" onclick="filterSelection('mis')">Misc</button></li>
+        </ul>
+      </div>
     </div>
     <div class="mainbody">
       <form style="font-family: 'Lato', sans-serif; font-size: 20px; text-align: left;" method="post" action="/index">
@@ -62,13 +64,13 @@
         <p>Post type:</p>
         <select style="font-size: 20px;" name="type">
           <option value="" selected disabled hidden>Choose one</option>
-          <option value="s">School</option>
-          <option value="a">Announcement</option>
-          <option value="q">Question</option>
-          <option value="o">Offering services</option>
-          <option value="f">For sale</option>
-          <option value="c">Confession</option>
-          <option value="m">Misc</option>
+          <option value="sch">School</option>
+          <option value="ann">Announcement</option>
+          <option value="que">Question</option>
+          <option value="off">Offering services</option>
+          <option value="for">For sale</option>
+          <option value="con">Confession</option>
+          <option value="mis">Misc</option>
         </select>
         <!-- <input type="checkbox" name="hw" value="checked"> Schoolwork
         <input type="checkbox" name="announce" value="checked"> Announcement
@@ -78,7 +80,7 @@
         <p> <input style="font-size: 20px;" type="submit" value="Go!"> </p>
       </form>
       {% for post in all_posts %}
-        <div style="border: 1px solid black" class="">
+        <div style="border: 1px solid black" class="filterDiv {{ post.type }}">
           <p>
             <img style="width: 32px; height: 32px;" src="{{ post.author_pic }}" alt="">
             {{ post.author_name }}
@@ -95,7 +97,48 @@
       {% endfor %}
     </div>
     <script type="text/javascript">
-      function filter(item) {}
+    filterSelection("all")
+    function filterSelection(c) {
+    let x, i;
+    x = document.getElementsByClassName("filterDiv");
+    if (c == "all") c = "";
+    for (i = 0; i < x.length; i++) {
+      w3RemoveClass(x[i], "show");
+      if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+    }
+  }
+
+  function w3AddClass(element, name) {
+    let i, arr1, arr2;
+    arr1 = element.className.split(" ");
+    arr2 = name.split(" ");
+    for (i = 0; i < arr2.length; i++) {
+      if (arr1.indexOf(arr2[i]) == -1) {element.className += " " + arr2[i];}
+    }
+  }
+
+  function w3RemoveClass(element, name) {
+    let i, arr1, arr2;
+    arr1 = element.className.split(" ");
+    arr2 = name.split(" ");
+    for (i = 0; i < arr2.length; i++) {
+      while (arr1.indexOf(arr2[i]) > -1) {
+        arr1.splice(arr1.indexOf(arr2[i]), 1);
+      }
+    }
+    element.className = arr1.join(" ");
+  }
+
+  // Add active class to the current button (highlight it)
+  let btnContainer = document.getElementById("myBtnContainer");
+  let btns = btnContainer.getElementsByClassName("btn");
+  for (let i = 0; i < btns.length; i++) {
+    btns[i].addEventListener("click", function(){
+      let current = document.getElementsByClassName("active");
+      current[0].className = current[0].className.replace(" active", "");
+      this.className += " active";
+    });
+  }
     </script>
   </body>
 </html>

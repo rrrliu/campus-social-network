@@ -176,3 +176,11 @@ form {
   margin-left: 240px;
   width: 65%;
 }
+
+div.show {
+  display: block;
+}
+
+.filterDiv {
+  display: none;
+}
