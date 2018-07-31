@@ -79,7 +79,9 @@ form {
 
 
 #dashpic {
+  background-color: black;
   border-radius: 50%;
+  color: transparent;
   height: 40px;
   margin: 0px;
   padding-bottom: 0px;
