@@ -21,7 +21,8 @@
       <div id="header">
         <h1> <a href='index?' style='color: white;'>camp·<span style="color:#5ddef4">us</span></h1>
             </div>
-            <!-- the top navigation bar -->
+
+        <!-- the top navigation bar -->
       <div id='dash'>
         <ul id='container'>
           <li> <a href='index?'> <i class="large material-icons" id='dashpic '>home</i> </a> </li><br>
@@ -32,7 +33,12 @@
               <button type="submit"><img src='https://svgsilh.com/svg/1976105.svg' height='18px'; width='18px'></button>
             </form> </li>
             <li><a href='profile'><img src="{{ dp_url }}" alt="Profile Picture" id='dashpic'></a></li>
+
       </ul>
+      <form class="confirm" action="/login" method="post">
+          <button type="button" onclick="signOut()">Sign out</button>
+        <!-- <input type = "submit" value ="Sign-Out" style="float:right"/> -->
+      </form>
     </div>
   </div>
     <!-- <div id="dash">
@@ -45,6 +51,7 @@
     <!-- the side bar -->
     <div id="nav">
       <div id="myBtnContainer">
+
         <ul>
           <!-- <li><a href="index.html">General</a></li>
           <li><a href="homework.html">Homework Help</a></li>
