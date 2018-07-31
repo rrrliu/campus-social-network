@@ -76,10 +76,12 @@
         <p> <input style="font-size: 20px;" type="submit" value="Go!"> </p>
       </form>
       {% for post in all_posts %}
-        <div style="border: 1px solid black" class="filterDiv {{ post.type }}">
-          <p>
-            <img style="width: 32px; height: 32px;" src="{{ post.author_pic }}" alt="">
-            {{ post.author_name }}
+        <div style="border: 1px solid black; font-family: 'Lato';" class="filterDiv {{ post.type }}">
+          <p id="firstline">
+            <img style="width: 32px; height: 32px; border-radius: 50px;" src="{{ post.author_pic }}" alt="">
+            &ensp; <span style="font-size: 24px;">
+              {{ post.author_name }}
+            </span>
           </p>
           <p>{{ post.text }}</p>
           <img src="{{ post.img_url }}" alt="">
@@ -88,7 +90,6 @@
             {{ post.timestamp.month }}/{{ post.timestamp.day }}/{{ post.timestamp.year}} at
             {{ post.timestamp.hour }}:{{post.timestamp.minute}}
           </p>
-          <p>{{ post.type }}</p>
         </div>
       {% endfor %}
     </div>
