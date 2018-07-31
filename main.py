@@ -40,29 +40,20 @@ class MainHandler(BaseHandler):
     def get(self):
         results_template = JINJA_ENVIRONMENT.get_template('templates/index.html')
 
-        dp_url = self.request.get('dp_url')
-        email = self.request.get('email')
-        f_name = self.request.get('first_name')
-        l_name = self.request.get('last_name')
-
-        user = User(first_name = f_name,
-                    last_name = l_name,
-                    dp_url = dp_url,
-                    email = email)
-        user.put()
-        ### TO DO: CHECK TO MAKE SURE IF USER HAS ALREADY BEEN CREATED
-        # User.query().filter()
-
-        current_user = User.query().fetch()[0]
+        user = User(first_name = self.session.get('f_name'),
+                    last_name = self.session.get('l_name'),
+                    dp_url = self.session.get('dp_url'),
+                    email = self.session.get('email'),)
+        if not (User.query(User.email == user.email).fetch()):
+            user.put()
 
         all_posts = Post.query().fetch()
-
         info = {
             'first_name' : self.session.get('f_name'),
             'last_name' : self.session.get('l_name'),
             'dp_url' : self.session.get('dp_url'),
             'email' : self.session.get('email'),
-            'all_posts' : all_posts
+            'all_posts' : all_posts,
         }
 
         self.response.write(results_template.render(info))
