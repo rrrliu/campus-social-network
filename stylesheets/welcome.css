@@ -100,6 +100,8 @@ p {
   border: 3px solid white;
   position: relative;
   bottom: 50px;
+}
 
-
+#pic {
+  border-radius: 50px;
 }
