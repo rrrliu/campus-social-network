@@ -177,17 +177,16 @@ form {
   width: 65%;
 }
 
-<<<<<<< HEAD
 .sticky {
   position: fixed;
   top: 0;
   width: 100%;
-=======
+}
+
 div.show {
   display: block;
 }
 
 .filterDiv {
   display: none;
->>>>>>> 715519e403ae693c62fcf4958d6d2feacd7bcda2
 }

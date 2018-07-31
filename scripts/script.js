@@ -1,5 +1,5 @@
 function filterSelection(c) {
-  let x, i;
+  var x, i;
   x = document.getElementsByClassName("filterDiv");
   if (c == "all") c = "";
   for (i = 0; i < x.length; i++) {
@@ -9,7 +9,7 @@ function filterSelection(c) {
 }
 
 function w3AddClass(element, name) {
-  let i, arr1, arr2;
+  var i, arr1, arr2;
   arr1 = element.className.split(" ");
   arr2 = name.split(" ");
   for (i = 0; i < arr2.length; i++) {
@@ -18,7 +18,7 @@ function w3AddClass(element, name) {
 }
 
 function w3RemoveClass(element, name) {
-  let i, arr1, arr2;
+  var i, arr1, arr2;
   arr1 = element.className.split(" ");
   arr2 = name.split(" ");
   for (i = 0; i < arr2.length; i++) {
@@ -30,17 +30,15 @@ function w3RemoveClass(element, name) {
 }
 
 // Add active class to the current button (highlight it)
-let btnContainer = document.getElementById("myBtnContainer");
-let btns = btnContainer.getElementsByClassName("btn");
-for (let i = 0; i < btns.length; i++) {
-  btns[i].addEventListener("click", function() {
-    let current = document.getElementsByClassName("active");
+var btnContainer = document.getElementById("myBtnContainer");
+var btns = btnContainer.getElementsByClassName("btn");
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function(){
+    var current = document.getElementsByClassName("active");
     current[0].className = current[0].className.replace(" active", "");
     this.className += " active";
   });
 }
-
-
 
 
 
@@ -70,4 +68,5 @@ auth2.signOut().then(function() {
   $(".confirm").css("display", "none");
   $("body, html").css("overflow", "hidden");
   })
+
 }
