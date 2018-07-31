@@ -70,17 +70,16 @@ class MainHandler(BaseHandler):
         author_name = self.session.get('f_name') + ' ' + self.session.get('l_name')
         author_pic = self.session.get('dp_url')
 
-        if len(text) == 0 and len(img_url) == 0:
-            self.redirect('/')
+        if not (len(text) == 0 and len(img_url) == 0):
 
-        post = Post(text = text,
-                    img_url = img_url,
-                    type = type,
-                    timestamp = datetime.datetime.now(),
-                    author_name = author_name,
-                    author_pic = author_pic)
-        post.put()
-        time.sleep(0.5)
+            post = Post(text = text,
+                        img_url = img_url,
+                        type = type,
+                        timestamp = datetime.datetime.now(),
+                        author_name = author_name,
+                        author_pic = author_pic)
+            post.put()
+            time.sleep(0.5)
         self.redirect('/index')
 
 class WelcomeHandler(BaseHandler):
