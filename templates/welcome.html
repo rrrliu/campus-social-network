@@ -17,7 +17,7 @@
   </head>
   <body>
     <div id="header">
-      <h1 style="display: inline;">camp·</h1><h1 style="display: inline; color:#5ddef4">us </h1>
+      <h1 style="display: inline;">camp·</h1><h1 style="display: inline; color: #ffca28">us </h1>
 
     </div>
     <div class="container">
@@ -28,10 +28,10 @@
 <center>
       </div>
       <center>
-      <div class="circle"><h4 style="display: inline;" >Where a campus becomes a </h4><h4 style="display: inline; color:#5ddef4">community</h4>
+      <div class="circle"><h4 style="display: inline;" >where a campus becomes a </h4><h4 style="display: inline; color:#ffca28">community</h4>
         <div class="g-signin2" data-onsuccess="onSignIn" >
           <!-- <span class="buttonText">Google</span> -->
-          login 
+          login
         </div>
       </div>
       </center>
@@ -79,6 +79,7 @@
       <script type="text/javascript">
         function onSignIn(googleUser) {
           let profile = googleUser.getBasicProfile();
+          $("body, html").css("overflow", "visible");
           $(".g-signin2").css("display", "none");
           $(".circle").css("display", "none");
           $(".confirm").css("display", "block");
@@ -99,6 +100,7 @@
           $(".circle").css("display", "block");
           $(".g-signin2").css("display", "block");
           $(".confirm").css("display", "none");
+          $("body, html").css("overflow", "hidden");
           })
 
         }

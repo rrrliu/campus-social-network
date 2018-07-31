@@ -8,13 +8,18 @@
   width: 100%;
 
 }
-
+html, body {
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
+}
 body {
-  background-color: black;
-/*  background-image: url('https://cdn.pixabay.com/photo/2017/08/30/01/05/milky-way-2695569_1280.jpg');*/
-  background-position: center;
+  background-color: #00004f;
+  background: linear-gradient(#9fa8da,#00004f);
+ /*background-image: url('https://cdn.pixabay.com/photo/2017/08/30/01/05/milky-way-2695569_1280.jpg');*/
+  background-position: center;*/
   margin-top: 0px;
-  margin: 0px;
+
 }
 
 h1 {
@@ -74,7 +79,7 @@ p {
   margin: 0 auto;
   width: 100px;
   position:relative;;
-  bottom: 150px;
+  bottom: 100px;
   color: black;
 }
 
@@ -84,8 +89,8 @@ p {
 
 .circle {
 
-  width: 425px;
-  height: 425px;
+  width: 420px;
+  height: 420px;
   border-radius: 50%;
   font-size: 20px;
   color: #000;
@@ -93,6 +98,8 @@ p {
   text-align: center;
   /*background: #b6ffff;*/
   border: 3px solid white;
+  position: relative;
+  bottom: 50px;
 
 
 }
