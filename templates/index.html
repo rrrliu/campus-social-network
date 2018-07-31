@@ -19,9 +19,10 @@
     <div id='wrapper' class='sticky'>
       <!-- the header -->
       <div id="header">
-        <h1> <a href='index?' style='color: white;'>camp·<span style="color:#5ddef4">us</span></h1>
+        <h1> <a href='index?' style='color: white;'>camp·<span style="color:#ffca28">us</span></h1>
             </div>
-            <!-- the top navigation bar -->
+
+        <!-- the top navigation bar -->
       <div id='dash'>
         <ul id='container'>
           <li> <a href='index?'> <i class="large material-icons" id='dashpic '>home</i> </a> </li><br>
@@ -33,6 +34,10 @@
             </form> </li>
             <li><a href='profile'><img src="{{ dp_url }}" alt="Profile Picture" id='dashpic'></a></li>
       </ul>
+      <form class="confirm" action="/" method="get">
+          <button type="submit" onclick="signOut()">Return to Login</button>
+        <!-- <input type = "submit" value ="Sign-Out" style="float:right"/> -->
+      </form>
     </div>
   </div>
     <!-- <div id="dash">
@@ -45,6 +50,7 @@
     <!-- the side bar -->
     <div id="nav">
       <div id="myBtnContainer">
+
         <ul>
           <!-- <li><a href="index.html">General</a></li>
           <li><a href="homework.html">Homework Help</a></li>

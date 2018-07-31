@@ -14,8 +14,8 @@ html, body {
   overflow: hidden;
 }
 body {
-  background-color: #00004f;
-  background: linear-gradient(#9fa8da,#00004f);
+  background-color: #9fa8da;
+  background: linear-gradient(#00004f, #9fa8da);
  /*background-image: url('https://cdn.pixabay.com/photo/2017/08/30/01/05/milky-way-2695569_1280.jpg');*/
   background-position: center;*/
   margin-top: 0px;
