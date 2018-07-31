@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Campus Connect</title>
+    <title>camp · us</title>
     <link rel="stylesheet" href="stylesheets/style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <meta name="google-signin-client_id" content="928270275694-v9phsaerghg67cinbriumsbt05nij68k.apps.googleusercontent.com">
@@ -15,18 +15,18 @@
      <a name="top"></a>
     <div id='wrapper'>
       <div id="header">
-        <h1 style="display: inline;">camp·</h1><h1 style="display: inline; color:#5ddef4">us </h1>
-      <!--<h2>The social network for your school</h2>-->
-      </div>
+        <h1> <a href='index?' style='color: white;'>camp·<span style="color:#5ddef4">us</span></h1>
+            </div>
       <div id='dash'>
         <ul id='container'>
-          <li >Hello, {{ first_name }}!</li>
+          <li> <a href='index?'> <img src="https://upload.wikimedia.org/wikipedia/commons/4/40/Home_Icon_by_Lakas.svg" alt="" id='dashpic'> </a> </li><br>
+          <li id='hello'>Hello, {{ first_name }}!</li>
           <li id='search'>
             <form action="" style='padding-left: 5%;padding-right: 5%;'>
               <input type="text" placeholder="Search.." name="search">
               <button type="submit"><img src='https://svgsilh.com/svg/1976105.svg' height='18px'; width='18px'></button>
             </form> </li>
-            <li><a href='profile'><img src="{{ dp_url }}" alt="Profile Picture" id='profilepic'></a></li>
+            <li><a href='profile'><img src="{{ dp_url }}" alt="Profile Picture" id='dashpic'></a></li>
       </ul>
     </div>
   </div>
@@ -39,25 +39,42 @@
     </div> -->
     <div id="nav">
       <ul>
-        <li><a href="index.html">General</a></li>
+        <!-- <li><a href="index.html">General</a></li>
         <li><a href="homework.html">Homework Help</a></li>
         <li><a href="announcements.html">Announcements</a></li>
-        <li><a href="confessions.html">Confessions</a></li>
+        <li><a href="confessions.html">Confessions</a></li> -->
+        <li><button class="btn" type="button" onclick="filter('all')">All</button></li>
+        <li><button class="btn" type="button" onclick="filter('s')">Schoolwork</button></li>
+        <li><button class="btn" type="button" onclick="filter('a')">Announcements</button></li>
+        <li><button class="btn" type="button" onclick="filter('q')">Questions</button></li>
+        <li><button class="btn" type="button" onclick="filter('o')">Offers</button></li>
+        <li><button class="btn" type="button" onclick="filter('s')">For sale</button></li>
+        <li><button class="btn" type="button" onclick="filter('f')">Confessions</button></li>
+
       </ul>
     </div>
     <div class="mainbody">
-      <form style="font-family: 'Lato', sans-serif; font-size: 20px;" method="post" action="/index">
+      <form style="font-family: 'Lato', sans-serif; font-size: 20px; text-align: left;" method="post" action="/index">
         <p>Text:</p>
-        <p> <input style="font-size: 20px;" type="text" name="text" value="<insert text here>"> </p>
-        <p>Image URL:</p>
-        <p> <input style="font-size: 20px;" type="text" name="img_url" value="<insert image URL>"> </p>
-        <p>Post Type</p>
+        <p> <input style="font-size: 20px;" type="text" name="text"> </p>
+        <p>Image URL (optional):</p>
+        <p> <input style="font-size: 20px;" type="text" name="img_url"> </p>
+        <p>Post type:</p>
         <select style="font-size: 20px;" name="type">
-          <option value="one">1</option>
-          <option value="two">2</option>
-          <option value="three">3</option>
-          <option value="four">4</option>
+          <option value="" selected disabled hidden>Choose one</option>
+          <option value="s">School</option>
+          <option value="a">Announcement</option>
+          <option value="q">Question</option>
+          <option value="o">Offering services</option>
+          <option value="f">For sale</option>
+          <option value="c">Confession</option>
+          <option value="m">Misc</option>
         </select>
+        <!-- <input type="checkbox" name="hw" value="checked"> Schoolwork
+        <input type="checkbox" name="announce" value="checked"> Announcement
+        <input type="checkbox" name="question" value="checked"> Question
+        <input type="checkbox" name="service" value="checked"> Offering services
+        <input type="checkbox" name="sale" value="checked"> For sale -->
         <p> <input style="font-size: 20px;" type="submit" value="Go!"> </p>
       </form>
       {% for post in all_posts %}
@@ -68,16 +85,17 @@
           </p>
           <p>{{ post.text }}</p>
           <img src="{{ post.img_url }}" alt="">
-          <p>{{ post.type }}</p>
+          <!-- <p>{{ post.type }}</p> -->
           <p>
             {{ post.timestamp.month }}/{{ post.timestamp.day }}/{{ post.timestamp.year}} at
             {{ post.timestamp.hour }}:{{post.timestamp.minute}}
           </p>
+          <p>{{ post.type }}</p>
         </div>
       {% endfor %}
     </div>
     <script type="text/javascript">
-
+      function filter(item) {}
     </script>
   </body>
 </html>

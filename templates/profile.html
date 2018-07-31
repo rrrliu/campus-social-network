@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>campusprofile</title>
+    <title>profile</title>
     <link rel="stylesheet" href="stylesheets/profile.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <meta name="google-signin-client_id" content="928270275694-v9phsaerghg67cinbriumsbt05nij68k.apps.googleusercontent.com">
@@ -15,20 +15,19 @@
     <a name="top"></a>
     <div id='wrapper'>
       <div id="header">
-        <h1> <a href='index?'> <h1 style="display: inline;">camp·</h1><h1 style="display: inline; color:#5ddef4">us </h1> </a></h1>
+        <h1> <a href='index?' style='color: white;'>camp·<span style='color: #5ddef4;'>us</span></a></h1>
       <!--<h2>The social network for your school</h2>-->
       </div>
       <div id='dash'>
         <ul id='container'>
           <li> <a href='index?'> <img src="https://upload.wikimedia.org/wikipedia/commons/4/40/Home_Icon_by_Lakas.svg" alt="" id='dashpic'> </a> </li><br>
-          <li id='hello'>Hello, {{ first_name }}!</li>
+          <li id='hello'>Hello, {{ first_name }}! </li>
           <li id='search'>
             <form action="/action_page.php">
               <input type="text" placeholder="Search.." name="search">
               <button type="submit"><img src='https://svgsilh.com/svg/1976105.svg' height='18px'; width='18px'></button>
             </form> </li>
           <li> <a href='profile'><img src="{{ dp_url }}" alt="Profile Picture" id='profilepic'></a></li>
-          <!-- <li> <a href='profile'> <img src="https://upload.wikimedia.org/wikipedia/commons/7/7c/User_font_awesome.svg" alt="Profile Picture" id='dashpic'> </a> </li> -->
         </ul>
     </div>
   </div>
@@ -48,13 +47,6 @@
       <button type="button" onclick="signOut()" id='signout'>Sign out</button>
     </form>
   </div>
-    <!-- <div id="dash">
-      <ul>
-        <li><a id="uni" href="#top"><a/></li>
-        <li><a href="settings.html"><img class="icon" src="https://cdn3.iconfinder.com/data/icons/vector-icons-for-mobile-apps-2/512/Settings_black-512.png"></a></li>
-        <li><a href="profile.html"><img class="icon" src="https://static.thenounproject.com/png/630729-200.png"></a></li>
-      </ul>
-    </div> -->
 
     <script type="text/javascript">
       function foo() {

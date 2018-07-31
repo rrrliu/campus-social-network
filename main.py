@@ -6,6 +6,7 @@ import urllib2
 import os
 from model import User, Post
 import datetime
+import time
 
 
 import webapp2
@@ -86,18 +87,7 @@ class MainHandler(BaseHandler):
                     author_name = author_name,
                     author_pic = author_pic)
         post.put()
-
-        # all_posts = Post.query().fetch()
-        #
-        # info = {
-        #     'first_name' : self.session.get('f_name'),
-        #     'last_name' : self.session.get('l_name'),
-        #     'dp_url' : self.session.get('dp_url'),
-        #     'email' : self.session.get('email'),
-        #     'all_posts' : all_posts
-        # }
-
-        # self.response.write(results_template.render(info))
+        time.sleep(0.5)
         self.redirect('/index')
 
 class WelcomeHandler(BaseHandler):
@@ -109,7 +99,12 @@ class WelcomeHandler(BaseHandler):
 class ProfileHandler(BaseHandler):
     def get(self):
         results_template = JINJA_ENVIRONMENT.get_template('templates/profile.html')
-        self.response.write(results_template.render())
+        info = {
+            'first_name' : self.session.get('f_name'),
+            'last_name' : self.session.get('l_name'),
+            'dp_url' : self.session.get('dp_url'),
+        }
+        self.response.write(results_template.render(info))
     # def login(self):
     #
 
@@ -119,7 +114,6 @@ class LoginHandler(BaseHandler):
         self.session['email'] = self.request.get('email')
         self.session['f_name'] = self.request.get('first_name')
         self.session['l_name'] = self.request.get('last_name')
-
         self.redirect('/index')
 
 config = {}

@@ -1,5 +1,11 @@
+a:link {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+
 body {
-  background-color: #ffffff;
+  background-color: white;
   margin: 0px;
   padding: 0px;
 }
@@ -13,23 +19,23 @@ h1 {
   float: left;
   font-family: 'Raleway', sans-serif;
 	font-size: 56px;
-	font-style: bold;
 	font-variant: normal;
 	font-weight: 400;
-	line-height: 20px;
+	line-height: 0px;
+  margin-top: 15px;
   color: #ffffff;
-  padding-left: 10px;
-  position: relative;
-  bottom: 15px;
+  padding-top: 0;
+  padding-left: 5px;
+  position: absolute;
 }
 
-/* h2 {
+h2 {
   font-family: 'Poiret One', cursive;
   font-size: 20px;
   line-height: 28px;
   font-style: italic;
   color: #f2ffff;
-} */
+}
 
 h3 {
   /* font-family: 'Nanum Gothic', sans-serif; */
@@ -47,7 +53,7 @@ form {
 #container{
   background-color: #e2e2e2;
   display: flex;
-  line-height: 10px;
+  line-height: 8px;
   list-style-type: none;
   margin: 0px;
   padding: 0px;
@@ -55,7 +61,9 @@ form {
 }
 
 #dash {
-  text-align: center;
+  margin: 0;
+  position: relative;
+  top: 0px;
 }
 
 #dash li {
@@ -65,53 +73,8 @@ form {
   text-align: center;
 }
 
-#header {
-  background-color: #071011;
-  font-size: 30px;
-  height: 90px;
-  margin: 0px;
-  padding-top: 3%;
-  text-align: center;
-  width: 100%;
-}
 
-#header h1 {
-  position: relative;
-  line-height: 10px;
-}
-
-#nav {
-  font-family: 'Lato', sans-serif;
-  float: left;
-  height: 100%;
-  position: fixed;
-  text-align: center;
-  width: 200px;
-}
-
-#nav ul {
-    background-color: #f1f1f1;
-    height: 100%;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    width: 200px;
-  }
-
-#nav li a {
-    display: block;
-    color: #000;
-    padding: 8px 16px;
-    text-decoration: none;
-}
-
-/* Change the link color on hover */
-#nav li a:hover {
-    background-color: #555;
-    color: white;
-}
-
-#profilepic {
+#dashpic {
   border-radius: 50%;
   height: 40px;
   margin: 0px;
@@ -119,23 +82,77 @@ form {
   width:40px;
 }
 
+#header {
+  background-color: #071011;
+  font-size: 20px;
+  height: 50px;
+  margin: 0px;
+  padding: 0px;
+  width: 100%;
+}
+
+#hello {
+  vertical-align: middle;
+  position: relative;
+  top: 15px;
+}
+
+/* #header h1 {
+  position: relative;
+  line-height: 10px;
+} */
+
+#nav {
+  font-family: 'Lato', sans-serif;
+  float: left;
+  height: 100%;
+  position: absolute;
+  text-align: center;
+  width: 200px;
+}
+
+#nav ul {
+    background-color: #f1f1f1;
+    height: 25%;
+    list-style-type: none;
+    margin: 10px;
+    padding: 0;
+    width: 200px;
+  }
+
+#nav li button {
+    display: block;
+    color: #000;
+    width: 200px;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+
+/* Change the link color on hover */
+#nav li button:hover {
+    background-color: #555;
+    color: white;
+}
+
 #search {
   flex: 1;
   position: relative;
+  top: 8px;
 }
 
 #search button {
   background: transparent;
   border: 0;
   position: absolute;
-  /* height: 18px; */
+  height: 20px;
 }
 
 #search input {
   background: transparent;
   border: 0;
+  outline: none;
   width: 100%;
-  /* text-height: 14px; */
+  text-height: 10px;
 }
 
 #search [type=text] {
@@ -144,7 +161,7 @@ form {
     transition: width 0.2s ease-in-out;
     border: 1px solid #444444;
     border-radius: 10px;
-    font-size: 18px;
+    font-size: 15px;
 }
 
 #search [type=text]:focus {
@@ -157,4 +174,5 @@ form {
 
 .mainbody {
   margin-left: 240px;
+  width: 65%;
 }
