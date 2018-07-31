@@ -30,6 +30,7 @@
       </ul>
     </div>
   </div>
+</div>
     <!-- <div id="dash">
       <ul>
         <li><a id="uni" href="#top"><a/></li>
@@ -37,22 +38,22 @@
         <li><a href="profile.html"><img class="icon" src="https://static.thenounproject.com/png/630729-200.png"></a></li>
       </ul>
     </div> -->
-    <div id="nav">
+<div id="nav">
       <ul>
         <!-- <li><a href="index.html">General</a></li>
         <li><a href="homework.html">Homework Help</a></li>
         <li><a href="announcements.html">Announcements</a></li>
         <li><a href="confessions.html">Confessions</a></li> -->
-        <li><button class="btn" type="button" onclick="filter('all')">All</button></li>
-        <li><button class="btn" type="button" onclick="filter('s')">Schoolwork</button></li>
-        <li><button class="btn" type="button" onclick="filter('a')">Announcements</button></li>
-        <li><button class="btn" type="button" onclick="filter('q')">Questions</button></li>
-        <li><button class="btn" type="button" onclick="filter('o')">Offers</button></li>
-        <li><button class="btn" type="button" onclick="filter('s')">For sale</button></li>
-        <li><button class="btn" type="button" onclick="filter('f')">Confessions</button></li>
+  <li><button class="btn" type="button" onclick="filter('all')">All</button></li>
+  <li><button class="btn" type="button" onclick="filter('s')">Schoolwork</button></li>
+  <li><button class="btn" type="button" onclick="filter('a')">Announcements</button></li>
+  <li><button class="btn" type="button" onclick="filter('q')">Questions</button></li>
+  <li><button class="btn" type="button" onclick="filter('o')">Offers</button></li>
+  <li><button class="btn" type="button" onclick="filter('s')">For sale</button></li>
+  <li><button class="btn" type="button" onclick="filter('f')">Confessions</button></li>
 
       </ul>
-    </div>
+</div>
     <div class="mainbody">
       <form style="font-family: 'Lato', sans-serif; font-size: 20px; text-align: left;" method="post" action="/index">
         <p>Text:</p>
@@ -99,8 +100,8 @@
 
       window.onscroll = function() {myFunction()};
 
-      var dash=document.getElementbyId('dash')
-      var sticky=dash.offsetTop;
+      var dash=document.getElementbyId('container')
+      var sticky=container.offsetTop;
 
       function myFunction() {
         if (window.pageYOffset >= sticky) {

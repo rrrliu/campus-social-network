@@ -63,7 +63,7 @@ form {
 #dash {
   margin: 0px;
   top: 0px;
-  z-index: 1;
+  /* overflow: scroll; */
 }
 
 #dash li {
@@ -96,16 +96,11 @@ form {
   top: 15px;
 }
 
-/* #header h1 {
-  position: relative;
-  line-height: 10px;
-} */
-
 #nav {
   font-family: 'Lato', sans-serif;
   float: left;
   height: 100%;
-  position: absolute;
+  position: static;
   text-align: center;
   width: 200px;
   margin-top: 20px;
@@ -170,7 +165,8 @@ form {
 }
 
 #wrapper {
-  min-height: 100%
+  padding: 0;
+  margin: 0;
 }
 
 .mainbody {
@@ -183,5 +179,4 @@ form {
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: 1
 }
