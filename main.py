@@ -45,7 +45,9 @@ class MainHandler(BaseHandler):
                     dp_url = self.session.get('dp_url'),
                     email = self.session.get('email'),)
         if not (User.query(User.email == user.email).fetch()):
-            user.put()
+            self.session['key'] = user.put()
+        # else:
+            # self.session['key'] = User.query(User.email === user.email)
 
         all_posts = Post.query().fetch()
         info = {
@@ -93,11 +95,25 @@ class ProfileHandler(BaseHandler):
         info = {
             'first_name' : self.session.get('f_name'),
             'last_name' : self.session.get('l_name'),
+            'email' : self.session.get('email'),
             'dp_url' : self.session.get('dp_url'),
         }
         self.response.write(results_template.render(info))
-    # def login(self):
-    #
+    def post(self):
+        # user_obj = self.session.get('key').get()
+
+        self.session['dp_url'] = self.request.get('dp_url')
+        self.session['email'] = self.request.get('email')
+        self.session['f_name'] = self.request.get('first_name')
+        self.session['l_name'] = self.request.get('last_name')
+
+        # user_obj.dp_url = self.request.get('dp_url')
+        # user_obj.email = self.request.get('email')
+        # user_obj.first_name = self.request.get('first_name')
+        # user_obj.last_name = self.request.get('last_name')
+        # user_obj.put()
+
+        self.redirect('/index')
 
 class LoginHandler(BaseHandler):
     def post(self):

@@ -32,20 +32,22 @@
     </div>
   </div>
   <div id='info'>
-    <form class="" action="index.html" method="post" id='profile'>
+    <form class="" action="/profile" method="post" id='profile'>
       <fieldset id='profile'>
         <img src="{{ dp_url }}" alt="Profile Picture" id='mainpic'>
         <h4>Username</h4>
         <ul>
-          <br> <li> First Name &ensp; <input type="text" name="" value=""> </li><br>
-          <li> Last Name &ensp; <input type="text" name="" value=""> </li><br>
-          <li> Email &ensp; <input type='text' name='' value=''> </li>
+          <br> <li> First Name &ensp; <input type="text" name="first_name" value="{{ first_name }}"> </li><br>
+          <li> Last Name &ensp; <input type="text" name="last_name" value="{{ last_name }}"> </li><br>
+          <li> Email &ensp; <input type="text" name="email" value="{{ email }}"> </li>
+          <li> Image URL &ensp; <input type="text" name="dp_url" value="{{ dp_url }}"></li>
         </ul>
       </fieldset>
+      <p><input type="submit" name="" value="Submit"></p>
     </form>
-    <form class="" action="index.html" method="post">
+    <!-- <form class="" action="/" method="post">
       <button type="button" onclick="signOut()" id='signout'>Sign out</button>
-    </form>
+    </form> -->
   </div>
 
     <script type="text/javascript">
