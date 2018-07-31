@@ -93,29 +93,30 @@ form {
   font-family: 'Lato', sans-serif;
   float: left;
   height: 100%;
-  position: fixed;
+  position: absolute;
   text-align: center;
   width: 200px;
 }
 
 #nav ul {
     background-color: #f1f1f1;
-    height: 100%;
+    height: 25%;
     list-style-type: none;
-    margin: 0;
+    margin: 10px;
     padding: 0;
     width: 200px;
   }
 
-#nav li a {
+#nav li button {
     display: block;
     color: #000;
+    width: 200px;
     padding: 8px 16px;
     text-decoration: none;
 }
 
 /* Change the link color on hover */
-#nav li a:hover {
+#nav li button:hover {
     background-color: #555;
     color: white;
 }
@@ -167,4 +168,5 @@ form {
 
 .mainbody {
   margin-left: 240px;
+  width: 65%;
 }

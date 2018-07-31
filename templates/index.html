@@ -40,25 +40,42 @@
     </div> -->
     <div id="nav">
       <ul>
-        <li><a href="index.html">General</a></li>
+        <!-- <li><a href="index.html">General</a></li>
         <li><a href="homework.html">Homework Help</a></li>
         <li><a href="announcements.html">Announcements</a></li>
-        <li><a href="confessions.html">Confessions</a></li>
+        <li><a href="confessions.html">Confessions</a></li> -->
+        <li><button class="btn" type="button" onclick="filter('all')">All</button></li>
+        <li><button class="btn" type="button" onclick="filter('s')">Schoolwork</button></li>
+        <li><button class="btn" type="button" onclick="filter('a')">Announcements</button></li>
+        <li><button class="btn" type="button" onclick="filter('q')">Questions</button></li>
+        <li><button class="btn" type="button" onclick="filter('o')">Offers</button></li>
+        <li><button class="btn" type="button" onclick="filter('s')">For sale</button></li>
+        <li><button class="btn" type="button" onclick="filter('f')">Confessions</button></li>
+
       </ul>
     </div>
     <div class="mainbody">
-      <form style="font-family: 'Lato', sans-serif; font-size: 20px;" method="post" action="/index">
+      <form style="font-family: 'Lato', sans-serif; font-size: 20px; text-align: left;" method="post" action="/index">
         <p>Text:</p>
         <p> <input style="font-size: 20px;" type="text" name="text"> </p>
         <p>Image URL (optional):</p>
         <p> <input style="font-size: 20px;" type="text" name="img_url"> </p>
-        <p>Post Type</p>
+        <p>Post type:</p>
         <select style="font-size: 20px;" name="type">
-          <option value="one">1</option>
-          <option value="two">2</option>
-          <option value="three">3</option>
-          <option value="four">4</option>
+          <option value="" selected disabled hidden>Choose one</option>
+          <option value="s">School</option>
+          <option value="a">Announcement</option>
+          <option value="q">Question</option>
+          <option value="o">Offering services</option>
+          <option value="f">For sale</option>
+          <option value="c">Confession</option>
+          <option value="m">Misc</option>
         </select>
+        <!-- <input type="checkbox" name="hw" value="checked"> Schoolwork
+        <input type="checkbox" name="announce" value="checked"> Announcement
+        <input type="checkbox" name="question" value="checked"> Question
+        <input type="checkbox" name="service" value="checked"> Offering services
+        <input type="checkbox" name="sale" value="checked"> For sale -->
         <p> <input style="font-size: 20px;" type="submit" value="Go!"> </p>
       </form>
       {% for post in all_posts %}
@@ -74,11 +91,12 @@
             {{ post.timestamp.month }}/{{ post.timestamp.day }}/{{ post.timestamp.year}} at
             {{ post.timestamp.hour }}:{{post.timestamp.minute}}
           </p>
+          <p>{{ post.type }}</p>
         </div>
       {% endfor %}
     </div>
     <script type="text/javascript">
-
+      function filter(item) {}
     </script>
   </body>
 </html>
