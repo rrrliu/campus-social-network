@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Campus Connect</title>
+    <title>camp · us</title>
     <link rel="stylesheet" href="stylesheets/style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <meta name="google-signin-client_id" content="928270275694-v9phsaerghg67cinbriumsbt05nij68k.apps.googleusercontent.com">
@@ -15,7 +15,7 @@
      <a name="top"></a>
     <div id='wrapper'>
       <div id="header">
-        <h1 style="display: inline;">camp·</h1><h1 style="display: inline; color:#5ddef4">us </h1>
+        <h1 style="display: inline;">camp ·</h1><h1 style="display: inline; color:#5ddef4">us </h1>
       <!--<h2>The social network for your school</h2>-->
       </div>
       <div id='dash'>
@@ -48,9 +48,9 @@
     <div class="mainbody">
       <form style="font-family: 'Lato', sans-serif; font-size: 20px;" method="post" action="/index">
         <p>Text:</p>
-        <p> <input style="font-size: 20px;" type="text" name="text" value="<insert text here>"> </p>
-        <p>Image URL:</p>
-        <p> <input style="font-size: 20px;" type="text" name="img_url" value="<insert image URL>"> </p>
+        <p> <input style="font-size: 20px;" type="text" name="text"> </p>
+        <p>Image URL (optional):</p>
+        <p> <input style="font-size: 20px;" type="text" name="img_url"> </p>
         <p>Post Type</p>
         <select style="font-size: 20px;" name="type">
           <option value="one">1</option>
@@ -68,7 +68,7 @@
           </p>
           <p>{{ post.text }}</p>
           <img src="{{ post.img_url }}" alt="">
-          <p>{{ post.type }}</p>
+          <!-- <p>{{ post.type }}</p> -->
           <p>
             {{ post.timestamp.month }}/{{ post.timestamp.day }}/{{ post.timestamp.year}} at
             {{ post.timestamp.hour }}:{{post.timestamp.minute}}
