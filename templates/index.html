@@ -63,15 +63,12 @@
     </div>
     <div class="mainbody">
       <!-- to post stuff -->
-      <form style="font-family: 'Lato', sans-serif; font-size: 20px; text-align: left;" method="post" action="/index">
+      <form style="font-family: 'Lato', sans-serif; font-size: 15px; text-align: left;" method="post" action="/index">
         <fieldset id='post'>
-          <p>Text:</p>
-          <p> <input style="font-size: 20px;" type="text" name="text"> </p>
-          <p>Image URL (optional):</p>
-          <p> <input style="font-size: 20px;" type="text" name="img_url"> </p>
-          <p>Post type:</p>
-          <select style="font-size: 20px;" name="type">
-            <option value="" selected disabled hidden>Choose one</option>
+          <p> <input style="border: none; font-size: 15px; outline: none;" type="text" name="text" value='Type something...'> </p> &emsp;
+          <p> <input style="border: none;font-size: 15px; outline: none;" type="text" name="img_url" value='Insert image url...'> </p>
+          <select style="font-size: 15px; width: 15%;" name="type">
+            <option value="" selected disabled hidden>post type</option>
             <option value="sch">School</option>
             <option value="ann">Announcement</option>
             <option value="que">Question</option>
@@ -80,7 +77,8 @@
             <option value="con">Confession</option>
             <option value="mis">Misc</option>
           </select>
-          <p> <input style="font-size: 20px;" type="submit" value="Go!"> </p>
+          &emsp;
+          <p> <input style="font-size: 18px; color: white; background-color: #283593; border-radius: 10px; outline: none;" type="submit" value="post"> </p>
       </fieldset>
       </form>
       <!-- Feed -->
