@@ -64,6 +64,10 @@ form {
   margin: 0;
   position: relative;
   top: 0px;
+<<<<<<< HEAD
+  /* overflow: scroll; */
+=======
+>>>>>>> 715519e403ae693c62fcf4958d6d2feacd7bcda2
 }
 
 #dash li {
@@ -97,16 +101,11 @@ form {
   top: 15px;
 }
 
-/* #header h1 {
-  position: relative;
-  line-height: 10px;
-} */
-
 #nav {
   font-family: 'Lato', sans-serif;
   float: left;
   height: 100%;
-  position: absolute;
+  position: static;
   text-align: center;
   width: 200px;
 }
@@ -169,7 +168,8 @@ form {
 }
 
 #wrapper {
-  min-height: 100%
+  padding: 0;
+  margin: 0;
 }
 
 .mainbody {
@@ -177,10 +177,17 @@ form {
   width: 65%;
 }
 
+<<<<<<< HEAD
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+=======
 div.show {
   display: block;
 }
 
 .filterDiv {
   display: none;
+>>>>>>> 715519e403ae693c62fcf4958d6d2feacd7bcda2
 }
