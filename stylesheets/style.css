@@ -213,3 +213,7 @@ div.show {
 .filterDiv {
   display: none;
 }
+
+img.post_image {
+  width: 240px;
+}

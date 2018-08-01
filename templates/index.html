@@ -71,11 +71,11 @@
       <!-- to post stuff -->
       <form style="font-family: 'Lato', sans-serif; font-size: 15px; text-align: left;" method="post" action="/index">
         <fieldset id='post'>
-          <p> <input style="border: none; font-size: 15px; outline: none;" type="text" name="text" value='Type something...'> </p> &emsp;
-          <p> <input style="border: none;font-size: 15px; outline: none;" type="text" name="img_url" value='Insert image url...'> </p>
+          <p> <input style="border: none; font-size: 15px; outline: none;" type="text" name="text" placeholder='Type something...'> </p> &emsp;
+          <p> <input style="border: none;font-size: 15px; outline: none;" type="text" name="img_url" placeholder='Insert image url...'> </p>
           <select style="font-size: 15px; width: 15%;" name="type">
             <option value="" selected disabled hidden>post type</option>
-            <option value="sch">School</option>
+            <option value="sch">Schoolwork</option>
             <option value="ann">Announcement</option>
             <option value="que">Question</option>
             <option value="off">Offering services</option>
@@ -97,13 +97,15 @@
             </span>
           </p>
           <p>{{ post.text }}</p>
-          <img src="{{ post.img_url }}" alt="">
+          <img class="post_image" src="{{ post.img_url }}" alt="">
           <!-- <p>{{ post.type }}</p> -->
           <p>
             {{ post.timestamp.month }}/{{ post.timestamp.day }}/{{ post.timestamp.year}} at
             {{ post.timestamp.hour }}:{{post.timestamp.minute}}
           </p>
         </div>
+        <br>
+        <br>
       {% endfor %}
     </div>
 
