@@ -279,3 +279,11 @@ img.post_image {
   padding: 0;
   width: 240px;
 }
+
+#like_button {
+  font-size: 14px;
+  color: white;
+  background-color: #283593;
+  border-radius: 10px;
+  outline: none;
+}
