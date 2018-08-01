@@ -5,8 +5,10 @@ import urllib
 import urllib2
 import os
 from model import User, Post
-import datetime
+from datetime import datetime
 import time
+import pytz
+
 
 
 import webapp2
@@ -71,11 +73,12 @@ class MainHandler(BaseHandler):
         author_pic = self.session.get('dp_url')
 
         if not (len(text) == 0 and len(img_url) == 0):
+            current_time = datetime.now()
 
             post = Post(text = text,
                         img_url = img_url,
                         type = type,
-                        timestamp = datetime.datetime.now(),
+                        timestamp = current_time,
                         author_name = author_name,
                         author_pic = author_pic)
             post.put()
