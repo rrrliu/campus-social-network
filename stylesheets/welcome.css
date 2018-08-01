@@ -1,3 +1,13 @@
+#button {
+font-size: 18px;
+color: white;
+background-color: #283593;
+border-radius: 10px;
+outline: none;
+}
+
+
+
 #header {
   /*background-color: #b6ffff;*/
   font-size: 50px;

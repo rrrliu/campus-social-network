@@ -5,8 +5,10 @@ import urllib
 import urllib2
 import os
 from model import User, Post
-import datetime
+from datetime import datetime
 import time
+import pytz
+
 
 
 import webapp2
@@ -71,11 +73,12 @@ class MainHandler(BaseHandler):
         author_pic = self.session.get('dp_url')
 
         if not (len(text) == 0 and len(img_url) == 0):
+            current_time = datetime.now()
 
             post = Post(text = text,
                         img_url = img_url,
                         type = type,
-                        timestamp = datetime.datetime.now(),
+                        timestamp = current_time,
                         author_name = author_name,
                         author_pic = author_pic)
             post.put()
@@ -122,6 +125,13 @@ class LoginHandler(BaseHandler):
         self.session['l_name'] = self.request.get('last_name')
         self.redirect('/index')
 
+class AboutUsHandler(BaseHandler):
+    def get(self):
+        results_template = JINJA_ENVIRONMENT.get_template('templates/aboutUs.html')
+        self.response.write(results_template.render())
+
+
+
 config = {}
 config['webapp2_extras.sessions'] = {
     'secret_key': 'my-super-secret-key',
@@ -133,5 +143,6 @@ app = webapp2.WSGIApplication([
     ('/index', MainHandler),
     ('/profile', ProfileHandler),
     ('/login', LoginHandler),
+    ('/aboutus', AboutUsHandler),
 ], config=config,
    debug=True)
