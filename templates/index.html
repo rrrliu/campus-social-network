@@ -97,13 +97,15 @@
             </span>
           </p>
           <p>{{ post.text }}</p>
-          <img src="{{ post.img_url }}" alt="">
+          <img class="post_image" src="{{ post.img_url }}" alt="">
           <!-- <p>{{ post.type }}</p> -->
           <p>
             {{ post.timestamp.month }}/{{ post.timestamp.day }}/{{ post.timestamp.year}} at
             {{ post.timestamp.hour }}:{{post.timestamp.minute}}
           </p>
         </div>
+        <br>
+        <br>
       {% endfor %}
     </div>
 
