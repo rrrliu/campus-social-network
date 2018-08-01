@@ -6,7 +6,6 @@ import os
 from model import User, Post
 from datetime import datetime
 import time
-import pytz
 import json
 from google.appengine.ext.ndb import Key
 
@@ -75,10 +74,12 @@ class MainHandler(BaseHandler):
             author_pic = self.session.get('dp_url')
 
             utc_dt = datetime.now()
-            local_tz = pytz.timezone('US/Pacific')
-            local_dt = utc_dt.replace(tzinfo=pytz.utc).astimezone(local_tz)
+            # local_tz = pytz.timezone('US/Pacific')
+            # local_dt = utc_dt.replace(tzinfo=pytz.utc).astimezone(local_tz)
+            local_dt = utc_dt.replace(hour=utc_dt.hour-7)
             format = '%A at %I:%M %p'
             current_time = local_dt.strftime(format)
+            # current_time = utc_dt.strftime(format)
 
             post = Post(author_key = key,
                         text = text,
