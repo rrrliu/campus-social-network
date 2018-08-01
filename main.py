@@ -62,23 +62,23 @@ class MainHandler(BaseHandler):
         self.response.write(results_template.render(info))
 
     def post(self):
-        results_template = JINJA_ENVIRONMENT.get_template('templates/index.html')
-
         text = self.request.get('text')
         img_url = self.request.get('img_url')
         type = self.request.get('type')
 
-        author_name = self.session.get('f_name') + ' ' + self.session.get('l_name')
-        author_pic = self.session.get('dp_url')
-
         if not (len(text) == 0 and len(img_url) == 0):
+
+            key_id = self.session.get('user_key_id')
+            key = Key('User', key_id)
+
+            author_name = self.session.get('f_name') + ' ' + self.session.get('l_name')
+            author_pic = self.session.get('dp_url')
+
             utc_dt = datetime.now()
             local_tz = pytz.timezone('US/Pacific')
             local_dt = utc_dt.replace(tzinfo=pytz.utc).astimezone(local_tz)
             format = '%A at %I:%M %p'
             current_time = local_dt.strftime(format)
-            key_id = self.session.get('user_key_id')
-            key = Key('User', key_id)
 
             post = Post(author_key = key,
                         text = text,
@@ -138,7 +138,13 @@ class AboutUsHandler(BaseHandler):
         results_template = JINJA_ENVIRONMENT.get_template('templates/aboutUs.html')
         self.response.write(results_template.render())
 
-
+class DeleteHandler(BaseHandler):
+    def post(self):
+        # my_post = self.request.get('postDiv')
+        # my_obj = Post.query(User.key == my_post.key).fetch()[0]
+        # my_obj.delete()
+        # time.sleep(0.1)
+        self.redirect('/index')
 
 config = {}
 config['webapp2_extras.sessions'] = {
@@ -152,5 +158,6 @@ app = webapp2.WSGIApplication([
     ('/profile', ProfileHandler),
     ('/login', LoginHandler),
     ('/aboutus', AboutUsHandler),
+    ('/delete', DeleteHandler)
 ], config=config,
    debug=True)

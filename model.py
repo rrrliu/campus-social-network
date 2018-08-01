@@ -13,8 +13,13 @@ class Post(ndb.Model):
     text = ndb.StringProperty(required=True)
     img_url = ndb.StringProperty(required=True)
     timestamp = ndb.StringProperty(required=True)
-    # score = ndb.IntegerProperty(required=True)
+    score = ndb.IntegerProperty(required=False)
     # comments = ndb.StringProperty(repeated=True)
     author_name = ndb.StringProperty(required=True)
     author_pic = ndb.StringProperty(required=True)
     type = ndb.StringProperty(required=True)
+
+class Comment(ndb.Model):
+    author_key = ndb.KeyProperty(User)
+    post_key = ndb.KeyProperty(Post)
+    text = ndb.StringProperty(required=True)
