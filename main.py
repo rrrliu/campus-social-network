@@ -88,7 +88,7 @@ class MainHandler(BaseHandler):
                         author_name = author_name,
                         author_pic = author_pic)
             post.put()
-            time.sleep(0.5)
+            time.sleep(0.1)
         self.redirect('/index')
 
 class WelcomeHandler(BaseHandler):
@@ -108,19 +108,21 @@ class ProfileHandler(BaseHandler):
         }
         self.response.write(results_template.render(info))
     def post(self):
-        # user_obj = self.session.get('key').get()
+        user_key = Key('User', self.session.get('user_key_id'))
+        user_obj = user_key.get()
 
         self.session['dp_url'] = self.request.get('dp_url')
         self.session['email'] = self.request.get('email')
         self.session['f_name'] = self.request.get('first_name')
         self.session['l_name'] = self.request.get('last_name')
 
-        # user_obj.dp_url = self.request.get('dp_url')
-        # user_obj.email = self.request.get('email')
-        # user_obj.first_name = self.request.get('first_name')
-        # user_obj.last_name = self.request.get('last_name')
-        # user_obj.put()
+        user_obj.dp_url = self.request.get('dp_url')
+        user_obj.email = self.request.get('email')
+        user_obj.first_name = self.request.get('first_name')
+        user_obj.last_name = self.request.get('last_name')
+        user_obj.put()
 
+        time.sleep(0.1)
         self.redirect('/index')
 
 class LoginHandler(BaseHandler):
