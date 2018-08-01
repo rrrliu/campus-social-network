@@ -35,3 +35,62 @@ h1 {
 	line-height: inherit;
   color: white;
 }
+
+#circle {
+  margin-left: 80px;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  font-size: 20px;
+  color: #000;
+  line-height: 350px;
+  /* text-align: center; */
+  /*background: #b6ffff;*/
+  border: 3px solid white;
+  /* position: relative;
+  top: 50px;
+  left:50px; */
+  /* display: inline-block; */
+  flex: 1;
+
+}
+
+#circle2 {
+  margin-left: 75px;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  font-size: 20px;
+  color: #000;
+  line-height: 350px;
+  /* text-align: center; */
+  border: 3px solid white;
+  /* position: relative;
+  top: 50px;
+  left:50px; */
+  /* display: inline-block; */
+  flex: 1;
+}
+#circle3 {
+  margin-left: 80px;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  font-size: 20px;
+  color: #000;
+  line-height: 350px;
+  /* text-align: center; */
+  border: 3px solid white;
+  /* position: relative;
+  top: 50px;
+  left:50px; */
+  /* display:inline-block; */
+  flex: 1;
+}
+
+.circles {
+  display: inline-flex;
+  list-style-type: none;
+  text-decoration: none;
+  width: 100%;
+}
