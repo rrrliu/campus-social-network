@@ -45,9 +45,9 @@ class MainHandler(BaseHandler):
                     dp_url = self.session.get('dp_url'),
                     email = self.session.get('email'),)
         if not (User.query(User.email == user.email).fetch()):
-            self.session['key'] = user.put()
-        # else:
-        #     self.session['key'] = User.query(User.email === user.email)
+            self.session['user_key'] = user.put().id()
+        else:
+            self.session['user_key'] = User.query(User.email == user.email).fetch()[0].key.id()
         all_users = User.query().fetch()
         all_posts = Post.query().fetch()
         info = {
@@ -77,8 +77,10 @@ class MainHandler(BaseHandler):
             local_dt = utc_dt.replace(tzinfo=pytz.utc).astimezone(local_tz)
             format = '%A at %I:%M %p'
             current_time = local_dt.strftime(format)
+            key = self.session.get('user_key')
 
-            post = Post(text = text,
+            post = Post(key = key,
+                        text = text,
                         img_url = img_url,
                         type = type,
                         timestamp = current_time,
