@@ -50,6 +50,7 @@ form {
   text-align: center;
 }
 
+
 #container{
   background-color: #e2e2e2;
   display: flex;
@@ -99,6 +100,8 @@ form {
   position: relative;
   top: 15px;
 }
+
+
 
 #nav {
   font-family: 'Lato', sans-serif;
