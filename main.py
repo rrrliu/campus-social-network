@@ -1,4 +1,3 @@
-
 import webapp2
 import jinja2
 import urllib
@@ -9,6 +8,7 @@ from datetime import datetime
 import time
 import pytz
 import json
+from google.appengine.ext.ndb import Key
 
 
 from webapp2_extras import sessions
@@ -45,9 +45,9 @@ class MainHandler(BaseHandler):
                     dp_url = self.session.get('dp_url'),
                     email = self.session.get('email'),)
         if not (User.query(User.email == user.email).fetch()):
-            self.session['user_key'] = user.put().id()
+            self.session['user_key_id'] = user.put().id()
         else:
-            self.session['user_key'] = User.query(User.email == user.email).fetch()[0].key.id()
+            self.session['user_key_id'] = User.query(User.email == user.email).fetch()[0].key.id()
         all_users = User.query().fetch()
         all_posts = Post.query().fetch()
         info = {
@@ -77,9 +77,10 @@ class MainHandler(BaseHandler):
             local_dt = utc_dt.replace(tzinfo=pytz.utc).astimezone(local_tz)
             format = '%A at %I:%M %p'
             current_time = local_dt.strftime(format)
-            key = self.session.get('user_key')
+            key_id = self.session.get('user_key_id')
+            key = Key('User', key_id)
 
-            post = Post(key = key,
+            post = Post(author_key = key,
                         text = text,
                         img_url = img_url,
                         type = type,
