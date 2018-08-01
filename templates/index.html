@@ -99,7 +99,7 @@
       </form>
       <!-- Feed -->
       {% for post in all_posts %}
-        <div class="filterDiv {{ post.type }}">
+        <div id='feed'class="filterDiv {{ post.type }}">
           <p id="firstline">
             <img style="width: 40px; height: 40px; border-radius: 50px; margin: 3px;" src="{{ post.author_pic }}" alt="">
             &ensp; <span style="font-size: 24px;">
