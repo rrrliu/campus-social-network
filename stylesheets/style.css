@@ -89,6 +89,19 @@ ul {
   width:40px;
 }
 
+#feed {
+  border: 1px solid black;
+  border-radius: 10px;
+  font-family: 'Lato';
+  margin-top: 0px;
+  margin-left: 10%;
+  margin-right: 10%;
+  padding: 3px;
+  text-align: center;
+  width: 80%;
+  height: 10%;
+}
+
 #header {
   background-color:#283593;
   font-size: 20px;
@@ -244,16 +257,7 @@ div.show {
 }
 
 .filterDiv {
-  display: inline-flex;
-  border: 1px solid black;
-  border-radius: 10px;
-  font-family: 'Lato';
-  margin-left: 10%;
-  margin-right: 10%;
-  padding: 3px;
-  text-align: center;
-  width: 80%;
-  height: 10%;
+  display: none;
 }
 
 img.post_image {
