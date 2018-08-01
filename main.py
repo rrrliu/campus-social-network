@@ -8,10 +8,8 @@ from model import User, Post
 from datetime import datetime
 import time
 import pytz
+import json
 
-
-
-import webapp2
 
 from webapp2_extras import sessions
 
@@ -50,7 +48,7 @@ class MainHandler(BaseHandler):
             self.session['key'] = user.put()
         # else:
             # self.session['key'] = User.query(User.email === user.email)
-
+        all_users = User.query().fetch()
         all_posts = Post.query().fetch()
         info = {
             'first_name' : self.session.get('f_name'),
@@ -58,6 +56,7 @@ class MainHandler(BaseHandler):
             'dp_url' : self.session.get('dp_url'),
             'email' : self.session.get('email'),
             'all_posts' : all_posts,
+            'all_users' : all_users,
         }
 
         self.response.write(results_template.render(info))

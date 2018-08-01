@@ -69,12 +69,12 @@
     </div>
     <div id='otheru'>
       <ul id='otheru'>
-        <li><img src="{{ dp_url }}" alt="Profile Picture" id='sidepic'></li>
-        <li><img src="{{ dp_url }}" alt="Profile Picture" id='sidepic'></li>
-        <li><img src="{{ dp_url }}" alt="Profile Picture" id='sidepic'></li>
-        <li><img src="{{ dp_url }}" alt="Profile Picture" id='sidepic'></li>
-        <li><img src="{{ dp_url }}" alt="Profile Picture" id='sidepic'></li>
-        <li><img src="{{ dp_url }}" alt="Profile Picture" id='sidepic'></li>
+        {% for user in all_users %}
+          <li style="color: white;">
+            <img src="{{ user.dp_url }}" alt="Profile Picture" id='sidepic'>
+            {{ user.first_name }}
+          </li>
+        {% endfor %}
       </ul>
     </div>
     <div class="mainbody">
