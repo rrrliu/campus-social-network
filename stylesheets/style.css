@@ -50,6 +50,9 @@ form {
   text-align: center;
 }
 
+ul {
+  list-style-type: none;
+}
 
 #container{
   background-color: #e2e2e2;
@@ -86,6 +89,19 @@ form {
   width:40px;
 }
 
+#feed {
+  border: 1px solid black;
+  border-radius: 10px;
+  font-family: 'Lato';
+  margin-top: 0px;
+  margin-left: 10%;
+  margin-right: 10%;
+  padding: 3px;
+  text-align: center;
+  width: 80%;
+  height: 10%;
+}
+
 #header {
   background-color:#283593;
   font-size: 20px;
@@ -118,11 +134,9 @@ form {
     background-color: transparent;
     border-radius: 8px;
     height: 25%;
-    list-style-type: none;
     padding: 0;
     width: 200px;
-
-  }
+}
 
 #nav li button {
     border-radius: 8px;
@@ -131,6 +145,7 @@ form {
     width: 200px;
     padding: 10px 16px;
     text-decoration: none;
+    outline: none;
 }
 
 /* Change the link color on hover */
@@ -139,7 +154,22 @@ form {
     color: white;
 }
 
+#otheru {
+  display: inline-block;
+  float: right;
+  list-style-type: none;
+  margin: 3%;
+  outline: none;
+}
+
+#otheru ul {
+  border: 1px solid #283593;
+  border-radius: 10px;
+  background-color: #283593;
+}
+
 #post {
+  border: 1px solid black;
   border-radius: 8px;
   margin: 10%;
   padding: 3px;
@@ -153,6 +183,11 @@ form {
   font-size: 20px;
   margin: 0px;
   padding: 0px;
+}
+
+#post p input:hover {
+  background-color: color:#ffca28
+
 }
 
 #search {
@@ -189,6 +224,17 @@ form {
     width: 50%;
 }
 
+#sidepic {
+  background-color: black;
+  border-radius: 50%;
+  color: transparent;
+  height: 50px;
+  margin: 5px;
+  margin-right: 15px;
+  width:50px;
+  text-align: center;
+}
+
 #wrapper {
   padding: 0;
   margin: 0;
@@ -215,5 +261,7 @@ div.show {
 }
 
 img.post_image {
+  margin: 0;
+  padding: 0;
   width: 240px;
 }
