@@ -1,4 +1,3 @@
-
 import webapp2
 import jinja2
 import urllib
@@ -9,6 +8,7 @@ from datetime import datetime
 import time
 import pytz
 import json
+from google.appengine.ext.ndb import Key
 
 
 from webapp2_extras import sessions
@@ -45,9 +45,9 @@ class MainHandler(BaseHandler):
                     dp_url = self.session.get('dp_url'),
                     email = self.session.get('email'),)
         if not (User.query(User.email == user.email).fetch()):
-            self.session['key'] = user.put()
-        # else:
-            # self.session['key'] = User.query(User.email === user.email)
+            self.session['user_key_id'] = user.put().id()
+        else:
+            self.session['user_key_id'] = User.query(User.email == user.email).fetch()[0].key.id()
         all_users = User.query().fetch()
         all_posts = Post.query().fetch()
         info = {
@@ -72,16 +72,23 @@ class MainHandler(BaseHandler):
         author_pic = self.session.get('dp_url')
 
         if not (len(text) == 0 and len(img_url) == 0):
-            current_time = datetime.now()
+            utc_dt = datetime.now()
+            local_tz = pytz.timezone('US/Pacific')
+            local_dt = utc_dt.replace(tzinfo=pytz.utc).astimezone(local_tz)
+            format = '%A at %I:%M %p'
+            current_time = local_dt.strftime(format)
+            key_id = self.session.get('user_key_id')
+            key = Key('User', key_id)
 
-            post = Post(text = text,
+            post = Post(author_key = key,
+                        text = text,
                         img_url = img_url,
                         type = type,
                         timestamp = current_time,
                         author_name = author_name,
                         author_pic = author_pic)
             post.put()
-            time.sleep(0.5)
+            time.sleep(0.1)
         self.redirect('/index')
 
 class WelcomeHandler(BaseHandler):
@@ -101,19 +108,21 @@ class ProfileHandler(BaseHandler):
         }
         self.response.write(results_template.render(info))
     def post(self):
-        # user_obj = self.session.get('key').get()
+        user_key = Key('User', self.session.get('user_key_id'))
+        user_obj = user_key.get()
 
         self.session['dp_url'] = self.request.get('dp_url')
         self.session['email'] = self.request.get('email')
         self.session['f_name'] = self.request.get('first_name')
         self.session['l_name'] = self.request.get('last_name')
 
-        # user_obj.dp_url = self.request.get('dp_url')
-        # user_obj.email = self.request.get('email')
-        # user_obj.first_name = self.request.get('first_name')
-        # user_obj.last_name = self.request.get('last_name')
-        # user_obj.put()
+        user_obj.dp_url = self.request.get('dp_url')
+        user_obj.email = self.request.get('email')
+        user_obj.first_name = self.request.get('first_name')
+        user_obj.last_name = self.request.get('last_name')
+        user_obj.put()
 
+        time.sleep(0.1)
         self.redirect('/index')
 
 class LoginHandler(BaseHandler):
