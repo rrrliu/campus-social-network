@@ -48,6 +48,8 @@ h3 {
 
 form {
   text-align: center;
+  margin-left: 11%;
+
 }
 
 ul {
@@ -94,10 +96,9 @@ ul {
   border-radius: 10px;
   font-family: 'Lato';
   margin-top: 0px;
-  margin-left: 10%;
-  margin-right: 10%;
+  margin-bottom: 1%;
   padding: 3px;
-  text-align: center;
+  padding-left: 10px;
   width: 80%;
   height: 10%;
 }
@@ -123,7 +124,9 @@ ul {
   font-family: 'Lato', sans-serif;
   float: left;
   height: 100%;
-  margin: 2%;
+  /* margin: 2%; */
+  margin-left: 5%;
+  margin-right: 5%;
   outline: none;
   position: static;
   text-align: center;
@@ -156,10 +159,14 @@ ul {
 
 #otheru {
   display: inline-block;
+  /* float: top; */
   float: right;
   list-style-type: none;
-  margin: 3%;
+  /* margin: 1%;
+  margin-top: -1%; */
+  margin-right: 5%;
   outline: none;
+  padding: 0;
 }
 
 #otheru ul {
@@ -168,13 +175,20 @@ ul {
   background-color: #283593;
 }
 
+#otheru li {
+  color: white;
+  width: 155px;
+}
+
 #post {
   border: 1px solid black;
   border-radius: 8px;
-  margin: 10%;
-  padding: 3px;
+  margin-top: 15%;
+  margin-bottom: 1%;
+  margin-left: -12%;
+  padding: 4px;
   text-align: center;
-  width: 80%;
+  width: 90%;
   height: 10%;
 }
 
@@ -225,14 +239,14 @@ ul {
 }
 
 #sidepic {
-  background-color: black;
+  background-color: white;
   border-radius: 50%;
   color: transparent;
   height: 50px;
   margin: 5px;
-  margin-right: 15px;
+  margin-right: 5px;
   width:50px;
-  text-align: center;
+  vertical-align: middle;
 }
 
 #wrapper {
@@ -241,8 +255,8 @@ ul {
 }
 
 .mainbody {
-  margin-top: 10%;
-  margin-left: 240px;
+  margin-left: 20%;
+  margin-right: 20%;
   width: 65%;
 }
 

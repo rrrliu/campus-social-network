@@ -35,27 +35,17 @@
             <li><a href='profile'><img src="{{ dp_url }}" alt="Profile Picture" id='dashpic'></a></li>
       </ul>
       <form class="confirm" action="/" method="get">
-          <button type="submit" onclick="signOut()">Return to Login</button>
+          <button type="submit" onclick="signOut()" style='float: right;'>Return to Login</button>
         <!-- <input type = "submit" value ="Sign-Out" style="float:right"/> -->
       </form>
     </div>
   </div>
     <!-- <div id="dash">
-      <ul>
-        <li><a id="uni" href="#top"><a/></li>
-        <li><a href="settings.html"><img class="icon" src="https://cdn3.iconfinder.com/data/icons/vector-icons-for-mobile-apps-2/512/Settings_black-512.png"></a></li>
-        <li><a href="profile.html"><img class="icon" src="https://static.thenounproject.com/png/630729-200.png"></a></li>
-      </ul>
     </div> -->
     <!-- the side bar -->
     <div id="nav">
       <div id="myBtnContainer">
-
         <ul>
-          <!-- <li><a href="index.html">General</a></li>
-          <li><a href="homework.html">Homework Help</a></li>
-          <li><a href="announcements.html">Announcements</a></li>
-          <li><a href="confessions.html">Confessions</a></li> -->
           <li><button class="btn active" type="button" onclick="filterSelection('all')">All</button></li>
           <li><button class="btn" type="button" onclick="filterSelection('sch')">Schoolwork</button></li>
           <li><button class="btn" type="button" onclick="filterSelection('ann')">Announcements</button></li>
@@ -67,24 +57,26 @@
         </ul>
       </div>
     </div>
-    <div id='otheru'>
-      <ul id='otheru'>
-        {% for user in all_users %}
-          <li style="color: white;">
-            <img src="{{ user.dp_url }}" alt="Profile Picture" id='sidepic'>
-            {{ user.first_name }}
-          </li>
-        {% endfor %}
-      </ul>
-    </div>
+    <!-- suggested users -->
+        <div id='otheru'>
+          <ul>
+            {% for user in all_users %}
+              <li>
+                <img src="{{ user.dp_url }}" alt="Profile Picture" id='sidepic'>
+                {{ user.first_name }}
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+        <!-- the whole main body -->
     <div class="mainbody">
       <!-- to post stuff -->
-      <form style="font-family: 'Lato', sans-serif; font-size: 15px; text-align: left;" method="post" action="/index">
+      <form style="font-family: 'Lato', sans-serif; font-size: 15px;" method="post" action="/index">
         <fieldset id='post'>
           <p> <input style="border: none; font-size: 15px; outline: none;" type="text" name="text" placeholder='Type something...'> </p> &emsp;
           <p> <input style="border: none;font-size: 15px; outline: none;" type="text" name="img_url" placeholder='Insert image url...'> </p>
           <select style="font-size: 15px; width: 15%;" name="type">
-            <option value="" selected disabled hidden>post type</option>
+            <option value="" selected disabled hidden>Choose tag</option>
             <option value="sch">Schoolwork</option>
             <option value="ann">Announcement</option>
             <option value="que">Question</option>
@@ -117,11 +109,8 @@
             <button type="button" onclick="upvote">Upvote</button>
           </p>
         </div>
-        <br>
-        <br>
       {% endfor %}
     </div>
-
   <!-- Javascript -->
     <script type="text/javascript">
       filterSelection("all")
