@@ -67,6 +67,16 @@
         </ul>
       </div>
     </div>
+    <div id='otheru'>
+      <ul id='otheru'>
+        <li><img src="{{ dp_url }}" alt="Profile Picture" id='sidepic'></li>
+        <li><img src="{{ dp_url }}" alt="Profile Picture" id='sidepic'></li>
+        <li><img src="{{ dp_url }}" alt="Profile Picture" id='sidepic'></li>
+        <li><img src="{{ dp_url }}" alt="Profile Picture" id='sidepic'></li>
+        <li><img src="{{ dp_url }}" alt="Profile Picture" id='sidepic'></li>
+        <li><img src="{{ dp_url }}" alt="Profile Picture" id='sidepic'></li>
+      </ul>
+    </div>
     <div class="mainbody">
       <!-- to post stuff -->
       <form style="font-family: 'Lato', sans-serif; font-size: 15px; text-align: left;" method="post" action="/index">
@@ -89,9 +99,9 @@
       </form>
       <!-- Feed -->
       {% for post in all_posts %}
-        <div style="border: 1px solid black; font-family: 'Lato';" class="filterDiv {{ post.type }}">
+        <div class="filterDiv {{ post.type }}">
           <p id="firstline">
-            <img style="width: 32px; height: 32px; border-radius: 50px;" src="{{ post.author_pic }}" alt="">
+            <img style="width: 40px; height: 40px; border-radius: 50px; margin: 3px;" src="{{ post.author_pic }}" alt="">
             &ensp; <span style="font-size: 24px;">
               {{ post.author_name }}
             </span>
@@ -115,7 +125,7 @@
 
       window.onscroll = function() {myFunction()};
 
-      var dash=document.getElementbyId('dash');
+      var dash=document.getElementById('dash');
       var sticky=dash.offsetTop;
 
       function myFunction() {
