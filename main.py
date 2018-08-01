@@ -138,7 +138,13 @@ class AboutUsHandler(BaseHandler):
         results_template = JINJA_ENVIRONMENT.get_template('templates/aboutUs.html')
         self.response.write(results_template.render())
 
-
+class DeleteHandler(BaseHandler):
+    def post(self):
+        # my_post = self.request.get('postDiv')
+        # my_obj = Post.query(User.key == my_post.key).fetch()[0]
+        # my_obj.delete()
+        # time.sleep(0.1)
+        self.redirect('/index')
 
 config = {}
 config['webapp2_extras.sessions'] = {
@@ -152,5 +158,6 @@ app = webapp2.WSGIApplication([
     ('/profile', ProfileHandler),
     ('/login', LoginHandler),
     ('/aboutus', AboutUsHandler),
+    ('/delete', DeleteHandler)
 ], config=config,
    debug=True)
