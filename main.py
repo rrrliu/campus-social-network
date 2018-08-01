@@ -122,6 +122,13 @@ class LoginHandler(BaseHandler):
         self.session['l_name'] = self.request.get('last_name')
         self.redirect('/index')
 
+class AboutUsHandler(BaseHandler):
+    def get(self):
+        results_template = JINJA_ENVIRONMENT.get_template('templates/aboutUs.html')
+        self.response.write(results_template.render())
+
+
+
 config = {}
 config['webapp2_extras.sessions'] = {
     'secret_key': 'my-super-secret-key',
@@ -133,5 +140,6 @@ app = webapp2.WSGIApplication([
     ('/index', MainHandler),
     ('/profile', ProfileHandler),
     ('/login', LoginHandler),
+    ('/aboutus', AboutUsHandler),
 ], config=config,
    debug=True)
