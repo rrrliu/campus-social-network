@@ -47,7 +47,7 @@ class MainHandler(BaseHandler):
         if not (User.query(User.email == user.email).fetch()):
             self.session['key'] = user.put()
         # else:
-            # self.session['key'] = User.query(User.email === user.email)
+        #     self.session['key'] = User.query(User.email === user.email)
         all_users = User.query().fetch()
         all_posts = Post.query().fetch()
         info = {
@@ -72,7 +72,11 @@ class MainHandler(BaseHandler):
         author_pic = self.session.get('dp_url')
 
         if not (len(text) == 0 and len(img_url) == 0):
-            current_time = datetime.now()
+            utc_dt = datetime.now()
+            local_tz = pytz.timezone('US/Pacific')
+            local_dt = utc_dt.replace(tzinfo=pytz.utc).astimezone(local_tz)
+            format = '%A at %I:%M %p'
+            current_time = local_dt.strftime(format)
 
             post = Post(text = text,
                         img_url = img_url,
