@@ -82,7 +82,10 @@ class MainHandler(BaseHandler):
             utc_dt = datetime.now()
             # local_tz = pytz.timezone('US/Pacific')
             # local_dt = utc_dt.replace(tzinfo=pytz.utc).astimezone(local_tz)
-            local_dt = utc_dt.replace(hour=utc_dt.hour-7)
+            updated_hour = utc_dt.hour - 7
+            if utc_dt.hour < 7:
+                updated_hour += 24
+            local_dt = utc_dt.replace(hour=updated_hour)
             format = '%A at %I:%M %p'
             current_time = local_dt.strftime(format)
             # current_time = utc_dt.strftime(format)
