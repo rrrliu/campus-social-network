@@ -95,7 +95,7 @@
       </ul>
       <div id="allcomments">
         {% for comment in all_comments %}
-          <div id="idividualcomment" class="">
+          <div id="individualcomment" class="">
             {% if comment.post_key == post.key %}
               {{ comment.author_name}}: {{ comment.text }}
             {% endif %}
