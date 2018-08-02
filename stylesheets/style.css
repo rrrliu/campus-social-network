@@ -56,6 +56,14 @@ ul {
   list-style-type: none;
 }
 
+#allcomments {
+  height: 90px;
+  overflow-y: scroll;
+  text-align: left;
+  padding-left: 20px;
+
+}
+
 #button {
 font-size: 18px;
 color: white;
@@ -72,6 +80,12 @@ outline: none;
   margin: 0px;
   padding: 0px;
   width: 100%;
+}
+
+#individualcomments {
+  font-size: 15px;
+  text-align: left;
+  padding: 2px;
 }
 
 #dash {
@@ -119,9 +133,37 @@ outline: none;
   top: 15px;
 }
 
+#like {
+  display: inline;
+  float: left;
+}
+
+#likebutton {
+  padding-left: 2px;
+  float: right;
+  font-size: 15px;
+  color: #ffca28;
+  vertical-align: middle;
+}
+
 #miscinfo {
   display: inline;
+  margin: 0px;
+  padding: 0;
   vertical-align: text-bottom;
+  top: 40px;
+  bottom: 10px;
+  border-bottom: 1px solid #283593;
+}
+
+#miscinfo input {
+  width: auto;
+  background-color: white;
+  border: 1px solid white;
+  border-radius: 8px;
+  font-size: 15px;
+  margin-bottom: 1%;
+  outline: none
 }
 
 #myBtnContainer {
@@ -173,6 +215,8 @@ outline: none;
   border: 1px solid #283593;
   border-radius: 10px;
   background-color: #283593;
+  height: 20%;
+  overflow-y: scroll;
   /* width: 160; */
 
 }
@@ -209,6 +253,7 @@ outline: none;
 #postbody {
   overflow: auto;
   vertical-align: middle;
+  padding: 10px;
   width: 100%;
 }
 
@@ -272,9 +317,23 @@ outline: none;
   padding: 0;
 }
 
+#userfeed ul {
+  list-style-type: none;
+  display: grid;
+  grid-row: auto;
+
+}
+
 #wrapper {
   padding: 0;
   margin: 0;
+}
+
+#writecomment {
+  background-color: white;
+  border: 1px solid white;
+  border-radius: 8px;
+  margin-bottom: 1%;
 }
 
 .feed {
@@ -309,6 +368,7 @@ img.post_image {
 }
 
 .like {
+  float: left;
   font-size: 14px;
   color: white;
   background-color: #283593;
