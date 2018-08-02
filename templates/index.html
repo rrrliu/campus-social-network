@@ -35,7 +35,7 @@
             <li><a href='profile'><img src="{{ dp_url }}" alt="Profile Picture" id='dashpic'></a></li>
       </ul>
       <form class="confirm" action="/logout" method="post">
-          <button id='button'type="submit" onclick="signOut()" style='float: right;'>Return to Login</button>
+          <button id='button'type="submit" onclick="signOut()" style='float: right;'>Log out</button>
         <!-- <input type = "submit" value ="Sign-Out" style="float:right"/> -->
       </form>
     </div>
@@ -73,7 +73,7 @@
             <option value="mis">Misc</option>
           </select>
           &emsp;
-          <p> <input style="font-size: 18px; color: white; background-color: #283593; border-radius: 10px; outline: none;" type="submit" value="post"> </p>
+          <p> <input style="font-size: 18px; color: white; background-color: #283593; border-radius: 10px; outline: none;" type="submit" value="share"> </p>
       </fieldset>
       </form>
       <!-- Feed -->
@@ -96,7 +96,7 @@
             <!-- <p>{{ post.type }}</p> -->
             <li id="miscinfo">
               <form action="/like" method="post">
-                <button class="like" type="submit" onclick="like()">Like   {{ post.score }} </button>
+                <button class="like" type="submit" onclick="like()">high five! &ensp;   {{ post.score }} </button>
                 <!-- {{ post.score }} -->
                 <input type="hidden" name="timestamp" value="{{ post.timestamp }}">
                 <input type="hidden" name="score" value="{{ post.score }}">
@@ -105,7 +105,7 @@
                 <input id="writecomment" type="text" name="comment" placeholder="Write a comment...">
                 <input type="hidden" name="timestamp" value="{{ post.timestamp }}">
                 <input type="hidden" name="author_name" value="{{ first_name }} {{ last_name }}">
-                <button class="comment" type="submit">Reply</button>
+                <button class="comment" type="submit">reply</button>
               </form>
                <!-- <form class="" action="/delete" method="post">
                 <button type="submit">Delete</button>
