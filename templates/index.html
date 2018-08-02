@@ -84,6 +84,7 @@
             <img style="width: 40px; height: 40px; border-radius: 50px; margin: 3px;" src="{{ post.author_pic }}" alt="">
             &ensp; <span style="font-size: 24px;">
               {{ post.author_name }}
+            <p id='timestamp'>  {{ post.timestamp }} </p>
             </span>
           </p>
           <p id=postbody>{{ post.text }}</p>
@@ -92,8 +93,6 @@
           </p>
           <!-- <p>{{ post.type }}</p> -->
           <p id='miscinfo'>
-            {{ post.timestamp }}
-            Likes: {{ post.score }}
           </p>
           <p>
             <form action="/like" method="post">
@@ -101,11 +100,11 @@
               <input type="hidden" name="timestamp" value="{{ post.timestamp }}">
               <input type="hidden" name="score" value="{{ post.score }}">
             </form>
+              <p id='likebutton'>{{ post.score }} </p>
             <form class="" action="/unlike" method="post">
               <button id="unlike" type="submit" onclick="unlike()">Liked</button>
               <input type="hidden" name="timestamp" value="{{ post.timestamp }}">
               <input type="hidden" name="score" value="{{ post.score }}">
-              <p id='likebutton'>{{ post.score }} </p>
             </form>
             <form class="" action="/comment" method="post">
               <input id='writecomment' type="text" name="comment" placeholder="Write a comment...">
