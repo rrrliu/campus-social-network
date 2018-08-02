@@ -178,10 +178,12 @@ class CommentHandler(BaseHandler):
         timestamp = self.request.get('timestamp')
         post_key = Post.query(Post.timestamp == timestamp).fetch()[0].key
         text = self.request.get('comment')
+        name = self.request.get('author_name')
         author_key = Key('User', self.session.get('user_key_id'))
         comment = Comment(author_key = author_key,
                           post_key = post_key,
-                          text = text)
+                          text = text,
+                          author_name = name)
         comment.put()
         time.sleep(0.1)
         self.redirect('/index')
