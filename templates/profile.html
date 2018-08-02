@@ -9,6 +9,7 @@
     <script src="https://apis.google.com/js/platform.js" async defer></script>
     <style>
       @import url('https://fonts.googleapis.com/css?family=Hind+Siliguri|Lato|Merriweather|Muli|Nanum+Gothic|Open+Sans|Playfair+Display|Poiret+One|Raleway|Roboto');
+      @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
     </style>
   </head>
   <body onload="foo();">
@@ -20,7 +21,7 @@
       </div>
       <div id='dash'>
         <ul id='container'>
-          <li> <a href='index?'> <img src="https://upload.wikimedia.org/wikipedia/commons/4/40/Home_Icon_by_Lakas.svg" alt="" id='dashpic'> </a> </li><br>
+          <li> <a href='index?'> <i class="material-icons">home</i> </a> </li><br>
           <li id='hello'>Hello, {{ first_name }}! </li>
           <li id='search'>
             <form action="/action_page.php">
@@ -31,23 +32,23 @@
         </ul>
     </div>
   </div>
-  <div id='info'>
+  <div>
     <form class="" action="/profile" method="post" id='profile'>
       <fieldset id='profile'>
         <img src="{{ dp_url }}" alt="Profile Picture" id='mainpic'>
         <h4>Username</h4>
         <ul>
-          <br> <li> First Name &ensp; <input type="text" name="first_name" value="{{ first_name }}"> </li><br>
-          <li> Last Name &ensp; <input type="text" name="last_name" value="{{ last_name }}"> </li><br>
-          <li> Email &ensp; <input type="text" name="email" value="{{ email }}"> </li>
-          <li> Image URL &ensp; <input type="text" name="dp_url" value="{{ dp_url }}"></li>
+          <br> <li> First Name &ensp; <input id='info' type="text" name="first_name" value="{{ first_name }}"> </li><br>
+          <li> Last Name &ensp; <input id='info' type="text" name="last_name" value="{{ last_name }}"> </li><br>
+          <li> Email &emsp; &ensp; &ensp; <input id='info' type="text" name="email" value="{{ email }}"> </li><br>
+          <li> Image URL &ensp; <input id='info' type="text" name="dp_url" value="{{ dp_url }}"></li>
         </ul>
       </fieldset>
-      <p><input type="submit" name="" value="Submit"></p>
+      <p><input id='button' type="submit" name="" value="Submit"></p>
     </form>
     <p>
       <form class="" action="/logout" method="post">
-        <button type="submit" onclick="signOut()">Return to Login</button>
+        <button id='button' type="submit" onclick="signOut()">Return to Login</button>
       </form>
     </p>
 
