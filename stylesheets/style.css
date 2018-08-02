@@ -384,7 +384,7 @@ img.post_image {
   outline: none;
 }
 
-#unlike {
+.unlike {
   font-size: 14px;
   color: white;
   background-color: #283593;

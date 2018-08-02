@@ -96,13 +96,7 @@
           </p>
           <p>
             <form action="/like" method="post">
-              <button id="like" type="submit" onclick="like()">Like</button>
-              <input type="hidden" name="timestamp" value="{{ post.timestamp }}">
-              <input type="hidden" name="score" value="{{ post.score }}">
-            </form>
-              <p id='likebutton'>{{ post.score }} </p>
-            <form class="" action="/unlike" method="post">
-              <button id="unlike" type="submit" onclick="unlike()">Liked</button>
+              <button class="like" type="submit" onclick="like()">Like</button>
               <input type="hidden" name="timestamp" value="{{ post.timestamp }}">
               <input type="hidden" name="score" value="{{ post.score }}">
             </form>
@@ -112,7 +106,7 @@
               <input type="hidden" name="author_name" value="{{ first_name }} {{ last_name }}">
               <button class="comment" type="submit">Reply</button>
             </form>
-            <!-- <form class="" action="/delete" method="post">
+             <!-- <form class="" action="/delete" method="post">
               <button type="submit">Delete</button>
               <input type="hidden" name="postDiv" value="{{ post }}">
             </form> -->
@@ -161,10 +155,6 @@
         }
       }
 
-      function like() {
-        $("#like").css("display","none");
-        $("#unlike").css("display", "block");
-      }
     </script>
   </body>
 </html>
