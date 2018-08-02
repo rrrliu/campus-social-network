@@ -1,3 +1,13 @@
+// function like() {
+//   $(".like").css("display", "none");
+//   $(".unlike").css("display", "block");
+// }
+//
+// function unlike() {
+//   $(".like").css("display", "block");
+//   $(".unlike").css("display", "none");
+// }
+
 function filterSelection(c) {
   var x, i;
   x = document.getElementsByClassName("filterDiv");

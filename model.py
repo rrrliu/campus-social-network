@@ -23,3 +23,7 @@ class Comment(ndb.Model):
     post_key = ndb.KeyProperty(Post)
     text = ndb.StringProperty(required=True)
     author_name = ndb.StringProperty(required=True)
+
+class Like(ndb.Model):
+    author_key = ndb.KeyProperty(User)
+    post_key = ndb.KeyProperty(Post)

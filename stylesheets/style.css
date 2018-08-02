@@ -308,7 +308,7 @@ img.post_image {
   width: 240px;
 }
 
-#like {
+.like {
   font-size: 14px;
   color: white;
   background-color: #283593;
@@ -316,7 +316,7 @@ img.post_image {
   outline: none;
 }
 
-#unlike {
+.unlike {
   font-size: 14px;
   color: white;
   background-color: #283593;

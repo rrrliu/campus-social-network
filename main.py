@@ -3,7 +3,7 @@ import jinja2
 import urllib
 import urllib2
 import os
-from model import User, Post, Comment
+from model import User, Post, Comment, Like
 from datetime import datetime
 import time
 import json
@@ -165,24 +165,23 @@ class DeleteHandler(BaseHandler):
 class LikeHandler(BaseHandler):
     def post(self):
         timestamp = self.request.get('timestamp')
-        score = self.request.get('score')
         post_key = Post.query(Post.timestamp == timestamp).fetch()[0].key
         post = post_key.get()
-        post.score = int(score) + 1
+        query = Like.query(Like.post_key == post.key).fetch()
+        like_author = None
+        author_key = Key('User', self.session.get('user_key_id'))
+        if len(query) > 0:
+            like_author = query[0].author_key
+        # if not (User.query(User.email == user.email).fetch()):
+        if not (like_author == author_key):
+            score = self.request.get('score')
+            post.score = int(score) + 1
+
+            Like(author_key = author_key,
+                 post_key = post_key).put()
         post.put()
         time.sleep(0.1)
         self.redirect('/index')
-
-class UnlikeHandler(BaseHandler):
-     def post(self):
-         timestamp = self.request.get('timestamp')
-         score = self.request.get('score')
-         post_key = Post.query(Post.timestamp == timestamp).fetch()[0].key
-         post = post_key.get()
-         post.score = int(score) -1
-         post.put()
-         time.sleep(0.1)
-         self.redirect('/index')
 
 class CommentHandler(BaseHandler):
     def post(self):
@@ -215,6 +214,5 @@ app = webapp2.WSGIApplication([
     ('/delete', DeleteHandler),
     ('/like', LikeHandler),
     ('/comment', CommentHandler),
-    ('/unlike', UnlikeHandler),
 ], config=config,
    debug=True)

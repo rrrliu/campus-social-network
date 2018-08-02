@@ -96,15 +96,15 @@
           </p>
           <p>
             <form action="/like" method="post">
-              <button id="like" type="submit" onclick="like()">Like</button>
+              <button class="like" type="submit" onclick="like()">Like</button>
               <input type="hidden" name="timestamp" value="{{ post.timestamp }}">
               <input type="hidden" name="score" value="{{ post.score }}">
             </form>
-            <form class="" action="/unlike" method="post">
-              <button id="unlike" type="submit" onclick="unlike()">Liked</button>
+            <!-- <form class="" action="/unlike" method="post">
+              <button class="unlike" type="submit" onclick="unlike()">Liked</button>
               <input type="hidden" name="timestamp" value="{{ post.timestamp }}">
               <input type="hidden" name="score" value="{{ post.score }}">
-            </form>
+            </form> -->
             <form class="" action="/comment" method="post">
               <input type="text" name="comment" placeholder="Write a comment...">
               <input type="hidden" name="timestamp" value="{{ post.timestamp }}">
@@ -157,10 +157,6 @@
         }
       }
 
-      function like() {
-        $("#like").css("display","none");
-        $("#unlike").css("display", "block");
-      }
     </script>
   </body>
 </html>
