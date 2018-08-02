@@ -34,7 +34,7 @@
             <li><a href='profile'><img src="{{ dp_url }}" alt="Profile Picture" id='dashpic'></a></li>
       </ul>
       <form class="confirm" action="/logout" method="post">
-          <button type="submit" onclick="signOut()" style='float: right;'>Return to Login</button>
+          <button id='button'type="submit" onclick="signOut()" style='float: right;'>Return to Login</button>
         <!-- <input type = "submit" value ="Sign-Out" style="float:right"/> -->
       </form>
     </div>
@@ -61,7 +61,7 @@
         <fieldset id='post'>
           <p> <input style="border: none; font-size: 15px; outline: none;" type="text" name="text" placeholder='Type something...'> </p> &emsp;
           <p> <input style="border: none;font-size: 15px; outline: none;" type="text" name="img_url" placeholder='Insert image url...'> </p>
-          <select style="font-size: 15px; width: 15%;" name="type">
+          <select style="font-size: 15px; width: 18%;" name="type">
             <option value="" selected disabled hidden>Choose tag</option>
             <option value="sch">Schoolwork</option>
             <option value="ann">Announcement</option>
@@ -85,13 +85,11 @@
               {{ post.author_name }}
             </span>
           </p>
-          <p>{{ post.text }}</p>
+          <p id=postbody>{{ post.text }}</p>
           <img class="post_image" src="{{ post.img_url }}" alt="">
           <!-- <p>{{ post.type }}</p> -->
-          <p>
+          <p id='miscinfo'>
             {{ post.timestamp }}
-          </p>
-          <p>
             Likes: {{ post.score }}
           </p>
           <p>
