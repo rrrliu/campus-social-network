@@ -8,6 +8,7 @@ from datetime import datetime
 import time
 import json
 from google.appengine.ext.ndb import Key
+from google.appengine.ext import ndb
 
 
 from webapp2_extras import sessions
@@ -90,7 +91,8 @@ class MainHandler(BaseHandler):
                         type = type,
                         timestamp = current_time,
                         author_name = author_name,
-                        author_pic = author_pic)
+                        author_pic = author_pic,
+                        score = 0)
             post.put()
             time.sleep(0.1)
         self.redirect('/index')
@@ -160,6 +162,13 @@ class DeleteHandler(BaseHandler):
 
 class LikeHandler(BaseHandler):
     def post(self):
+        timestamp = self.request.get('timestamp')
+        score = self.request.get('score')
+        post_key = Post.query(Post.timestamp == timestamp).fetch()[0].key
+        post = post_key.get()
+        post.score = int(score) + 1
+        post.put()
+        time.sleep(0.1)
         self.redirect('/index')
 
 class CommentHandler(BaseHandler):

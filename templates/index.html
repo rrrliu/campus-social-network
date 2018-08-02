@@ -105,8 +105,13 @@
             {{ post.timestamp }}
           </p>
           <p>
+            Likes: {{ post.score }}
+          </p>
+          <p>
             <form action="/like" method="post">
               <button class="like" type="submit" onclick="like">Like</button>
+              <input type="hidden" name="timestamp" value="{{ post.timestamp }}">
+              <input type="hidden" name="score" value="{{ post.score }}">
             </form>
             <form class="" action="/comment" method="post">
               <input type="text" name="comment" placeholder="Write a comment...">
