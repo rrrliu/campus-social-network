@@ -111,11 +111,17 @@ class WelcomeHandler(BaseHandler):
 class ProfileHandler(BaseHandler):
     def get(self):
         results_template = JINJA_ENVIRONMENT.get_template('templates/profile.html')
+        all_posts = Post.query().fetch()
+        user_key = Key('User', self.session.get('user_key_id'))
+        user_posts = Post.query(Post.author_key == user_key).fetch()
+        all_comments = Comment.query().fetch()
         info = {
             'first_name' : self.session.get('f_name'),
             'last_name' : self.session.get('l_name'),
             'email' : self.session.get('email'),
             'dp_url' : self.session.get('dp_url'),
+            'user_posts' : user_posts,
+            'all_comments' : all_comments
         }
         self.response.write(results_template.render(info))
     def post(self):
