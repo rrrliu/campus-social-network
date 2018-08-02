@@ -6,8 +6,6 @@ border-radius: 10px;
 outline: none;
 }
 
-
-
 #header {
   /*background-color: #b6ffff;*/
   font-size: 50px;
@@ -65,7 +63,7 @@ form {
 
 h4 {
   color: white;
-  font-size:20px;
+  font-size:25px;
   font-family: 'Raleway';
 }
 fieldset {
@@ -135,4 +133,39 @@ p {
 
 #pic {
   border-radius: 50px;
+}
+
+#email_input {
+border-radius: 10px;
+border:20px;
+border: 2px solid #283593;
+font-family:'Raleway';
+font-size: 18px;
+
+}
+
+#firstname_input {
+  border-radius: 10px;
+  border: 2px solid #283593;
+  font-family:'Raleway';
+  font-size: 18px;
+
+}
+
+#lastname_input {
+  border-radius: 10px;
+  border: 2px solid #283593;
+  font-family:'Raleway';
+  font-size: 18px;
+
+
+}
+
+#pic_input {
+  border-radius: 10px;
+  border: 2px solid #283593;
+  font-family:'Raleway';
+  font-size: 18px;
+
+
 }
