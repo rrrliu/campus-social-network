@@ -9,6 +9,7 @@
   font-family: 'Montserrat', sans-serif;
 
   }
+
  html, body {
   margin: 0;
   height: 100%;
@@ -196,6 +197,7 @@ img {
   margin: 40px 20px 0 20px;
   padding-bottom: 5px;
   font-weight: lighter;
+  font-family: 'Montserrat', sans-serif;
 }
 
 /* .text p {
