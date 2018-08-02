@@ -3,7 +3,7 @@ import jinja2
 import urllib
 import urllib2
 import os
-from model import User, Post
+from model import User, Post, Comment
 from datetime import datetime
 import time
 import json
@@ -173,6 +173,14 @@ class LikeHandler(BaseHandler):
 
 class CommentHandler(BaseHandler):
     def post(self):
+        timestamp = self.request.get('timestamp')
+        post_key = Post.query(Post.timestamp == timestamp).fetch()[0].key
+        text = self.request.get('comment')
+        author_key = Key('User', self.session.get('user_key_id'))
+        comment = Comment(author_key = author_key,
+                          post_key = post_key,
+                          text = text)
+        comment.put()
         self.redirect('/index')
 
 config = {}

@@ -102,6 +102,7 @@
             </form>
             <form class="" action="/comment" method="post">
               <input type="text" name="comment" placeholder="Write a comment...">
+              <input type="hidden" name="timestamp" value="{{ post.timestamp }}">
               <button class="comment" type="submit">Reply</button>
             </form>
             <!-- <form class="" action="/delete" method="post">
