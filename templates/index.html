@@ -97,6 +97,7 @@
           <p>
             <form action="/like" method="post">
               <button class="like" type="submit" onclick="like()">Like</button>
+              {{ post.score }}
               <input type="hidden" name="timestamp" value="{{ post.timestamp }}">
               <input type="hidden" name="score" value="{{ post.score }}">
             </form>
