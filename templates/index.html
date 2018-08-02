@@ -79,27 +79,25 @@
       {% for post in all_posts %}
       <!-- <fieldset id='userfeed'> -->
         <div id='userfeed' class="filterDiv {{ post.type }}">
-          <p id="firstline">
+          <ul>
+          <li id="firstline">
             <img style="width: 40px; height: 40px; border-radius: 50px; margin: 3px;" src="{{ post.author_pic }}" alt="">
             &ensp; <span style="font-size: 24px;">
-              {{ post.author_name }}
-            </span>
-          </p>
-          <p id=postbody>{{ post.text }}</p>
+              {{ post.author_name }} </span>
+            <span style='font-size: 12px; color: #bebfc6;'>  {{ post.timestamp }}  </span>
+          </li>
+          <li id=postbody>{{ post.text }}</li>
           <img class="post_image" src="{{ post.img_url }}" alt="">
           <!-- <p>{{ post.type }}</p> -->
-          <p id='miscinfo'>
-            {{ post.timestamp }}
-            Likes: {{ post.score }}
-          </p>
-          <p>
-            <form action="/like" method="post">
+          <li id='miscinfo'>
+            <form id='like' action="/like" method="post">
               <button class="like" type="submit" onclick="like">Like</button>
               <input type="hidden" name="timestamp" value="{{ post.timestamp }}">
               <input type="hidden" name="score" value="{{ post.score }}">
+              <p id='likebutton'>{{ post.score }} </p>
             </form>
             <form class="" action="/comment" method="post">
-              <input type="text" name="comment" placeholder="Write a comment...">
+              <input id='writecomment' type="text" name="comment" placeholder="Write a comment...">
               <input type="hidden" name="timestamp" value="{{ post.timestamp }}">
               <button class="comment" type="submit">Reply</button>
             </form>
@@ -107,14 +105,17 @@
               <button type="submit">Delete</button>
               <input type="hidden" name="postDiv" value="{{ post }}">
             </form> -->
-          </p>
+          </li>
+        </ul>
+        <div id='allcomments'>
           {% for comment in all_comments %}
-            <div class="">
+            <div id='idividualcomment' class="">
               {% if comment.post_key == post.key %}
                 {{ comment.text }}
               {% endif %}
             </div>
           {% endfor %}
+        </div>
         </div>
       {% endfor %}
     </div>
