@@ -135,6 +135,16 @@ outline: none;
   top: 15px;
 }
 
+#highFive {
+/* position: relative;
+top:30px;
+right: 275px; */
+float: left;
+vertical-align: middle;
+
+
+}
+
 #like {
   display: inline;
   float: left;
