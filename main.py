@@ -173,6 +173,17 @@ class LikeHandler(BaseHandler):
         time.sleep(0.1)
         self.redirect('/index')
 
+class UnlikeHandler(BaseHandler):
+     def post(self):
+         timestamp = self.request.get('timestamp')
+         score = self.request.get('score')
+         post_key = Post.query(Post.timestamp == timestamp).fetch()[0].key
+         post = post_key.get()
+         post.score = int(score) -1
+         post.put()
+         time.sleep(0.1)
+         self.redirect('/index')
+
 class CommentHandler(BaseHandler):
     def post(self):
         timestamp = self.request.get('timestamp')
@@ -202,5 +213,6 @@ app = webapp2.WSGIApplication([
     ('/delete', DeleteHandler),
     ('/like', LikeHandler),
     ('/comment', CommentHandler),
+    ('/unlike', UnlikeHandler),
 ], config=config,
    debug=True)

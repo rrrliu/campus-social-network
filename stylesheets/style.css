@@ -308,12 +308,21 @@ img.post_image {
   width: 240px;
 }
 
-.like {
+#like {
   font-size: 14px;
   color: white;
   background-color: #283593;
   border-radius: 10px;
   outline: none;
+}
+
+#unlike {
+  font-size: 14px;
+  color: white;
+  background-color: #283593;
+  border-radius: 10px;
+  outline: none;
+  display: none;
 }
 
 i.material-icons {
