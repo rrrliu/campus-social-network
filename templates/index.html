@@ -34,7 +34,7 @@
             </form> </li>
             <li><a href='profile'><img src="{{ dp_url }}" alt="Profile Picture" id='dashpic'></a></li>
       </ul>
-      <form class="confirm" action="/" method="get">
+      <form class="confirm" action="/logout" method="post">
           <button type="submit" onclick="signOut()" style='float: right;'>Return to Login</button>
         <!-- <input type = "submit" value ="Sign-Out" style="float:right"/> -->
       </form>
@@ -105,8 +105,14 @@
             {{ post.timestamp }}
           </p>
           <p>
-            <button id="like_button" type="button" onclick="like">Like</button>
-            <!-- <form class="" action="delete" method="post">
+            <form action="/like" method="post">
+              <button class="like" type="submit" onclick="like">Like</button>
+            </form>
+            <form class="" action="/comment" method="post">
+              <input type="text" name="comment" placeholder="Write a comment...">
+              <button type="submit" name="button"></button>
+            </form>
+            <!-- <form class="" action="/delete" method="post">
               <button type="submit">Delete</button>
               <input type="hidden" name="postDiv" value="{{ post }}">
             </form> -->

@@ -37,6 +37,9 @@ JINJA_ENVIRONMENT = jinja2.Environment(
 
 class MainHandler(BaseHandler):
     def get(self):
+        if (self.session.get('email') == None):
+            self.redirect('/')
+
         results_template = JINJA_ENVIRONMENT.get_template('templates/index.html')
 
         user = User(first_name = self.session.get('f_name'),
@@ -134,6 +137,14 @@ class LoginHandler(BaseHandler):
         self.session['l_name'] = self.request.get('last_name')
         self.redirect('/index')
 
+class LogoutHandler(BaseHandler):
+    def post(self):
+        self.session['dp_url'] = None
+        self.session['email'] = None
+        self.session['f_name'] = None
+        self.session['l_name'] = None
+        self.redirect('/')
+
 class AboutUsHandler(BaseHandler):
     def get(self):
         results_template = JINJA_ENVIRONMENT.get_template('templates/aboutUs.html')
@@ -147,6 +158,14 @@ class DeleteHandler(BaseHandler):
         # time.sleep(0.1)
         self.redirect('/index')
 
+class LikeHandler(BaseHandler):
+    def post(self):
+        self.redirect('/index')
+
+class CommentHandler(BaseHandler):
+    def post(self):
+        self.redirect('/index')
+
 config = {}
 config['webapp2_extras.sessions'] = {
     'secret_key': 'my-super-secret-key',
@@ -158,7 +177,10 @@ app = webapp2.WSGIApplication([
     ('/index', MainHandler),
     ('/profile', ProfileHandler),
     ('/login', LoginHandler),
+    ('/logout', LogoutHandler),
     ('/aboutus', AboutUsHandler),
-    ('/delete', DeleteHandler)
+    ('/delete', DeleteHandler),
+    ('/like', LikeHandler),
+    ('/comment', CommentHandler),
 ], config=config,
    debug=True)
