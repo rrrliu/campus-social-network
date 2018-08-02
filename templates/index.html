@@ -101,12 +101,6 @@
               <input type="hidden" name="timestamp" value="{{ post.timestamp }}">
               <input type="hidden" name="score" value="{{ post.score }}">
             </form>
-            <!-- <form class="" action="/unlike" method="post">
-              <button class="unlike" type="submit" onclick="unlike()">Liked</button>
-              <input type="hidden" name="timestamp" value="{{ post.timestamp }}">
-              <input type="hidden" name="score" value="{{ post.score }}">
-              <p id='likebutton'>{{ post.score }} </p>
-            </form>
             <form class="" action="/comment" method="post">
               <input id='writecomment' type="text" name="comment" placeholder="Write a comment...">
               <input type="hidden" name="timestamp" value="{{ post.timestamp }}">
@@ -116,7 +110,7 @@
              <form class="" action="/delete" method="post">
               <button type="submit">Delete</button>
               <input type="hidden" name="postDiv" value="{{ post }}">
-            </form> -->
+            </form>
           </li>
         </ul>
         <div id='allcomments'>
