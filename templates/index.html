@@ -110,6 +110,13 @@
               <input type="hidden" name="postDiv" value="{{ post }}">
             </form> -->
           </p>
+          {% for comment in all_comments %}
+            <div class="">
+              {% if comment.post_key == post.key %}
+                {{ comment.text }}
+              {% endif %}
+            </div>
+          {% endfor %}
         </div>
       {% endfor %}
     </div>

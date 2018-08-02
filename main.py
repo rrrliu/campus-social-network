@@ -53,6 +53,7 @@ class MainHandler(BaseHandler):
             self.session['user_key_id'] = User.query(User.email == user.email).fetch()[0].key.id()
         all_users = User.query().fetch()
         all_posts = Post.query().fetch()
+        all_comments = Comment.query().fetch()
         info = {
             'first_name' : self.session.get('f_name'),
             'last_name' : self.session.get('l_name'),
@@ -60,6 +61,7 @@ class MainHandler(BaseHandler):
             'email' : self.session.get('email'),
             'all_posts' : all_posts,
             'all_users' : all_users,
+            'all_comments' : all_comments
         }
 
         self.response.write(results_template.render(info))
@@ -181,6 +183,7 @@ class CommentHandler(BaseHandler):
                           post_key = post_key,
                           text = text)
         comment.put()
+        time.sleep(0.1)
         self.redirect('/index')
 
 config = {}
