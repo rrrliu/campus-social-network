@@ -82,45 +82,45 @@
           <ul>
           <li id="firstline">
              <div style="font-size: 24px; display: inline-grid; grid-template-columns: 8% 32% 60%; width: 90%;">
-            <img style="width: 40px; height: 40px; border-radius: 50px; margin: 3px;" src="{{ post.author_pic }}" alt="">
-            &ensp;
-             {{ post.author_name }}
-            <p id='timestamp'> | {{ post.timestamp }} </p>
-             </div>
-          </li>
-          <p id=postbody>{{ post.text }}</p>
-          <p>
-            <img class="post_image" src="{{ post.img_url }}" alt="">
-          </p>
-          <!-- <p>{{ post.type }}</p> -->
-          <li id='miscinfo'>
-            <form action="/like" method="post">
-              <button class="like" type="submit" onclick="like()">Like   {{ post.score }} </button>
-              <!-- {{ post.score }} -->
-              <input type="hidden" name="timestamp" value="{{ post.timestamp }}">
-              <input type="hidden" name="score" value="{{ post.score }}">
-            </form>
-            <form class="" action="/comment" method="post">
-              <input id='writecomment' type="text" name="comment" placeholder="Write a comment...">
-              <input type="hidden" name="timestamp" value="{{ post.timestamp }}">
-              <input type="hidden" name="author_name" value="{{ first_name }} {{ last_name }}">
-              <button class="comment" type="submit">Reply</button>
-            </form>
-             <!-- <form class="" action="/delete" method="post">
-              <button type="submit">Delete</button>
-              <input type="hidden" name="postDiv" value="{{ post }}">
-            </form> -->
-          </li>
-        </ul>
-        <div id='allcomments'>
-          {% for comment in all_comments %}
-            <div id='idividualcomment' class="">
-              {% if comment.post_key == post.key %}
-                {{ comment.author_name}}: {{ comment.text }}
-              {% endif %}
-            </div>
-          {% endfor %}
-        </div>
+              <img style="width: 40px; height: 40px; border-radius: 50px; margin: 3px;" src="{{ post.author_pic }}" alt="">
+              &ensp;
+               {{ post.author_name }}
+              <p id='timestamp'> | {{ post.timestamp }} </p>
+               </div>
+            </li>
+            <p id=postbody>{{ post.text }}</p>
+            <p>
+              <img class="post_image" src="{{ post.img_url }}" alt="">
+            </p>
+            <!-- <p>{{ post.type }}</p> -->
+            <li id='miscinfo'>
+              <form action="/like" method="post">
+                <button class="like" type="submit" onclick="like()">Like   {{ post.score }} </button>
+                <!-- {{ post.score }} -->
+                <input type="hidden" name="timestamp" value="{{ post.timestamp }}">
+                <input type="hidden" name="score" value="{{ post.score }}">
+              </form>
+              <form class="" action="/comment" method="post">
+                <input id='writecomment' type="text" name="comment" placeholder="Write a comment...">
+                <input type="hidden" name="timestamp" value="{{ post.timestamp }}">
+                <input type="hidden" name="author_name" value="{{ first_name }} {{ last_name }}">
+                <button class="comment" type="submit">Reply</button>
+              </form>
+               <!-- <form class="" action="/delete" method="post">
+                <button type="submit">Delete</button>
+                <input type="hidden" name="postDiv" value="{{ post }}">
+              </form> -->
+            </li>
+          </ul>
+          <div id='allcomments'>
+            {% for comment in all_comments %}
+              <div id='idividualcomment' class="">
+                {% if comment.post_key == post.key %}
+                  {{ comment.author_name}}: {{ comment.text }}
+                {% endif %}
+              </div>
+            {% endfor %}
+          </div>
         </div>
       {% endfor %}
     </div>
