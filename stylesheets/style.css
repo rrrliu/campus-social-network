@@ -280,7 +280,15 @@ img.post_image {
   width: 240px;
 }
 
-#like_button {
+.like {
+  font-size: 14px;
+  color: white;
+  background-color: #283593;
+  border-radius: 10px;
+  outline: none;
+}
+
+.comment {
   font-size: 14px;
   color: white;
   background-color: #283593;
