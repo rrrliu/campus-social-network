@@ -149,7 +149,6 @@ outline: none;
 }
 
 #miscinfo {
-  text-align: left;
   display: table-row;
   margin: 0px;
   padding: 0;
@@ -322,6 +321,7 @@ outline: none;
 #userfeed {
   background-color: white;
   border: 1px solid white;
+  border-top: 7px solid #ffca28;
   border-radius: 10px;
   font-family: 'Lato';
   /* margin-left: 10%; */
