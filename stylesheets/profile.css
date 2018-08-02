@@ -312,3 +312,10 @@ img.post_image {
   font-size: 12px;
   color: #bebfc6;
 }
+
+#firstline {
+  display: inline-block;
+  width: 100%;
+  padding-right: 30px;
+  text-align: left;
+}
