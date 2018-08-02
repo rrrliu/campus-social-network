@@ -376,6 +376,15 @@ img.post_image {
   outline: none;
 }
 
+#unlike {
+  font-size: 14px;
+  color: white;
+  background-color: #283593;
+  border-radius: 10px;
+  outline: none;
+  display: none;
+}
+
 i.material-icons {
   font-size: 40px;
   color: white;
