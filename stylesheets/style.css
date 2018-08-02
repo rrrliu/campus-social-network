@@ -82,7 +82,6 @@ ul {
 
 
 #dashpic {
-  background-color: black;
   border-radius: 50%;
   color: transparent;
   height: 40px;
@@ -91,16 +90,18 @@ ul {
   width:40px;
 }
 
-#feed {
+#userfeed {
   border: 1px solid black;
   border-radius: 10px;
   font-family: 'Lato';
-  margin-top: 0px;
-  margin-bottom: 1%;
-  padding: 3px;
-  padding-left: 10px;
-  width: 80%;
+  margin-left: 10%;
+  margin-bottom: 2%;
+  width: 82%;
   height: 10%;
+}
+
+#userfeed p {
+  padding: 0px;
 }
 
 #header {
@@ -120,20 +121,18 @@ ul {
 
 
 
-#nav {
+#myBtnContainer {
   font-family: 'Lato', sans-serif;
-  float: left;
+  /* float: right; */
   height: 100%;
-  /* margin: 2%; */
-  margin-left: 5%;
-  margin-right: 5%;
+  margin-left: 15%;
   outline: none;
   position: static;
   text-align: center;
   width: 200px;
 }
 
-#nav ul {
+#myBtnContainer ul {
     background-color: transparent;
     border-radius: 8px;
     height: 25%;
@@ -141,7 +140,7 @@ ul {
     width: 200px;
 }
 
-#nav li button {
+#myBtnContainer li button {
     border-radius: 8px;
     display: block;
     color: #000;
@@ -152,54 +151,51 @@ ul {
 }
 
 /* Change the link color on hover */
-#nav li button:hover {
+#myBtnContainer li button:hover {
     background-color: #555;
     color: white;
 }
 
-#otheru {
-  display: inline-block;
-  /* float: top; */
-  float: right;
+#otherusers {
   list-style-type: none;
-  /* margin: 1%;
-  margin-top: -1%; */
-  margin-right: 5%;
+  margin-right: 15%;
   outline: none;
   padding: 0;
+  width: 180px;
 }
 
-#otheru ul {
+#otherusers ul {
   border: 1px solid #283593;
   border-radius: 10px;
   background-color: #283593;
+  /* width: 160; */
+
 }
 
-#otheru li {
+#otherusers li {
   color: white;
-  width: 155px;
+  /* width: 155px; */
 }
 
-#post {
+#topost {
   border: 1px solid black;
   border-radius: 8px;
-  margin-top: 15%;
   margin-bottom: 1%;
-  margin-left: -12%;
+  margin-left: -1%;
   padding: 4px;
   text-align: center;
   width: 90%;
   height: 10%;
 }
 
-#post p {
+#topost p {
   display: inline-block;
   font-size: 20px;
   margin: 0px;
   padding: 0px;
 }
 
-#post p input:hover {
+#topost p input:hover {
   background-color: color:#ffca28
 
 }
@@ -243,8 +239,8 @@ ul {
   border-radius: 50%;
   color: transparent;
   height: 50px;
-  margin: 5px;
-  margin-right: 5px;
+  /* margin: 5px;
+  margin-right: 5px; */
   width:50px;
   vertical-align: middle;
 }
@@ -254,10 +250,14 @@ ul {
   margin: 0;
 }
 
-.mainbody {
-  margin-left: 20%;
-  margin-right: 20%;
+.feed {
   width: 65%;
+}
+
+.mainbody {
+  display: flex;
+  flex-direction: row;
+  margin-top: 10%;
 }
 
 .sticky {
@@ -275,9 +275,15 @@ div.show {
 }
 
 img.post_image {
-  margin: 0;
+
   padding: 0;
   width: 240px;
+
+}
+
+i.material-icons {
+  font-size: 40px;
+  color: #283593;
 }
 
 #like_button {

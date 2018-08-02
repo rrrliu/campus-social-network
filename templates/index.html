@@ -25,7 +25,7 @@
         <!-- the top navigation bar -->
       <div id='dash'>
         <ul style="font-family: 'Raleway'" id='container'>
-          <li> <a href='index?'> <i class="large material-icons" id='dashpic '>home</i> </a> </li><br>
+          <li> <a href='index?'> <i class="material-icons">home</i> </a> </li><br>
           <li id='hello'>Hello, {{ first_name }}!</li>
           <li id='search'>
             <form action="" style='padding-left: 5%;padding-right: 5%;'>
@@ -40,10 +40,8 @@
       </form>
     </div>
   </div>
-    <!-- <div id="dash">
-    </div> -->
+  <div class='mainbody'>
     <!-- the side bar -->
-    <div id="nav">
       <div id="myBtnContainer">
         <ul>
           <li><button class="btn active" type="button" onclick="filterSelection('all')">All</button></li>
@@ -56,23 +54,11 @@
           <li><button class="btn" type="button" onclick="filterSelection('mis')">Misc</button></li>
         </ul>
       </div>
-    </div>
-    <!-- suggested users -->
-        <div style="font-family:'Open sans'" id='otheru'>
-          <ul>
-            {% for user in all_users %}
-              <li>
-                <img src="{{ user.dp_url }}" alt="Profile Picture" id='sidepic'>
-                {{ user.first_name }}
-              </li>
-            {% endfor %}
-          </ul>
-        </div>
         <!-- the whole main body -->
-    <div class="mainbody">
+    <div class="feed">
       <!-- to post stuff -->
       <form style="font-family: 'Lato', sans-serif; font-size: 15px;" method="post" action="/index">
-        <fieldset id='post'>
+        <fieldset id='topost'>
           <p> <input style="border: none; font-size: 15px; outline: none;" type="text" name="text" placeholder='Type something...'> </p> &emsp;
           <p> <input style="border: none;font-size: 15px; outline: none;" type="text" name="img_url" placeholder='Insert image url...'> </p>
           <select style="font-size: 15px; width: 15%;" name="type">
@@ -91,7 +77,7 @@
       </form>
       <!-- Feed -->
       {% for post in all_posts %}
-        <div id='feed'class="filterDiv {{ post.type }}">
+        <div id='userfeed'class="filterDiv {{ post.type }}">
           <p id="firstline">
             <img style="width: 40px; height: 40px; border-radius: 50px; margin: 3px;" src="{{ post.author_pic }}" alt="">
             &ensp; <span style="font-size: 24px;">
@@ -114,6 +100,19 @@
         </div>
       {% endfor %}
     </div>
+    <!-- suggested users -->
+        <div style="font-family:'Open sans'" id='otherusers'>
+          <ul>
+            {% for user in all_users %}
+              <li>
+                <img src="{{ user.dp_url }}" alt="Profile Picture" id='sidepic'>
+                {{ user.first_name }}
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+  </div>
+
   <!-- Javascript -->
     <script type="text/javascript">
       filterSelection("all")
