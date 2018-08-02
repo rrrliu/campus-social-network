@@ -112,6 +112,7 @@ outline: none;
 }
 
 #firstline {
+  float: left;
   display: block;
   width: 100%;
   padding-right: 30px;
