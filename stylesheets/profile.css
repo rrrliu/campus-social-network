@@ -123,6 +123,13 @@ outline: none;
 #info {
   text-align: justify;
   outline: none;
+  border-radius: 5px;
+  border: 2px solid #484848;
+  /* border: 2px solid #ffca28; */
+  /* border: 2px solid #283593; */
+  font-family:'Raleway';
+  font-size: 14px;
+  color: gray;
 }
 
 #mainpic {

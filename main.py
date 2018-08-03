@@ -54,6 +54,18 @@ class MainHandler(BaseHandler):
         all_users = User.query().fetch()
         all_posts = Post.query().order(-Post.date_time).fetch()
         all_comments = Comment.query().order(Comment.date_time).fetch()
+
+        for post in all_posts:
+            author = post.author_key.get()
+            post.author_name = author.first_name + ' ' + author.last_name
+            post.author_pic = author.dp_url
+            author.put()
+
+        for comment in all_comments:
+            author = comment.author_key.get()
+            comment.author_name = author.first_name + ' ' + author.last_name
+            author.put()
+
         info = {
             'first_name' : self.session.get('f_name'),
             'last_name' : self.session.get('l_name'),
@@ -114,8 +126,20 @@ class ProfileHandler(BaseHandler):
         results_template = JINJA_ENVIRONMENT.get_template('templates/profile.html')
         all_posts = Post.query().fetch()
         user_key = Key('User', self.session.get('user_key_id'))
-        user_posts = Post.query(Post.author_key == user_key).fetch()
-        all_comments = Comment.query().fetch()
+        user_posts = Post.query(Post.author_key == user_key).order(-Post.date_time).fetch()
+        all_comments = Comment.query().order(Comment.date_time).fetch()
+
+        for post in all_posts:
+            author = post.author_key.get()
+            post.author_name = author.first_name + ' ' + author.last_name
+            post.author_pic = author.dp_url
+            author.put()
+
+        for comment in all_comments:
+            author = comment.author_key.get()
+            comment.author_name = author.first_name + ' ' + author.last_name
+            author.put()
+
         info = {
             'first_name' : self.session.get('f_name'),
             'last_name' : self.session.get('l_name'),
@@ -141,7 +165,7 @@ class ProfileHandler(BaseHandler):
         user_obj.put()
 
         time.sleep(0.1)
-        self.redirect('/index')
+        self.redirect('/profile')
 
 class LoginHandler(BaseHandler):
     def post(self):
