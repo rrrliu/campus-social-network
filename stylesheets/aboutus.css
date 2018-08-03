@@ -221,9 +221,14 @@ img {
 } */
 
 @media only screen and (max-width: 600px) {
+  #button {
+    top: 130px;
+    margin-left: auto;
+    margin-right: auto;
+  }
   .row {
     display: block;
     overflow-y: scroll;
-    height: 70%;
+    height: 60%;
   }
 }
