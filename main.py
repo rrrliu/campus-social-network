@@ -60,6 +60,12 @@ class MainHandler(BaseHandler):
             post.author_name = author.first_name + ' ' + author.last_name
             post.author_pic = author.dp_url
             author.put()
+
+        for comment in all_comments:
+            author = comment.author_key.get()
+            comment.author_name = author.first_name + ' ' + author.last_name
+            author.put()
+
         info = {
             'first_name' : self.session.get('f_name'),
             'last_name' : self.session.get('l_name'),
@@ -127,6 +133,11 @@ class ProfileHandler(BaseHandler):
             author = post.author_key.get()
             post.author_name = author.first_name + ' ' + author.last_name
             post.author_pic = author.dp_url
+            author.put()
+
+        for comment in all_comments:
+            author = comment.author_key.get()
+            comment.author_name = author.first_name + ' ' + author.last_name
             author.put()
 
         info = {
