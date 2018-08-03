@@ -52,8 +52,8 @@ class MainHandler(BaseHandler):
         else:
             self.session['user_key_id'] = User.query(User.email == user.email).fetch()[0].key.id()
         all_users = User.query().fetch()
-        all_posts = Post.query().fetch()
-        all_comments = Comment.query().fetch()
+        all_posts = Post.query().order(-Post.date_time).fetch()
+        all_comments = Comment.query().order(Comment.date_time).fetch()
         info = {
             'first_name' : self.session.get('f_name'),
             'last_name' : self.session.get('l_name'),
