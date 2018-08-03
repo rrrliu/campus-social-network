@@ -52,7 +52,7 @@ class MainHandler(BaseHandler):
         else:
             self.session['user_key_id'] = User.query(User.email == user.email).fetch()[0].key.id()
         all_users = User.query().fetch()
-        all_posts = Post.query().order(-Post.timestamp).fetch()
+        all_posts = Post.query().fetch()
         all_comments = Comment.query().fetch()
         info = {
             'first_name' : self.session.get('f_name'),
@@ -83,11 +83,9 @@ class MainHandler(BaseHandler):
             # local_tz = pytz.timezone('US/Pacific')
             # local_dt = utc_dt.replace(tzinfo=pytz.utc).astimezone(local_tz)
             updated_hour = utc_dt.hour - 7
-            updated_day = utc_dt.day
             if utc_dt.hour < 7:
                 updated_hour += 24
-                updated_day -= 1
-            local_dt = utc_dt.replace(hour=updated_hour, day = updated_day)
+            local_dt = utc_dt.replace(hour=updated_hour)
             format = '%A at %I:%M %p'
             current_time = local_dt.strftime(format)
             # current_time = utc_dt.strftime(format)
@@ -97,7 +95,6 @@ class MainHandler(BaseHandler):
                         img_url = img_url,
                         type = type,
                         timestamp = current_time,
-                        date_time = local_dt,
                         author_name = author_name,
                         author_pic = author_pic,
                         score = 0)
