@@ -2,6 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>profile</title>
     <link rel="stylesheet" href="stylesheets/profile.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -23,20 +24,15 @@
         <ul id='container'>
           <li> <a href='index?'> <i class="material-icons">home</i> </a> </li><br>
           <li id='hello'>Hello, {{ first_name }}! </li>
-          <li id='search'>
-            <form action="/action_page.php" style='padding-left:5%;padding-right:5%;'>
-              <input type="text" placeholder="Search.." name="search">
-              <button type="submit"><img src='https://svgsilh.com/svg/1976105.svg' height='18px'; width='18px'></button>
-            </form> </li>
           <li> <a href='profile'><img src="{{ dp_url }}" alt="Profile Picture" id='profilepic'></a></li>
         </ul>
     </div>
   </div>
+  <center>
   <div>
     <form class="" action="/profile" method="post" id='profile'>
       <fieldset id='profile'>
         <img src="{{ dp_url }}" alt="Profile Picture" id='mainpic'>
-        <h4>Username</h4>
         <ul>
           <br> <li> First Name &ensp; <input id='info' type="text" name="first_name" value="{{ first_name }}"> </li><br>
           <li> Last Name &ensp; <input id='info' type="text" name="last_name" value="{{ last_name }}"> </li><br>
@@ -62,7 +58,7 @@
     <div id='userfeed' class="filterDiv {{ post.type }}">
       <ul>
       <li id="firstline">
-         <div style="font-size: 24px; display: inline-grid; grid-template-columns: 8% 32% 60%; width: 90%;">
+         <div>
           <img style="width: 40px; height: 40px; border-radius: 50px; margin: 3px;" src="{{ post.author_pic }}" alt="">
           &ensp;
            {{ post.author_name }}
@@ -105,7 +101,7 @@
     </div>
   {% endfor %}
 </div>
-
+</center>
 
     <script type="text/javascript">
       function foo() {

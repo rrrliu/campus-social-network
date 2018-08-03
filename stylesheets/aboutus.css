@@ -206,3 +206,11 @@ img {
   text-align: center;
   font-weight: lighter;
 } */
+
+@media only screen and (max-width: 600px) {
+  .row {
+    display: block;
+    overflow-y: scroll;
+    height: 70%;
+  }
+}
