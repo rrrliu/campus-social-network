@@ -122,6 +122,13 @@ class ProfileHandler(BaseHandler):
         user_key = Key('User', self.session.get('user_key_id'))
         user_posts = Post.query(Post.author_key == user_key).order(-Post.date_time).fetch()
         all_comments = Comment.query().order(Comment.date_time).fetch()
+
+        for post in all_posts:
+            author = post.author_key.get()
+            post.author_name = author.first_name + ' ' + author.last_name
+            post.author_pic = author.dp_url
+            author.put()
+
         info = {
             'first_name' : self.session.get('f_name'),
             'last_name' : self.session.get('l_name'),
