@@ -109,7 +109,7 @@
                   </button>
 
                 <!-- {{ post.score }} -->
-                <input type="hidden" name="timestamp" value="{{ post.timestamp }}">
+                <input type="hidden" name="date_time" value="{{ post.date_time }}">
                 <input type="hidden" name="score" value="{{ post.score }}">
               </form>
 
@@ -117,7 +117,7 @@
 
                 <input id="writecomment" type="text" name="comment" placeholder="Write a comment...">
 
-                <input type="hidden" name="timestamp" value="{{ post.timestamp }}">
+                <input type="hidden" name="date_time" value="{{ post.date_time }}">
                 <input type="hidden" name="author_name" value="{{ first_name }} {{ last_name }}">
                 <button class="comment" type="submit">reply</button>
 
