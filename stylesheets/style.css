@@ -49,7 +49,6 @@ h3 {
 form {
   text-align: center;
   margin-left: 11%;
-
 }
 
 ul {
@@ -142,8 +141,6 @@ top:30px;
 right: 275px; */
 float: left;
 vertical-align: middle;
-
-
 }
 
 #like {
@@ -231,7 +228,6 @@ vertical-align: middle;
   height: 350px;
   overflow-y: scroll;
   /* width: 160; */
-
 }
 
 #otherusers li {
@@ -323,12 +319,6 @@ vertical-align: middle;
   color: #bebfc6;
 }
 
-#username {
-
-}
-
-
-
 #userfeed {
   background-color: white;
   border: 1px solid white;
@@ -347,6 +337,7 @@ vertical-align: middle;
   list-style-type: none;
   display: grid;
   grid-row: auto;
+  padding-left: 0;
 
 }
 
@@ -479,6 +470,10 @@ i.material-icons {
    }
 
    @media only screen and (max-width: 600px) {
+     form {
+       text-align: center;
+       margin: 2%;
+     }
      h1 {
        float: center;
        font-family: 'Raleway', sans-serif;
@@ -529,6 +524,25 @@ i.material-icons {
        top: 15px;
        flex: 1;
      }
+     #miscinfo {
+       display: grid;
+       grid-template-columns: auto auto auto;
+       margin: 0px;
+       padding: 0;
+       vertical-align: text-bottom;
+       top: 40px;
+       bottom: 5px;
+       border-bottom: 1px solid #283593;
+     }
+     #miscinfo input {
+       width: 140px;
+       background-color: white;
+       border: 1px solid white;
+       border-radius: 8px;
+       font-size: 12px;
+       margin-bottom: 1%;
+       outline: none
+     }
 
     #myBtnContainer {
         display: none;
@@ -542,11 +556,8 @@ i.material-icons {
       border: 1px solid white;
       border-radius: 8px;
       flex: auto;
-      margin-bottom: 1%;
-      /* margin-left: -11%; */
-      margin-right: 1%;
-      padding: 4px;
       text-align: center;
+      margin: 1px;
       width: 100%;
       /* height: 10%; */
     }
@@ -563,11 +574,35 @@ i.material-icons {
       /* height: 15%; */
       padding: 0;
     }
+    .comment {
+      font-size: 12px;
+      color: #283593;
+      border: none;
+      background-color: #eaebf2;
+      border-radius: 10px;
+      outline: none;
+    }
+    .like {
+      float: left;
+      font-size: 12px;
+      color: #283593;
+      border: none;
+      /* #ffca28 */
+      /* background-color: #283593; */
+      background-color: #eaebf2;
+      /* background-color: white; */
+      border-radius: 10px;
+      outline: none;
+    }
     .mainbody {
       display: grid;
       grid-template-columns: auto;
       margin-top: 33%;
       height: 97%;
       width: auto;
+    }
+    element.style {
+      font-size: 20px;
+      width: 100%;
     }
  }
