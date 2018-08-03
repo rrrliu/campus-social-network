@@ -398,8 +398,12 @@ img.post_image {
 .like {
   float: left;
   font-size: 14px;
-  color: white;
-  background-color: #283593;
+  color: #283593;
+  border: none;
+  /* #ffca28 */
+  /* background-color: #283593; */
+  background-color: #eaebf2;
+  /* background-color: white; */
   border-radius: 10px;
   outline: none;
 }
@@ -411,8 +415,9 @@ i.material-icons {
 
 .comment {
   font-size: 14px;
-  color: white;
-  background-color: #283593;
+  color: #283593;
+  border: none;
+  background-color: #eaebf2;
   border-radius: 10px;
   outline: none;
 }

@@ -157,12 +157,12 @@ class LogoutHandler(BaseHandler):
         self.session['f_name'] = None
         self.session['l_name'] = None
         self.redirect('/')
-    def post(self):
-        self.session['dp_url'] = None
-        self.session['email'] = None
-        self.session['f_name'] = None
-        self.session['l_name'] = None
-        self.redirect('/')
+    # def post(self):
+    #     self.session['dp_url'] = None
+    #     self.session['email'] = None
+    #     self.session['f_name'] = None
+    #     self.session['l_name'] = None
+    #     self.redirect('/')
 
 class AboutUsHandler(BaseHandler):
     def get(self):
