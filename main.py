@@ -114,8 +114,8 @@ class ProfileHandler(BaseHandler):
         results_template = JINJA_ENVIRONMENT.get_template('templates/profile.html')
         all_posts = Post.query().fetch()
         user_key = Key('User', self.session.get('user_key_id'))
-        user_posts = Post.query(Post.author_key == user_key).fetch()
-        all_comments = Comment.query().fetch()
+        user_posts = Post.query(Post.author_key == user_key).order(-Post.date_time).fetch()
+        all_comments = Comment.query().order(Comment.date_time).fetch()
         info = {
             'first_name' : self.session.get('f_name'),
             'last_name' : self.session.get('l_name'),
