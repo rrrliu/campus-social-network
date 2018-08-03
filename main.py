@@ -98,7 +98,7 @@ class MainHandler(BaseHandler):
                         author_name = author_name,
                         author_pic = author_pic,
                         score = 0,
-                        date_time = datetime.now().strftime('%m/%d/%y/%H/%M/%S'))
+                        date_time = datetime.now().strftime('%m/%d/%y/%H/%M/%S/%f'))
             post.put()
             time.sleep(0.1)
         self.redirect('/index')
@@ -210,7 +210,7 @@ class CommentHandler(BaseHandler):
                           post_key = post_key,
                           text = text,
                           author_name = name,
-                          date_time = datetime.now().strftime('%m/%d/%y/%H/%M/%S'))
+                          date_time = datetime.now().strftime('%m/%d/%y/%H/%M/%S/%f'))
         comment.put()
         time.sleep(0.1)
         self.redirect('/index')
