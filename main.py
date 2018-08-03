@@ -147,7 +147,7 @@ class ProfileHandler(BaseHandler):
         user_obj.put()
 
         time.sleep(0.1)
-        self.redirect('/index')
+        self.redirect('/profile')
 
 class LoginHandler(BaseHandler):
     def post(self):

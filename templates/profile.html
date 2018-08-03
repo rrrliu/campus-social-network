@@ -40,11 +40,16 @@
           <li> Image URL &ensp; <input id='info' type="text" name="dp_url" value="{{ dp_url }}"></li>
         </ul>
       </fieldset>
-      <p><input id="button" type="submit" name="" value="Submit"></p>
+      <p><input id="button" type="submit" name="" value="Update"></p>
     </form>
     <p>
+      <form class="" action="/index" method="get">
+        <input id="button" type="submit" value="Return to feed"></button>
+      </form>
+    </p>
+    <p>
       <form class="" action="/logout" method="get">
-        <button id="button" type="submit" onclick="signOut()">Return to Login</button>
+        <input id="button" type="submit" onclick="signOut()" value="Log out">
       </form>
     </p>
 
