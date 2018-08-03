@@ -214,7 +214,7 @@ outline: none;
 }
 
 #otherusers ul {
-  border: 1px solid #283593;
+  border: 2px solid #ffca28;
   border-radius: 10px;
   background-color: #283593;
   height: 10%;
@@ -405,3 +405,59 @@ i.material-icons {
   border-radius: 10px;
   outline: none;
 }
+
+/* testing animations and designs!!!! */
+
+.waves-effect.waves-brown .waves-ripple {
+   /* The alpha value allows the text and background color
+   of the button to still show through. */
+    background-color: rgba(121, 85, 72, 0.65);
+  }
+
+  li {
+       float: left;
+   }
+
+   li a, .dropbtn {
+       display: inline-block;
+       color: white;
+       text-align: center;
+       padding: 14px 0px 0px 20px;
+       text-decoration: none;
+   }
+
+   li a:hover, .dropdown:hover .dropbtn {
+       background-color: white;
+   }
+
+   li.dropdown {
+       display: inline-block;
+   }
+
+   .dropdown-content {
+       display: none;
+       position: absolute;
+       right: 10px;
+       background-color: #f9f9f9;
+       border-radius: 10px;
+       min-width: 160px;
+       box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+       z-index: 1;
+   }
+
+   .dropdown-content a {
+       color: black;
+       padding: 12px 16px;
+       text-decoration: none;
+       display: block;
+       text-align: center;
+   }
+
+   .dropdown-content a:hover {
+     background-color: #f1f1f1;
+     border-radius: 10px;
+   }
+
+   .dropdown:hover .dropdown-content {
+       display: block;
+   }
