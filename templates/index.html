@@ -35,8 +35,8 @@
             <li class='dropdown'><a href='/index?' class='dropbtn' ><img src="{{ dp_url }}" alt="Profile Picture" id='dashpic'></a>
               <div class='dropdown-content'>
                 <a href='/profile'>profile</a>
-                <a href="/logout">logout</a>
                 <a href='/aboutus'>about us</a>
+                  <a href="/logout">logout</a>
               </div>
             </li>
       </ul>
@@ -100,10 +100,13 @@
               <form action="/like" method="post">
 
                     <div>
-                  <img id="highFive"src="https://static.thenounproject.com/png/1154833-200.png" style="height:20px; width:20px; color: white;display:inline-block;">
+
                 </div>
 
-                  <button class="like" type="submit" onclick="like()">high five! &ensp;   {{ post.score }} </button>
+                  <button class="like" type="submit" onclick="like()">
+                    <img id="highFive"src="https://static.thenounproject.com/png/1154833-200.png" style="height:20px; width:20px; color: white;display:inline-block;"> &ensp;
+                    high five! &ensp;   {{ post.score }}
+                  </button>
 
                 <!-- {{ post.score }} -->
                 <input type="hidden" name="timestamp" value="{{ post.timestamp }}">
