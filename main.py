@@ -201,18 +201,19 @@ class LikeHandler(BaseHandler):
 
 class CommentHandler(BaseHandler):
     def post(self):
-        date_time = self.request.get('date_time')
-        post_key = Post.query(Post.date_time == date_time).fetch()[0].key
         text = self.request.get('comment')
-        name = self.request.get('author_name')
-        author_key = Key('User', self.session.get('user_key_id'))
-        comment = Comment(author_key = author_key,
-                          post_key = post_key,
-                          text = text,
-                          author_name = name,
-                          date_time = datetime.now().strftime('%m/%d/%y/%H/%M/%S/%f'))
-        comment.put()
-        time.sleep(0.1)
+        if len(text) > 0:
+            date_time = self.request.get('date_time')
+            post_key = Post.query(Post.date_time == date_time).fetch()[0].key
+            name = self.request.get('author_name')
+            author_key = Key('User', self.session.get('user_key_id'))
+            comment = Comment(author_key = author_key,
+                              post_key = post_key,
+                              text = text,
+                              author_name = name,
+                              date_time = datetime.now().strftime('%m/%d/%y/%H/%M/%S/%f'))
+            comment.put()
+            time.sleep(0.1)
         self.redirect('/index')
 
 config = {}
