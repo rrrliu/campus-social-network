@@ -114,8 +114,13 @@ outline: none;
 #firstline {
   display: inline-block;
   width: 100%;
-  padding-right: 30px;
-  text-align: left;
+  font-size: 24px;
+}
+
+#firstline div {
+    display: inline-grid;
+    grid-template-columns: 8% 32% 60%;
+    width: 90%;
 }
 
 #header {
@@ -391,10 +396,7 @@ img.post_image {
   font-size: 14px;
   color: #283593;
   border: none;
-  /* #ffca28 */
-  /* background-color: #283593; */
   background-color: #eaebf2;
-  /* background-color: white; */
   border-radius: 10px;
   outline: none;
 }
@@ -487,6 +489,10 @@ i.material-icons {
        padding-left: 5px;
        position: absolute;
      }
+     select {
+       flex: 1;
+       width: 100%;
+     }
      #container{
        background-color: #283593;
        display: flex;
@@ -505,8 +511,10 @@ i.material-icons {
        padding-bottom: 0px;
        width:40px;
      }
-     #firstline div{
-       font-size: 15px;
+     #firstline div {
+       font-size: 20px;
+       grid-template-columns: 10% 55% 30%;
+       margin: 1%;
      }
      #header {
        background-color:#283593;
@@ -543,7 +551,6 @@ i.material-icons {
        margin-bottom: 1%;
        outline: none
      }
-
     #myBtnContainer {
         display: none;
    }
@@ -551,7 +558,8 @@ i.material-icons {
       display: none;
     }
     #post {
-      display: inline-flex;
+      display: grid;
+      grid-template-columns: auto auto auto;
       background-color: white;
       border: 1px solid white;
       border-radius: 8px;
@@ -560,6 +568,9 @@ i.material-icons {
       margin: 1px;
       width: 100%;
       /* height: 10%; */
+    }
+    #select {
+      width: 100%;
     }
     #userfeed {
       background-color: white;
@@ -582,6 +593,9 @@ i.material-icons {
       border-radius: 10px;
       outline: none;
     }
+    .feed {
+      width: auto;
+    }
     .like {
       float: left;
       font-size: 12px;
@@ -602,7 +616,8 @@ i.material-icons {
       width: auto;
     }
     element.style {
-      font-size: 20px;
+      font-size: 10px;
+      grid-template-columns: auto auto auto ;
       width: 100%;
     }
  }

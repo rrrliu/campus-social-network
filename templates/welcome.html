@@ -7,6 +7,7 @@
     <meta name="google-signin-client_id" content="928270275694-v9phsaerghg67cinbriumsbt05nij68k.apps.googleusercontent.com">
     <script src="https://apis.google.com/js/platform.js" async defer></script>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>camp · us</title>
 
     <link rel="stylesheet" href="stylesheets/welcome.css">
@@ -36,24 +37,24 @@
     <form class="confirm" action="/login" method="post">
       <fieldset>
         <div >
-        <h4 style="color: white">Please confirm your profile details:</h4>
+        <h4 style="color: white">Account information fetched!</h4>
         <img id="pic" alt="">
         <p style="color: white">Profile picture URL:</p>
-        <input id="pic_input" type="text" name="dp_url" value="">
+        <input id="pic_input" type="text" name="dp_url" value="" readonly>
         <p style="color: white"> Email address:</p>
-        <input id="email_input" type="text" name="email" value="">
+        <input id="email_input" type="text" name="email" value="" readonly>
         <p style="color: white">First name:</p>
         <p>
-          <input id="firstname_input" type="text" name="first_name" value="">
+          <input id="firstname_input" type="text" name="first_name" value="" readonly>
         </p>
         <p style="color: white">Last name:</p>
         <p>
-          <input id="lastname_input" type="text" name="last_name" value="">
+          <input id="lastname_input" type="text" name="last_name" value="" readonly>
         </p>
         <form class="" action="/logout" method="post">
           <button id="button" type="button" onclick="signOut()">Sign out</button>
         </form>
-      <input id="button" type="submit" name="" value="Finish">
+      <input id="button" type="submit" name="" value="Continue">
         </div>
       </fieldset>
     </form>

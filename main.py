@@ -52,8 +52,20 @@ class MainHandler(BaseHandler):
         else:
             self.session['user_key_id'] = User.query(User.email == user.email).fetch()[0].key.id()
         all_users = User.query().fetch()
-        all_posts = Post.query().fetch()
-        all_comments = Comment.query().fetch()
+        all_posts = Post.query().order(-Post.date_time).fetch()
+        all_comments = Comment.query().order(Comment.date_time).fetch()
+
+        for post in all_posts:
+            author = post.author_key.get()
+            post.author_name = author.first_name + ' ' + author.last_name
+            post.author_pic = author.dp_url
+            author.put()
+
+        for comment in all_comments:
+            author = comment.author_key.get()
+            comment.author_name = author.first_name + ' ' + author.last_name
+            author.put()
+
         info = {
             'first_name' : self.session.get('f_name'),
             'last_name' : self.session.get('l_name'),
@@ -98,7 +110,7 @@ class MainHandler(BaseHandler):
                         author_name = author_name,
                         author_pic = author_pic,
                         score = 0,
-                        date_time = datetime.now().strftime('%m/%d/%y/%H/%M/%S'))
+                        date_time = datetime.now().strftime('%m/%d/%y/%H/%M/%S/%f'))
             post.put()
             time.sleep(0.1)
         self.redirect('/index')
@@ -114,8 +126,20 @@ class ProfileHandler(BaseHandler):
         results_template = JINJA_ENVIRONMENT.get_template('templates/profile.html')
         all_posts = Post.query().fetch()
         user_key = Key('User', self.session.get('user_key_id'))
-        user_posts = Post.query(Post.author_key == user_key).fetch()
-        all_comments = Comment.query().fetch()
+        user_posts = Post.query(Post.author_key == user_key).order(-Post.date_time).fetch()
+        all_comments = Comment.query().order(Comment.date_time).fetch()
+
+        for post in all_posts:
+            author = post.author_key.get()
+            post.author_name = author.first_name + ' ' + author.last_name
+            post.author_pic = author.dp_url
+            author.put()
+
+        for comment in all_comments:
+            author = comment.author_key.get()
+            comment.author_name = author.first_name + ' ' + author.last_name
+            author.put()
+
         info = {
             'first_name' : self.session.get('f_name'),
             'last_name' : self.session.get('l_name'),
@@ -141,7 +165,7 @@ class ProfileHandler(BaseHandler):
         user_obj.put()
 
         time.sleep(0.1)
-        self.redirect('/index')
+        self.redirect('/profile')
 
 class LoginHandler(BaseHandler):
     def post(self):
@@ -201,18 +225,19 @@ class LikeHandler(BaseHandler):
 
 class CommentHandler(BaseHandler):
     def post(self):
-        date_time = self.request.get('date_time')
-        post_key = Post.query(Post.date_time == date_time).fetch()[0].key
         text = self.request.get('comment')
-        name = self.request.get('author_name')
-        author_key = Key('User', self.session.get('user_key_id'))
-        comment = Comment(author_key = author_key,
-                          post_key = post_key,
-                          text = text,
-                          author_name = name,
-                          date_time = datetime.now().strftime('%m/%d/%y/%H/%M/%S'))
-        comment.put()
-        time.sleep(0.1)
+        if len(text) > 0:
+            date_time = self.request.get('date_time')
+            post_key = Post.query(Post.date_time == date_time).fetch()[0].key
+            name = self.request.get('author_name')
+            author_key = Key('User', self.session.get('user_key_id'))
+            comment = Comment(author_key = author_key,
+                              post_key = post_key,
+                              text = text,
+                              author_name = name,
+                              date_time = datetime.now().strftime('%m/%d/%y/%H/%M/%S/%f'))
+            comment.put()
+            time.sleep(0.1)
         self.redirect('/index')
 
 config = {}
