@@ -337,6 +337,8 @@ img.post_image {
   width: 60%;
 }
 
+
+
 @media only screen and (max-width: 600px) {
   body {
     width: auto;
