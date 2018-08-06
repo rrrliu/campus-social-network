@@ -194,6 +194,11 @@ class AboutUsHandler(BaseHandler):
         results_template = JINJA_ENVIRONMENT.get_template('templates/aboutUs.html')
         self.response.write(results_template.render())
 
+class MoreHandler(BaseHandler):
+    def get(self):
+        results_template = JINJA_ENVIRONMENT.get_template('templates/more.html')
+        self.response.write(results_template.render())
+
 class DeleteHandler(BaseHandler):
     def post(self):
         # my_post = self.request.get('postDiv')
@@ -256,5 +261,6 @@ app = webapp2.WSGIApplication([
     ('/delete', DeleteHandler),
     ('/like', LikeHandler),
     ('/comment', CommentHandler),
+    ('/more', MoreHandler),
 ], config=config,
    debug=True)
