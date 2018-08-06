@@ -31,6 +31,16 @@ h1 {
   color: white;
 }
 
+h2 {
+  font-family: 'Raleway';
+	font-size: 42px;
+	font-style: bold;
+	font-variant: normal;
+	font-weight: 400;
+	line-height: inherit;
+  color: white;
+}
+
 ul {
   list-style-type: none;
 }
@@ -240,8 +250,11 @@ img {
   #button {
     top: 130px;
   }
+  #header {
+    font-size: 30px;
+  }
   #more {
-    margin-top: 25%;
+    margin-top: 10%;
   }
   .row {
     display: inline-grid;
