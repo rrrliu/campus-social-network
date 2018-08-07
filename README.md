@@ -1,5 +1,5 @@
-# campus-social-network
-Link: <cssi-camp-us.appspot.com>
+# Camp·us
+Link: (cssi-camp-us.appspot.com)
 
 Camp·us is a platform that connects students to their school's community.
 
