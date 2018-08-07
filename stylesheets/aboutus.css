@@ -1,38 +1,19 @@
-#button {
-font-size: 18px;
-color: white;
-background-color: #283593;
-border-radius: 10px;
-outline: none;
-float: right;
-position: absolute;
-top: 50px;
-right:30px;
-
-}
-
-#header {
-  color:white;
-  font-size: 50px;
-  height: 150px;
-  margin: 0px;
-  padding-top: 3%;
-  text-align: center;
-  width: 100%;
-  font-family: 'Montserrat', sans-serif;
-
-  }
-
- html, body {
+  html, body {
   margin: 0;
   height: 100%;
   overflow: hidden;
 }
 
+a:link {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+
  body {
   background-color: #9fa8da;
   background: linear-gradient(#00004f, #9fa8da);
-  background-repeat: : no-repeat;
+  background-repeat: repeat;
   background-attachment: fixed;
 
   margin-top: 0px;
@@ -50,57 +31,86 @@ h1 {
   color: white;
 }
 
-/* #Richard { */
-  /* margin-left: 75px; */
-  /* width: 300px;
-  height: 300px;
-  border-radius: 50%;
-  font-size: 20px;
-  color: #000;
-  line-height: 350px; */
-  /* text-align: center; */
-  /*background: #b6ffff;*/
-  /* border: 3px solid white;
-  position: relative;
-  top: 50px;
-  left:50px;
-  display: inline-block;
-  flex: 1;
+h2 {
+  font-family: 'Raleway';
+	font-size: 42px;
+	font-style: bold;
+	font-variant: normal;
+	font-weight: 400;
+	line-height: inherit;
+  color: white;
+}
 
-} */
+ul {
+  list-style-type: none;
+}
 
-/* #Dena { */
-  /* margin-left: 75px; */
-  /* width: 300px;
-  height: 300px;
-  border-radius: 50%;
-  font-size: 20px;
-  color: #000;
-  line-height: 350px; */
-  /* text-align: center; */
-  /* border: 3px solid white;
-  position: relative;
-  top: 50px;
-  left:150px;
-  display: inline-block;
-  flex: 1;
-} */
-/* #Moises { */
-  /* margin-left: 75px; */
-  /* width: 300px;
-  height: 300px;
-  border-radius: 50%;
-  font-size: 20px;
-  color: #000;
-  line-height: 350px; */
-  /* text-align: center; */
-  /* border: 3px solid white;
-  position: relative;
-  top: 150px;
-  left:250px;
-  display:inline-block;
-  flex: 1;
-} */
+#button {
+font-size: 18px;
+color: white;
+background-color: #283593;
+border-radius: 10px;
+outline: none;
+float: top;
+position: absolute;
+top: 50px;
+right:30px;
+}
+
+#header {
+  color:white;
+  font-size: 50px;
+  height: 150px;
+  margin: 0px;
+  padding-top: 3%;
+  text-align: center;
+  width: 100%;
+  font-family: 'Montserrat', sans-serif;
+  }
+
+#more {
+    font-family: 'Lato', sans-serif;
+    height: 100%;
+    margin: 1%;
+    margin-left: auto;
+    margin-right: auto;
+    outline: none;
+    position: static;
+    text-align: center;
+    width: 30%;
+  }
+
+#more ul {
+      background-color: transparent;
+      display: table;
+      height: 25%;
+      padding: 0;
+      margin: 1%;
+      table-layout: fixed;
+      width: 100%;
+  }
+
+#more li {
+    width: 100%
+  }
+
+#more li {
+      background-color: white;
+      border: 1px solid white;
+      border-radius: 10px;
+      color: #000;
+      margin-bottom: 5px;
+      width: 100%;
+      padding: 10px 16px;
+      text-decoration: none;
+      outline: none;
+  }
+
+  /* Change the link color on hover */
+#more li button:hover {
+      background-color: #555;
+      color: white;
+  }
 
 #nameDena {
     color:white;
@@ -168,6 +178,7 @@ opacity: 15%;
   grid-template-columns: auto auto auto;
   grid-column-gap: .1em;
   height: 98%;
+  overflow-x: scroll;
 }
 img {
   position: relative;
@@ -228,9 +239,22 @@ img {
   font-weight: lighter;
 } */
 
+
+
+              /* Mobile
+               Version */
+
+
+
 @media only screen and (max-width: 600px) {
   #button {
     top: 130px;
+  }
+  #header {
+    font-size: 30px;
+  }
+  #more {
+    margin-top: 10%;
   }
   .row {
     display: inline-grid;
