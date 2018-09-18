@@ -18,5 +18,6 @@ Current features include:
 Features we want to implement:
 - Increased compatibility with smaller screen (especially mobile devices)
 - AJAX script to dynamically update HTML when posting, high fiving, or commenting rather than refreshing the page
+- Alternatively, rewriting the news feed in react.js to create a dynamic interface
 - Ability to high five comments
 - Facebook sign-in or an independent authentication service
